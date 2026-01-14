@@ -9,7 +9,7 @@ if not os.path.exists(base_dir):
 TICK = "`" * 3
 
 # ---------------------------------------------------------
-# 2. 문제 설명 생성 (problem_01.md) - "문제 01" 문구 제거
+# 2. 문제 설명 생성 (problem_01.md)
 # ---------------------------------------------------------
 md_content = f"""# 배고픈 모험가의 사과 수확 (Apple Harvest)
 
@@ -78,7 +78,7 @@ def save_file(path, content):
         f.write(content)
 
 # MD 및 정답 코드 저장
-save_file(os.path.join(base_dir, "problem_01.md"), md_content)
+save_file(os.path.join(base_dir, "problem.md"), md_content)
 
 py_solution = """import sys
 data = list(map(int, sys.stdin.read().split()))
