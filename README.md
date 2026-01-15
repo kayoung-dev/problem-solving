@@ -1,1 +1,23 @@
-This repository is for a problem generator
+## 📂 1. 표준 디렉토리 구조
+새로운 문제가 추가될 때마다 아래의 폴더 구조를 준수합니다.
+
+```text
+.
+├── Easy/                   # 난이도 구분 (Easy, Medium, Hard)
+│   └── P01/                # 문제 번호 (P01, P02, P03...)
+│       ├── problem.md      # 문제 설명 및 입출력 예시
+│       ├── solution.py     # 표준 정답 소스 코드
+│       ├── input_NN.txt    # 테스트 입력 데이터 (01~20)
+│       └── output_NN.txt   # 테스트 출력 데이터 (01~20)
+│   └── P02/
+│       ├── problem.md
+│       ├── ...
+│   
+├── generator/
+│   └── g01.py              # 문제 파일 및 테스트 데이터 생성 스크립트
+│   └── g02.py
+│   └── ...
+│
+└── README.md               # 프로젝트 전체 가이드 (현재 파일)
+```
+
