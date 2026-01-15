@@ -62,9 +62,8 @@ md_content = f"""# 편의점 알바생 단비의 유통기한 점검 (Expiration
 """
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) - 주석 오류 완벽 수정
+# 3. 정답 코드 (solution.py)
 # ---------------------------------------------------------
-# solution.py 부분만 이렇게 교체해 보세요
 py_solution = """import sys
 
 def main():
@@ -93,7 +92,6 @@ def main():
         if urgent_items and urgent_sum <= m:
             target_count += 1
             
-    print(target_count)
 
 if __name__ == "__main__":
     main()
