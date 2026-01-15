@@ -92,6 +92,7 @@ def main():
         if urgent_items and urgent_sum <= m:
             target_count += 1
             
+    print(target_count)
 
 if __name__ == "__main__":
     main()
