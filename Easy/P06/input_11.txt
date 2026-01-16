@@ -1,3 +1,3 @@
-20
-Black
-Swift Banana C++ White Green Python Fig Elderberry Java Cherry Rust Grape Go Date Kotlin Apple Yellow Blue Black Red
+9
+Kotlin
+Banana Red Green White Apple Elderberry Python Yellow Kotlin

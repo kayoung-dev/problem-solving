@@ -37,7 +37,7 @@ Java C++ Python Ruby Go
 3
 ```
 
-> **설명:** 'Python'은 [Java, C++, Python, Ruby, Go] 중에서 **3번째**에 위치해 있습니다.
+* 'Python'은 [Java, C++, Python, Ruby, Go] 중에서 **3번째**에 위치해 있습니다.
 
 ### 예시 2
 **Input:**
@@ -52,4 +52,4 @@ CSS JavaScript React
 -1
 ```
 
-> **설명:** 책장에 'HTML'이라는 책은 없습니다.
+* 책장에 'HTML'이라는 책은 없습니다.
