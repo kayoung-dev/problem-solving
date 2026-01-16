@@ -26,12 +26,12 @@
 
 ### 예시 1
 
-입력
+Input:
 ```
 ABBCDAA
 ```
 
-출력
+Output:
 ```
 ABCD
 ```
@@ -40,12 +40,12 @@ ABCD
 
 ### 예시 2
 
-입력
+Input:
 ```
 a1a1B2B2
 ```
 
-출력
+Output:
 ```
 a1B2
 ```

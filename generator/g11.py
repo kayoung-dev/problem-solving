@@ -39,7 +39,7 @@ md_content = f"""# 서아의 푸드트럭 정산 (Food Truck)
 
 ### 예시 1
 
-입력
+Input:
 {TICK}
 5
 1000 2500 1500 3000 500
@@ -47,7 +47,7 @@ md_content = f"""# 서아의 푸드트럭 정산 (Food Truck)
 1 3 5 2
 {TICK}
 
-출력
+Output:
 {TICK}
 5500
 {TICK}
@@ -56,7 +56,7 @@ md_content = f"""# 서아의 푸드트럭 정산 (Food Truck)
 
 ### 예시 2
 
-입력
+Input:
 {TICK}
 3
 200 300 400
@@ -64,7 +64,7 @@ md_content = f"""# 서아의 푸드트럭 정산 (Food Truck)
 2 2 2 1 3
 {TICK}
 
-출력
+Output:
 {TICK}
 1700
 {TICK}

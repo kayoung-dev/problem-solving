@@ -42,12 +42,12 @@ md_content = f"""# 소연의 암호 토큰 복원 (Token Restore)
 
 ### 예시 1
 
-입력
+Input:
 {TICK}
 ABBCDAA
 {TICK}
 
-출력
+Output:
 {TICK}
 ABCD
 {TICK}
@@ -56,12 +56,12 @@ ABCD
 
 ### 예시 2
 
-입력
+Input:
 {TICK}
 a1a1B2B2
 {TICK}
 
-출력
+Output:
 {TICK}
 a1B2
 {TICK}
