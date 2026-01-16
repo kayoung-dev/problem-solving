@@ -61,4 +61,5 @@ dist/
 # Custom (generator 결과물 등)
 # ===============================
 validator/
-runner/
+run.py
+Easy/
