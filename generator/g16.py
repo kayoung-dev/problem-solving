@@ -163,4 +163,4 @@ for i in range(1, 21):
     save_file(os.path.join(base_dir, f"input_{i:02d}.txt"), input_str)
     save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), output_str)
 
-print("✅ Easy/P16 생성이 완료되었습니다.")
+print("✅ 'Easy/P16' 생성이 완료되었습니다.")
