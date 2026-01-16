@@ -62,4 +62,4 @@ dist/
 # ===============================
 validator/
 run.py
-Easy/
+Easy/*
