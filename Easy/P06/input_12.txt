@@ -1,3 +1,3 @@
-12
-Blue
-Rust Java Go C++ Apple Blue Green Grape Cherry Yellow Date Red
+6
+Red
+Banana Python Date Black Rust Red

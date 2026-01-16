@@ -1,3 +1,3 @@
-8
-Red
-Banana Red Yellow Go Apple Grape C++ Fig
+12
+Java
+Black Yellow Date Apple Grape Java Go C++ Python Fig Green Elderberry
