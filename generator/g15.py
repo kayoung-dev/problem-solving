@@ -45,12 +45,12 @@ md_content = f"""# 센서 데이터 요약
 
 ### 예시 1
 
-입력
+Input:
 {TICK}
 10 -2 30 0 50 60
 {TICK}
 
-출력
+Output:
 {TICK}
 60
 {TICK}
@@ -59,12 +59,12 @@ md_content = f"""# 센서 데이터 요약
 
 ### 예시 2
 
-입력
+Input:
 {TICK}
 -1 5 -3 7 -9
 {TICK}
 
-출력
+Output:
 {TICK}
 12
 {TICK}

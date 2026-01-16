@@ -34,13 +34,13 @@ md_content = f"""# 유진의 최고 기온 찾기 (Max Temperature)
 
 ### 예시 1
 
-입력
+Input:
 {TICK}
 5
 3 -2 5 1 0
 {TICK}
 
-출력
+Output:
 {TICK}
 5
 {TICK}
@@ -49,13 +49,13 @@ md_content = f"""# 유진의 최고 기온 찾기 (Max Temperature)
 
 ### 예시 2
 
-입력
+Input:
 {TICK}
 4
 -10 -3 -7 -50
 {TICK}
 
-출력
+Output:
 {TICK}
 -3
 {TICK}
