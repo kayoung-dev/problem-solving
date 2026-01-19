@@ -57,13 +57,13 @@ md_content = f"""# 현우의 방문 기록 정리 (Visit Log Cleanup)
 
 ### 예시 2
 
-입력
+Input:
 {TICK}
 6
 7 7 7 7 7 7
 {TICK}
 
-출력
+Output:
 {TICK}
 7
 {TICK}
