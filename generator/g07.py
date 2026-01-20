@@ -5,9 +5,10 @@ import string
 # 1. 경로 설정
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P07")
+test_dir = os.path.join(base_dir, "test")
 
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir, exist_ok=True)
+os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -140,11 +141,11 @@ for i in range(1, 21):
     ans = sentence.count(target)
     
     # 파일 저장
-    input_file = os.path.join(base_dir, f"input_{i:02d}.txt")
+    input_file = os.path.join(test_dir, f"input_{i:02d}.in")
     with open(input_file, "w", encoding="utf-8") as f:
         f.write(f"{target}\n")
         f.write(f"{sentence}")
         
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), str(ans))
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), str(ans))
 
 print(f"✅ 'Easy/P07' 생성이 완료되었습니다.")

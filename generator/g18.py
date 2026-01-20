@@ -4,9 +4,10 @@ import random
 # 1. 경로 설정
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P18")
+test_dir = os.path.join(base_dir, "test")
 
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir, exist_ok=True)
+os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -112,10 +113,10 @@ for i in range(1, 21):
             score -= val
             
     # 입력 파일 저장 (숫자 리스트만 한 줄로 저장)
-    input_path = os.path.join(base_dir, f"input_{i:02d}.txt")
+    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
     with open(input_path, "w", encoding="utf-8") as f:
         f.write(" ".join(map(str, stones)))
         
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), str(score))
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), str(score))
 
 print(f"✅ 'Easy/P18' 생성이 완료되었습니다.")

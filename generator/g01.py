@@ -4,9 +4,10 @@ import random
 # 1. 경로 설정
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P01")
+test_dir = os.path.join(base_dir, "test")
 
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir, exist_ok=True)
+os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -116,8 +117,8 @@ for i in range(1, 21):
     picked = [w for w in weights if w >= k]
     ans_str = f"{len(picked)} {sum(picked)}" if picked else "0 0"
     
-    save_file(os.path.join(base_dir, f"input_{i:02d}.txt"), input_str)
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), ans_str)
+    save_file(os.path.join(test_dir, f"input_{i:02d}.in"), input_str)
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), ans_str)
 
 print(f"✅ 'Easy/P01' 생성이 완료되었습니다.")
 

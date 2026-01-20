@@ -4,9 +4,10 @@ import random
 # 1. 경로 설정
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P02")
+test_dir = os.path.join(base_dir, "test")
 
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir, exist_ok=True)
+os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -123,7 +124,7 @@ for i in range(1, 21):
             ans += 1
             
     # input 파일에 실제 줄바꿈(\n)이 들어가도록 저장합니다.
-    save_file(os.path.join(base_dir, f"input_{i:02d}.txt"), "\n".join(test_input))
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), str(ans))
+    save_file(os.path.join(test_dir, f"input_{i:02d}.in"), "\n".join(test_input))
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), str(ans))
 
 print(f"✅ 'Easy/P02' 파일 생성이 완료되었습니다.")
