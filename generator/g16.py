@@ -6,7 +6,10 @@ import random
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P16")
+test_dir = os.path.join(base_dir, "test")
+
 os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -160,7 +163,7 @@ for i in range(1, 21):
     input_str = " ".join(logs)
     output_str = str(simulate(logs))
 
-    save_file(os.path.join(base_dir, f"input_{i:02d}.txt"), input_str)
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), output_str)
+    save_file(os.path.join(test_dir, f"input_{i:02d}.in"), input_str)
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), output_str)
 
 print("✅ 'Easy/P16' 생성이 완료되었습니다.")

@@ -5,9 +5,10 @@ import string
 # 1. 경로 설정
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P03")
+test_dir = os.path.join(base_dir, "test")
 
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir, exist_ok=True)
+os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -111,7 +112,7 @@ for i in range(1, 21):
         # 무작위 문자열 생성
         input_str = ''.join(random.choices(string.ascii_letters + " ", k=20)).strip()
     
-    save_file(os.path.join(base_dir, f"input_{i:02d}.txt"), input_str)
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), input_str[::-1])
+    save_file(os.path.join(test_dir, f"input_{i:02d}.in"), input_str)
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), input_str[::-1])
 
 print(f"✅ 'Easy/P03' 생성이 완료되었습니다.")

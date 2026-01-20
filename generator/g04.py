@@ -4,9 +4,10 @@ import random
 # 1. 경로 설정
 current_dir = os.path.dirname(os.path.abspath(__file__))
 base_dir = os.path.join(current_dir, "..", "Easy", "P04")
+test_dir = os.path.join(base_dir, "test")
 
-if not os.path.exists(base_dir):
-    os.makedirs(base_dir, exist_ok=True)
+os.makedirs(base_dir, exist_ok=True)
+os.makedirs(test_dir, exist_ok=True)
 
 TICK = "`" * 3
 
@@ -125,11 +126,11 @@ for i in range(1, 21):
     ans_str = f"{avg:.2f}"
     
     # 실제 줄바꿈을 사용하여 파일 저장
-    file_path = os.path.join(base_dir, f"input_{i:02d}.txt")
+    file_path = os.path.join(test_dir, f"input_{i:02d}.in")
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(f"{n}\n")  # 여기서 실제 엔터 처리가 됩니다.
         f.write(" ".join(map(str, scores)))
         
-    save_file(os.path.join(base_dir, f"output_{i:02d}.txt"), ans_str)
+    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), ans_str)
 
 print(f"✅ 'Easy/P04' 생성이 완료되었습니다.")
