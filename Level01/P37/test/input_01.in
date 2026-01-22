@@ -1,0 +1,5 @@
+TYPE apple
+TYPE banana
+UNDO
+REDO
+TYPE cherry

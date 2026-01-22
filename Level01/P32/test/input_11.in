@@ -1,0 +1,11000 @@
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+POP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+POP
+MIN
+MIN
+POP
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+POP
+POP
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+POP
+MIN
+MIN
+POP
+PUSH {val}
+POP
+POP
+POP
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+POP
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+POP
+TOP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+POP
+POP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+POP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+MIN
+TOP
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+POP
+TOP
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+TOP
+MIN
+POP
+MIN
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+MIN
+MIN
+TOP
+TOP
+TOP
+POP
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+POP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+POP
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+TOP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+POP
+TOP
+TOP
+POP
+POP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+POP
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+TOP
+POP
+POP
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+POP
+MIN
+MIN
+TOP
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+MIN
+MIN
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+POP
+POP
+TOP
+POP
+MIN
+POP
+TOP
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+TOP
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+TOP
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+TOP
+POP
+PUSH {val}
+POP
+MIN
+TOP
+TOP
+MIN
+TOP
+MIN
+POP
+MIN
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+POP
+TOP
+MIN
+TOP
+TOP
+TOP
+TOP
+TOP
+POP
+POP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+MIN
+POP
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+TOP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+POP
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+POP
+MIN
+TOP
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+POP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+TOP
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+POP
+TOP
+MIN
+TOP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+POP
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+POP
+PUSH {val}
+POP
+MIN
+POP
+POP
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+MIN
+TOP
+POP
+PUSH {val}
+POP
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+POP
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+TOP
+POP
+PUSH {val}
+POP
+MIN
+POP
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+MIN
+POP
+POP
+POP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+POP
+POP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+POP
+TOP
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+MIN
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+POP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+MIN
+MIN
+POP
+MIN
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+POP
+MIN
+MIN
+POP
+POP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+POP
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+POP
+MIN
+TOP
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+TOP
+TOP
+POP
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+POP
+POP
+POP
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+TOP
+PUSH {val}
+POP
+POP
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+POP
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+POP
+POP
+MIN
+MIN
+MIN
+TOP
+TOP
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+TOP
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+TOP
+POP
+POP
+MIN
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+POP
+POP
+POP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+MIN
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+POP
+TOP
+MIN
+MIN
+TOP
+MIN
+POP
+MIN
+MIN
+MIN
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+MIN
+TOP
+MIN
+POP
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+MIN
+POP
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+POP
+TOP
+POP
+POP
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+MIN
+POP
+MIN
+POP
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+POP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+MIN
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+POP
+MIN
+POP
+MIN
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+TOP
+POP
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+MIN
+POP
+MIN
+POP
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+TOP
+TOP
+TOP
+POP
+MIN
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+POP
+POP
+POP
+MIN
+TOP
+TOP
+POP
+MIN
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+POP
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+POP
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+POP
+MIN
+POP
+POP
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+TOP
+POP
+PUSH {val}
+TOP
+TOP
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+POP
+POP
+POP
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+TOP
+MIN
+MIN
+TOP
+MIN
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+POP
+POP
+POP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+POP
+TOP
+POP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+POP
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+MIN
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+POP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+POP
+MIN
+TOP
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+TOP
+MIN
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+POP
+PUSH {val}
+POP
+POP
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+POP
+POP
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+TOP
+MIN
+MIN
+TOP
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+POP
+MIN
+TOP
+POP
+POP
+MIN
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+POP
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+MIN
+POP
+POP
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+TOP
+POP
+PUSH {val}
+TOP
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+POP
+POP
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+POP
+POP
+MIN
+MIN
+TOP
+POP
+TOP
+POP
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+POP
+POP
+TOP
+POP
+MIN
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+TOP
+TOP
+POP
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+POP
+POP
+POP
+POP
+POP
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+MIN
+MIN
+POP
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+TOP
+MIN
+MIN
+POP
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+TOP
+TOP
+POP
+POP
+POP
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+POP
+MIN
+POP
+PUSH {val}
+POP
+POP
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+POP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+POP
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+POP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+TOP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+MIN
+MIN
+MIN
+POP
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+TOP
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+POP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+POP
+POP
+POP
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+MIN
+TOP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+POP
+POP
+POP
+POP
+MIN
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+POP
+POP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+TOP
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+MIN
+MIN
+MIN
+POP
+TOP
+TOP
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+POP
+MIN
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+POP
+MIN
+TOP
+POP
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+POP
+TOP
+MIN
+MIN
+MIN
+POP
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+POP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+MIN
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+MIN
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+TOP
+TOP
+MIN
+TOP
+TOP
+POP
+TOP
+MIN
+TOP
+MIN
+TOP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+MIN
+TOP
+POP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+POP
+MIN
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+TOP
+POP
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+POP
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+POP
+POP
+POP
+POP
+POP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+POP
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+TOP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+TOP
+POP
+TOP
+POP
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+TOP
+POP
+POP
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+POP
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+POP
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+TOP
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+POP
+POP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+POP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+POP
+TOP
+TOP
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+POP
+POP
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+POP
+PUSH {val}
+POP
+POP
+TOP
+POP
+POP
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+POP
+POP
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+POP
+POP
+POP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+TOP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+POP
+TOP
+MIN
+TOP
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+POP
+MIN
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+MIN
+TOP
+POP
+POP
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+TOP
+POP
+POP
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+POP
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+POP
+MIN
+TOP
+PUSH {val}
+POP
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+POP
+MIN
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+POP
+TOP
+MIN
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+POP
+TOP
+TOP
+MIN
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+POP
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+MIN
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+POP
+PUSH {val}
+TOP
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+POP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+POP
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+TOP
+TOP
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+POP
+MIN
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+TOP
+TOP
+POP
+TOP
+POP
+TOP
+TOP
+POP
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+MIN
+TOP
+POP
+POP
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+MIN
+POP
+POP
+POP
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+TOP
+POP
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+POP
+MIN
+POP
+MIN
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+POP
+TOP
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+TOP
+TOP
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+TOP
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+POP
+MIN
+POP
+MIN
+POP
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+POP
+MIN
+MIN
+MIN
+POP
+TOP
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+POP
+MIN
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+MIN
+POP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+POP
+POP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+TOP
+TOP
+POP
+TOP
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+POP
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+TOP
+PUSH {val}
+POP
+POP
+POP
+TOP
+MIN
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+POP
+TOP
+TOP
+TOP
+MIN
+POP
+POP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+TOP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+POP
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+POP
+TOP
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+TOP
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+POP
+POP
+POP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+POP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+POP
+POP
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+POP
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+MIN
+TOP
+MIN
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+MIN
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+MIN
+MIN
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+TOP
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+POP
+POP
+TOP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+MIN
+POP
+TOP
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+MIN
+TOP
+POP
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+POP
+TOP
+POP
+MIN
+TOP
+POP
+MIN
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+MIN
+POP
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+MIN
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+POP
+MIN
+TOP
+PUSH {val}
+MIN
+TOP
+TOP
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+MIN
+MIN
+MIN
+POP
+POP
+TOP
+POP
+TOP
+POP
+TOP
+POP
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+MIN
+PUSH {val}
+TOP
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+POP
+POP
+PUSH {val}
+POP
+PUSH {val}
+POP
+POP
+MIN
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+POP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+MIN
+TOP
+PUSH {val}
+POP
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+TOP
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+TOP
+MIN
+TOP
+MIN
+TOP
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+TOP
+POP
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+POP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+TOP
+MIN
+MIN
+MIN
+MIN
+POP
+MIN
+POP
+POP
+MIN
+TOP
+POP
+POP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+POP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+POP
+POP
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+POP
+MIN
+MIN
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+POP
+PUSH {val}
+MIN
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+POP
+TOP
+POP
+POP
+MIN
+TOP
+MIN
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+MIN
+MIN
+MIN
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+TOP
+TOP
+POP
+TOP
+TOP
+POP
+MIN
+POP
+POP
+TOP
+MIN
+PUSH {val}
+TOP
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+POP
+MIN
+POP
+TOP
+PUSH {val}
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+POP
+TOP
+MIN
+PUSH {val}
+MIN
+MIN
+TOP
+MIN
+MIN
+TOP
+PUSH {val}
+TOP
+MIN
+POP
+PUSH {val}
+POP
+TOP
+TOP
+PUSH {val}
+TOP
+POP
+PUSH {val}
+POP
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+TOP
+TOP
+MIN
+MIN
+POP
+MIN
+TOP
+POP
+PUSH {val}
+PUSH {val}
+MIN
+POP
+TOP
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+PUSH {val}
+POP
+MIN
+POP
+PUSH {val}
+MIN
+MIN
+POP
+MIN
+PUSH {val}
+PUSH {val}
+MIN
+TOP
+PUSH {val}
+POP
+POP
+PUSH {val}
+POP
+POP
+POP
+TOP
+POP
+MIN
+MIN
+MIN
+PUSH {val}
+POP
+POP
+PUSH {val}
+MIN
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+PUSH {val}
+TOP
+MIN
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+TOP
+TOP
+POP
+MIN
+TOP
+POP
+MIN
+PUSH {val}
+MIN
+PUSH {val}
+PUSH {val}
+POP
+POP
+TOP
+POP
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+POP
+PUSH {val}
+PUSH {val}
+PUSH {val}
+TOP
+PUSH {val}
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+TOP
+PUSH {val}
+TOP
+MIN
+MIN
+POP
+PUSH {val}
+TOP
+PUSH {val}
+MIN
+PUSH {val}
+TOP
+MIN
+PUSH {val}
+PUSH {val}
+PUSH {val}
+PUSH {val}
+MIN
+MIN
+PUSH {val}
+POP
+MIN
+MIN
+TOP
+POP
+POP
+MIN
+PUSH {val}
+MIN
+TOP
+POP
