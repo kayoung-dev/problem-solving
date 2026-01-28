@@ -1,0 +1,19 @@
+4
+1 20260101
+2 20260103
+3 20251231
+4 20260102
+10
+1 network
+1 network
+1 db
+2 network
+2 db
+2 auth
+3 db
+3 db
+4 auth
+4 auth
+2
+network db
+3
