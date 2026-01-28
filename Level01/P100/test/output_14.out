@@ -1,140 +1,81 @@
-data88
-DATA113
-DATA124
-data127
-DATA230
-DATA300
-DATA373
-data394
-data412
-data439
-data455
-data462
-DATA534
-DATA559
-DATA634
-DATA663
-DATA664
-data721
-data906
-data960
-DOC41
-doc234
-DOC276
-DOC283
-DOC283
-doc397
-doc434
-DOC444
-doc453
-DOC484
-DOC629
-DOC657
-doc691
-doc697
-doc752
-DOC861
-DOC956
-DOC961
-doc981
-FILE38
-FILE82
-file221
-file233
-file242
-file253
-FILE322
-FILE350
-file364
-file466
-file478
-FILE595
-FILE622
-file748
-FILE832
-FILE868
-file881
-file885
-FILE919
-file924
-IMG66
-img101
-img176
-IMG193
-IMG231
-img491
-img515
-IMG524
-img563
-img614
-IMG678
-IMG679
-img892
-img951
-img973
-log9
-log11
-LOG68
-LOG121
-LOG278
-LOG336
-log363
-log373
-LOG376
-LOG407
-LOG409
-log454
-log466
-log507
-LOG596
-log616
-LOG629
-log681
-log741
-LOG787
-LOG813
-temp32
-temp90
-TEMP127
-TEMP129
-TEMP260
-TEMP280
-TEMP305
-temp330
-TEMP355
-TEMP360
-temp372
-temp419
-TEMP429
-TEMP500
-temp557
-temp694
-TEMP694
-temp696
-TEMP702
-temp725
-temp788
-TEMP804
-TEMP832
-TEMP953
-temp990
-TEST212
-test214
-test322
-test439
-TEST515
-TEST541
-test651
-TEST701
-TEST706
-TEST709
-TEST793
-TEST840
-TEST863
-test883
-test949
-test969
-TEST977
-test978
-test990
-test999
+fix(api): update config
+fix(api): rename variable
+fix(api): rename variable
+fix(auth): fix typo
+fix(ci): reduce latency
+fix(ci): optimize query
+fix(core): handle null
+fix(core): bump version
+fix(core): cleanup code
+fix(ui): improve logging
+fix(ui): update pipeline
+fix(ui): optimize query
+fix(ui): cleanup code
+fix(ui): optimize query
+fix: update config
+fix: fix typo
+feat(api): fix typo
+feat(api): handle null
+feat(auth): add endpoint
+feat(auth): fix typo
+feat(ci): optimize query
+feat(ci): fix typo
+feat(ci): add endpoint
+feat(ci): handle null
+feat(core): fix typo
+feat(core): handle null
+feat(db): add endpoint
+feat(db): update config
+feat(ui): reduce latency
+feat(ui): add unit tests
+refactor(auth): bump version
+refactor(ci): add endpoint
+refactor(ci): handle null
+refactor(core): add endpoint
+refactor(core): handle null
+refactor(core): optimize query
+refactor(core): handle null
+refactor(core): handle null
+refactor(db): cleanup code
+refactor(db): handle null
+refactor(db): optimize query
+refactor(ui): update pipeline
+refactor(ui): bump version
+refactor(ui): optimize query
+test(api): reduce latency
+test(api): cleanup code
+test(api): update config
+test(api): handle null
+test(auth): improve logging
+test(auth): update config
+test(auth): cleanup code
+test(auth): handle null
+test(ci): bump version
+test(ci): update pipeline
+test(ci): optimize query
+test(ci): handle null
+test(ci): bump version
+test(ci): handle null
+test(core): improve logging
+test(core): bump version
+test(db): reduce latency
+test(db): reduce latency
+test(ui): add endpoint
+test: optimize query
+test: bump version
+chore(api): update config
+chore(api): add unit tests
+chore(auth): improve logging
+chore(ci): fix typo
+chore(ci): optimize query
+chore(ci): add unit tests
+chore(core): fix typo
+chore(core): rename variable
+chore(db): optimize query
+chore(ui): rename variable
+chore(ui): handle null
+chore: cleanup code
+chore: cleanup code
+chore: fix typo
+chore: bump version
+chore: add unit tests
