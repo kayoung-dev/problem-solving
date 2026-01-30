@@ -4,35 +4,28 @@ from collections import deque
 input = sys.stdin.readline
 
 def solve():
-    # 1. N, K 읽기
     line = input().split()
     if not line: return
     n, k = int(line[0]), int(line[1])
     
-    # dq: (y - x, x) 쌍을 저장하며 y-x 기준 내림차순 유지
-    dq = deque()
-    max_synergy = -float('inf')
+    energies = list(map(int, input().split()))
+    dq = deque() # 히어로의 인덱스 저장
     
-    # 2. 히어로 정보 순차 처리
-    for _ in range(n):
-        xj, yj = map(int, input().split())
-        
-        # [A] 거리 제한을 벗어난 파트너 제거 (x_j - x_i > k)
-        while dq and xj - dq[0][1] > k:
+    for i in range(n):
+        # 1. [왼쪽 문] 범위를 벗어난 인덱스 제거
+        if dq and dq[0] < i - k + 1:
             dq.popleft()
             
-        # [B] 최적의 파트너와 시너지 계산
-        if dq:
-            max_synergy = max(max_synergy, dq[0][0] + yj + xj)
-            
-        # [C] 자신의 잠재력(y-x)을 큐에 추가 (단조성 유지)
-        current_potential = yj - xj
-        while dq and current_potential >= dq[-1][0]:
+        # 2. [오른쪽 문] 현재보다 약한 이전 멤버들 제거 (단조성 유지)
+        while dq and energies[dq[-1]] <= energies[i]:
             dq.pop()
-        dq.append((current_potential, xj))
+            
+        dq.append(i)
         
-    # 3. 결과 출력
-    print(max_synergy)
+        # 3. 요새가 K명을 채운 시점부터 최강자 출력
+        if i >= k - 1:
+            print(energies[dq[0]], end=' ')
+    print()
 
 if __name__ == "__main__":
     solve()
