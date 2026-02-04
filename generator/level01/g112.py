@@ -109,9 +109,16 @@ sample3_grid = [
 ]
 sample3_out = solve_internal(sample3_grid, sample3_H)
 
-problem_md = f"""# 온도 차단막 설치 최소화
+problem_md = f"""---
+title: "온도 차단막 설치 최소화"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["MST", "sorting"]
+---
 
-## 문제 설명
+## description
 시설 관리자 **소연**은 여러 구역으로 나뉜 실험 온실을 점검하려고 합니다.  
 온실은 $R \\times C$ 격자 형태이며, 각 칸에는 그 구역의 **온도**가 적혀 있습니다.
 
@@ -128,64 +135,56 @@ problem_md = f"""# 온도 차단막 설치 최소화
 
 소연이 **모든 칸을 서로 오갈 수 있도록** 만들기 위해 필요한 차단막 **최소 설치 개수**를 구하세요.
 
----
 
-## 입력 형식 (Input Format)
+
+## input_description
 - 첫째 줄에 정수 $R$, $C$, $H$가 공백으로 주어집니다.
 - 다음 $R$줄에 걸쳐 각 줄마다 $C$개의 정수로 온도가 주어집니다.
 
----
-
-## 출력 형식 (Output Format)
+## output_description
 - 모든 칸이 서로 이동 가능해지도록 만들기 위한 차단막 **최소 설치 개수**를 출력합니다.
 
----
+# samples
 
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 {sample1_R} {sample1_C} {sample1_H}
 {grid_to_str(sample1_grid)}
 {TICK}
-**Output:**
+
+### output 1
 {TICK}
 {sample1_out}
 {TICK}
-
 - 대부분의 인접 칸이 $|T_a - T_b| \\le 2$ 를 만족해 차단막이 거의 필요 없습니다.
 - 꼭 필요한 경계만 골라 설치했을 때의 최소 개수가 출력값입니다.
 
-### 예시 2
-**Input:**
+### input 2
 {TICK}
 {sample2_R} {sample2_C} {sample2_H}
 {grid_to_str(sample2_grid)}
 {TICK}
-**Output:**
+
+### output 2
 {TICK}
 {sample2_out}
 {TICK}
-
 - 오른쪽 열은 온도가 $40$ 이상이라, 왼쪽 영역($18\\sim20$)과 온도 차가 크게 벌어집니다.
 - 결국 오른쪽 영역으로 넘어가는 경계는 최소 한 번 이상 차단막 설치가 필요하며,
   전체가 이어지도록 설치 개수를 최소화한 결과가 출력값입니다.
 
-### 예시 3
-**Input:**
+### input 3
 {TICK}
 {sample3_R} {sample3_C} {sample3_H}
 {grid_to_str(sample3_grid)}
 {TICK}
-**Output:**
+
+### output 3
 {TICK}
 {sample3_out}
 {TICK}
 
----
-
-## 힌트 (Note)
+## hint
 
 - 각 칸을 “구역”, 인접한 상·하·좌·우 관계를 “연결 후보”라고 생각할 수 있습니다.
 - 인접한 두 구역의 온도를 $T_a, T_b$라 할 때,
@@ -346,9 +345,9 @@ for i, (R, C, H, grid) in enumerate(test_data, 1):
     input_str = f"{R} {C} {H}\n" + "\n".join(" ".join(map(str, row)) for row in grid) + "\n"
     ans = solve_internal(grid, H) + "\n"
 
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
 print("✅ 'Level01/P112' 문제 생성이 완료되었습니다.")
