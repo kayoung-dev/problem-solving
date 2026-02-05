@@ -1,11 +1,11 @@
----
+<!--code-round-metadata
 title: "참석자 명단 확인"
 level: "1"
 time_limit: 1000
 memory_limit: 128
 languages: ["c", "cpp", "java", "js", "go", "python"]
 tags: ["이진탐색"]
----
+-->
 
 ## description
 행사 진행자 동수는 입구에서 방문객들의 입장을 도와주고 있습니다. 동수는 사전에 신청한 사람들의 고유 번호가 적힌 참석자 명단을 가지고 있으며, 이 명단은 번호순으로 정렬되어 있습니다.
@@ -63,3 +63,6 @@ tags: ["이진탐색"]
 1
 ```
 - 명단의 가장 첫 번째 위치에 100이 존재하므로 1을 출력합니다.
+
+## hint
+Easy!
