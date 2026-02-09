@@ -19,7 +19,7 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 problem_md = r"""---
 title: "로봇 청소기의 효율적인 청소"
-level: "2"
+level: "3"
 time_limit: 1000
 memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]

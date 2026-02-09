@@ -19,7 +19,7 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 problem_md = r"""---
 title: "과일 가게의 연속 대박 기간 찾기"
-level: "2"
+level: "3"
 time_limit: 1000
 memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]

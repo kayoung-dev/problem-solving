@@ -18,7 +18,7 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 problem_md = r"""---
 title: "태호의 복도 타일 공사"
-level: "2"
+level: "3"
 time_limit: 1000
 memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]

@@ -19,7 +19,7 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 md_content = f"""---
 title: "올바른 괄호"
-level: "1"
+level: "2"
 time_limit: 1000
 memory_limit: 128
 languages: ["c", "cpp", "java", "js", "go", "python"]

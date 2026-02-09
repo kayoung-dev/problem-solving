@@ -19,7 +19,7 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 md_content = f"""---
 title: "연료 전지 충전소"
-level: "1"
+level: "2"
 time_limit: 1000
 memory_limit: 128
 languages: ["c", "cpp", "java", "js", "go", "python"]
