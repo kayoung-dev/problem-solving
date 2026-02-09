@@ -1,5 +1,0 @@
-fix(api): handle null request
-fix: patch build error
-feat(api): add search endpoint
-refactor(core): split service layer
-chore(ci): update pipeline

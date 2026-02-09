@@ -1,9 +1,0 @@
-feat(ci): improve logging
-feat(core): improve logging
-feat(db): fix typo
-feat(db): optimize query
-test(core): reduce latency
-test(db): optimize query
-test: update pipeline
-chore(ci): reduce latency
-chore: fix typo

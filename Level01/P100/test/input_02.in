@@ -1,6 +1,0 @@
-5
-aa11bb22 2026-01-01 10:00 feat: init project
-cc33dd44 2026-01-01 10:01 feat(ui): add button
-ee55ff66 2026-01-01 09:59 fix(ui): hotfix
-11223344 2026-01-01 10:02 fix: adjust config
-deadbeef 2026-01-01 10:03 test(ui): add tests
