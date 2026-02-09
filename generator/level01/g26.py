@@ -2,11 +2,13 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level01/P26 폴더 생성)
+# 1. 경로 설정 및 기본 설정
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
-root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P26")
+# 실제 사용 시 경로 구조에 맞춰 수정 가능
+easy_dir = os.path.abspath(os.path.join(current_dir, "..", "..", "Easy")) 
+
+base_dir = os.path.join(easy_dir, "P26")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -15,163 +17,127 @@ os.makedirs(test_dir, exist_ok=True)
 TICK = "`" * 3
 
 # ---------------------------------------------------------
-# 2. 문제 설명 (problem.md)
+# 2. 문제 설명 (Markdown)
 # ---------------------------------------------------------
-LIFO_LATEX = r"$LIFO(Last \,\, In, \,\, First \,\, Out)$"
-BRACKETS_LATEX = r"$\{\}$"
-
-problem_md = f"""# 우주선 통제실의 괄호 보안 시스템
+md_content = f"""# 우주 정거장의 신호 해독
 
 ## 문제 설명
-우주 통제실의 보안 요원 **케이트**는 외계 행성에서 전송된 암호화된 보안 코드를 분석하고 있습니다. 이 코드는 여러 종류의 괄호들로 구성되어 있으며, 코드가 유효하기 위해서는 모든 괄호가 올바른 순서로 닫혀야 합니다.
+우주 정거장의 통신 장교 '리나'는 지구로부터 수신된 암호화된 신호 배열을 분석하고 있습니다. 
+우주 방사선으로 인해 신호 배열에는 의미 없는 노이즈(숫자)들이 섞여 있습니다.
 
-보안 코드가 유효하기 위한 조건은 다음과 같습니다:
-1. 모든 열린 괄호는 반드시 같은 종류의 닫힌 괄호와 짝을 이뤄야 합니다.
-2. 나중에 열린 괄호가 먼저 닫혀야 하는 {LIFO_LATEX} 원칙을 준수해야 합니다.
-3. 모든 괄호 검사가 끝난 후, 남는 괄호가 없어야 합니다.
+보안 본부에서는 진짜 정보를 해독하기 위한 보안 키 `divisor`를 보내왔습니다. 
+리나는 다음 규칙에 따라 진짜 신호만을 걸러내야 합니다.
 
-사용되는 괄호의 종류는 소괄호 $( )$, 중괄호 {BRACKETS_LATEX}, 대괄호 $[ ]$ 총 3종류입니다. 주어진 보안 코드가 유효한지 판별하는 프로그램을 작성하세요.
+1. 수신된 신호 배열 `arr`의 각 숫자 중, 보안 키 `divisor`로 **나누어 떨어지는 수**만 유효한 신호입니다.
+2. 해독의 정확성을 위해 유효한 신호들은 **오름차순**으로 정렬되어야 합니다.
+3. 만약 유효한 신호가 하나도 없다면, 이는 통신 오류이므로 **-1**을 반환해야 합니다.
 
----
-
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 보안 코드 문자열이 주어집니다. 
-* 문자열의 길이는 $1$ 이상 $10^5$ 이하이며, `(`, `)`, `[`, `]`, `{{`, `}}`로만 구성됩니다.
-
-## 출력 형식 (Output Format)
-* 보안 코드가 유효하면 `PASS`를, 유효하지 않으면 `FAIL`을 출력합니다.
+신호 배열과 보안 키가 주어졌을 때, 해독된 신호 목록을 출력하는 프로그램을 작성하세요.
 
 ---
 
-## 입출력 예시 (Sample I/O)
+## 입력 형식
+* 첫 번째 줄에 신호 배열의 크기 $N$과 보안 키 $divisor$가 공백으로 구분되어 주어집니다. ($1 \\le N \\le 100$, $1 \\le divisor \\le 100$)
+* 두 번째 줄에 $N$개의 신호 데이터(자연수)가 공백으로 구분되어 주어집니다.
+
+## 출력 형식
+* 유효한 신호를 오름차순으로 정렬하여 공백으로 구분해 출력합니다.
+* 유효한 신호가 없다면 -1을 출력합니다.
+
+---
+
+## 입출력 예시
 
 ### 예시 1
 **Input:**
 {TICK}
-([]) {{}}
+5 5
+5 9 7 10 3
 {TICK}
 
 **Output:**
 {TICK}
-PASS
+5 10
 {TICK}
 
-* `(`와 `)`가 짝을 이루고, `[`와 `]`가 짝을 이룹니다. 마지막에 `{{`와 `}}`도 올바르게 닫혔으므로 유효합니다.
+* 5로 나누어 떨어지는 신호는 5와 10입니다. 이를 오름차순으로 정렬하면 5 10이 됩니다.
 
 ### 예시 2
 **Input:**
 {TICK}
-([)]
+3 11
+2 4 8
 {TICK}
 
 **Output:**
 {TICK}
-FAIL
+-1
 {TICK}
 
-* `[`가 열린 후 `(`가 열렸으므로, `)`가 먼저 나와야 하지만 `]`가 먼저 나왔습니다. {LIFO_LATEX} 원칙에 어긋나므로 유효하지 않습니다.
+* 11로 나누어 떨어지는 신호가 없습니다. 따라서 -1을 출력합니다.
 """
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) 
+# 3. 정답 코드 (Python Solution)
 # ---------------------------------------------------------
-solution_py = f"""import sys
+py_solution = """import sys
 
-def solve():
-    # 문자열만 바로 읽어옴
-    code = sys.stdin.read().strip()
-    if not code:
-        return
+def main():
+    # 입력 처리
+    line1 = sys.stdin.readline().split()
+    if not line1: return
+    n = int(line1[0])
+    divisor = int(line1[1])
     
-    stack = []
-    bracket_map = {{')': '(', ']': '[', '}}': '{{'}}
+    arr = list(map(int, sys.stdin.readline().split()))
     
-    for char in code:
-        if char in bracket_map.values():
-            stack.append(char)
-        elif char in bracket_map:
-            if not stack or stack[-1] != bracket_map[char]:
-                print("FAIL")
-                return
-            stack.pop()
-            
-    if not stack:
-        print("PASS")
+    # 로직: divisor로 나누어 떨어지는 값 필터링
+    filtered = [num for num in arr if num % divisor == 0]
+    
+    # 예외 처리 및 정렬
+    if not filtered:
+        print("-1")
     else:
-        print("FAIL")
+        filtered.sort()
+        # 언패킹(*)을 사용하여 공백 구분 출력
+        print(*filtered)
 
-if __name__ == "__main__":
-    solve()
+if __name__ == "__main__": main()
 """
 
 # ---------------------------------------------------------
-# 4. 테스트케이스 생성 로직
+# 4. 파일 생성 및 테스트 케이스 생성
 # ---------------------------------------------------------
-def generate_valid_brackets(n):
-    stack = []
-    res = []
-    pairs = {'(': ')', '[': ']', '{': '}'}
-    open_chars = ['(', '[', '{']
-    while len(res) + len(stack) < n:
-        char = random.choice(open_chars)
-        stack.append(char)
-        res.append(char)
-    while stack:
-        res.append(pairs[stack.pop()])
-    return "".join(res)
+def save_file(path, content):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
 
-def generate_test_cases():
-    cases = []
-    # 고정 케이스 (튜플로 묶어서 append)
-    cases.append(("([]){}", "PASS"))
-    cases.append(("([)]", "FAIL"))
-    cases.append((")(", "FAIL"))
-    cases.append(("{{[()(())]}}", "PASS"))
+# 메인 문제 파일 및 솔루션 저장
+save_file(os.path.join(base_dir, "problem.md"), md_content)
+save_file(os.path.join(base_dir, "solution.py"), py_solution)
+
+# 테스트 케이스 20개 생성
+for i in range(1, 21):
+    # 랜덤 데이터 생성
+    n = random.randint(1, 100)
+    divisor = random.randint(1, 20)
+    arr = [random.randint(1, 1000) for _ in range(n)]
     
-    # 랜덤 대규모 케이스 (총 20개를 채움)
-    for i in range(len(cases) + 1, 21):
-        length = i * 50 # 문자열 길이 조절
-        if i % 2 == 0:
-            s = generate_valid_brackets(length)
-            cases.append((s, "PASS"))
-        else:
-            s = list(generate_valid_brackets(length))
-            # 임의의 한 문자를 바꿔서 FAIL 유도
-            idx = random.randint(0, len(s)-1)
-            s[idx] = random.choice(['(', ')', '[', ']', '{', '}'])
-            res_str = "".join(s)
-            
-            # 우연히 PASS가 될 수 있으므로 실제 검증
-            ans = "PASS"
-            stk = []
-            m = {')': '(', ']': '[', '}': '{'}
-            for c in res_str:
-                if c in m.values(): stk.append(c)
-                elif c in m:
-                    if not stk or stk[-1] != m[c]: ans = "FAIL"; break
-                    stk.pop()
-                else: ans = "FAIL"; break
-            if stk: ans = "FAIL"
-            cases.append((res_str, ans))
-    return cases
-
-# ---------------------------------------------------------
-# 5. 파일 저장
-# ---------------------------------------------------------
-with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
-    f.write(problem_md)
-
-with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
-    f.write(solution_py)
-
-all_cases = generate_test_cases()
-for i, (inp, out) in enumerate(all_cases, 1):
-    in_file = os.path.join(test_dir, f"input_{i:02d}.in")
-    out_file = os.path.join(test_dir, f"output_{i:02d}.out")
+    # Input 파일 작성
+    input_content = f"{n} {divisor}\n" + " ".join(map(str, arr))
+    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
+    save_file(input_path, input_content)
     
-    with open(in_file, "w", encoding="utf-8") as f:
-        f.write(inp)
-    with open(out_file, "w", encoding="utf-8") as f:
-        f.write(out)
+    # Output 계산
+    filtered = [x for x in arr if x % divisor == 0]
+    filtered.sort()
+    
+    if not filtered:
+        output_content = "-1"
+    else:
+        output_content = " ".join(map(str, filtered))
+        
+    output_path = os.path.join(test_dir, f"output_{i:02d}.out")
+    save_file(output_path, output_content)
 
-print(f"✅ 'Level01/P26' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Easy/P26' 생성이 완료되었습니다.")
