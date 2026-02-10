@@ -2,7 +2,7 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level02/P04 폴더 생성)
+# 1. 경로 설정 (Level02/P004 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -17,214 +17,145 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""---
-title: "올바른 괄호"
+problem_md = r"""---
+title: "배달원의 효율적 휴식"
 level: "2"
 time_limit: 1000
-memory_limit: 128
+memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Stack"]
+tags: ["DP"]
 ---
 
 ## description
-괄호가 바르게 짝지어졌다는 것은 `'('` 문자로 열렸으면 반드시 짝지어서 `')'` 문자로 닫혀야 한다는 뜻입니다. <br />
+성실한 배달원 민수는 일직선으로 늘어선 마을의 집들에 음식을 배달하고 있습니다. 각 집에서는 배달을 완료할 때마다 민수에게 정해진 금액의 팁을 줍니다. 하지만 민수에게는 체력을 관리하기 위한 한 가지 철칙이 있습니다.<br />
 
-예를 들어:
-* `()()` 또는 `(())()` 는 올바른 괄호입니다.
-* `)()` 또는 `(()(` 는 올바르지 않은 괄호입니다.
+**"연속해서 붙어 있는 두 집을 방문하지 않는다."**<br />
 
-소괄호 `'('`와 `')'`로만 이루어진 문자열 `S`가 주어졌을 때, 이 문자열이 올바른 괄호 문자열인지 판단하는 프로그램을 작성하세요.
-스택(Stack)을 활용하여 **열린 괄호는 쌓고, 닫힌 괄호는 짝을 맞춰 제거**하는 아이디어를 사용해 보세요.
+만약 어떤 집에서 배달을 했다면, 바로 옆에 붙어 있는 집은 건너뛰고 쉬어야 합니다. 즉, 최소한 한 집 이상은 건너뛰어야 다음 배달을 진행할 수 있습니다.<br />
 
-
+마을에 있는 각 집이 주는 배달 팁의 액수가 순서대로 주어질 때, 민수가 규칙을 지키면서 얻을 수 있는 **팁의 총합 중 최댓값**을 구하는 프로그램을 작성하세요.<br />
 
 ## input_description
-- 첫 번째 줄에 테스트 케이스의 개수 $T$가 주어집니다. ($1 \le T \le 100$)
-- 두 번째 줄부터 $T$개의 줄에 걸쳐 괄호 문자열 $S$가 주어집니다.
-    - 문자열 $S$의 길이는 2 이상 100,000 이하입니다.
+- 첫 번째 줄에 마을에 있는 집의 개수 $N$이 주어집니다. 
+- $1 \le N \le 100,000$
+- 두 번째 줄에 각 집이 주는 팁 액수 $T_i$가 공백으로 구분되어 $N$개 주어집니다. 
+- $0 \le T_i \le 10,000$
 
 ## output_description
-- 각 테스트 케이스마다 올바른 괄호 문자열이면 `YES`, 아니면 `NO`를 출력합니다.
+- 민수가 얻을 수 있는 팁 총합의 최댓값을 정수로 출력합니다.
 
 # samples
 
 ### input 1
 {TICK}
-3
-()()
-(())()
-)()(
+4
+1 2 3 1
 {TICK}
 
 ### output 1
 {TICK}
-YES
-YES
-NO
+4
 {TICK}
 
 ### input 2
 {TICK}
-2
-(()(
-((()))
+5
+2 7 9 3 1
 {TICK}
 
 ### output 2
 {TICK}
-NO
-YES
+12
 {TICK}
 
-"""
+### input 3
+{TICK}
+10
+100 1 1 100 1 1 100 1 1 100
+{TICK}
+
+### output 3
+{TICK}
+400
+{TICK}
+
+""".replace("{TICK}", TICK)
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) 
+# 3. 정답 코드 (solution.py - DP 방식)
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = r"""import sys
 
-def is_valid_parenthesis(s):
-    stack = []
-    for char in s:
-        if char == '(':
-            stack.append(char)
-        else: # char == ')'
-            if not stack:
-                return False
-            stack.pop()
-    
-    # 순회가 끝났을 때 스택이 비어있어야 올바른 괄호
-    return len(stack) == 0
-
-def main():
-    input = sys.stdin.readline
-    
-    try:
-        t_str = input().strip()
-        if not t_str:
-            return
-        t = int(t_str)
-    except ValueError:
+def solve():
+    input_data = sys.stdin.read().split()
+    if not input_data:
         return
-
-    for _ in range(t):
-        s = input().strip()
-        if is_valid_parenthesis(s):
-            print("YES")
-        else:
-            print("NO")
+    
+    n = int(input_data[0])
+    tips = list(map(int, input_data[1:]))
+    
+    if n == 1:
+        print(tips[0])
+        return
+    
+    # dp[i]는 i번째 집까지 고려했을 때 얻을 수 있는 최대 팁입니다.
+    dp = [0] * n
+    
+    # 초기값 설정
+    dp[0] = tips[0]
+    dp[1] = max(tips[0], tips[1])
+    
+    # 점화식: i번째 집을 선택하는 경우(dp[i-2] + 현재팁) vs 선택하지 않는 경우(dp[i-1])
+    for i in range(2, n):
+        dp[i] = max(dp[i-1], dp[i-2] + tips[i])
+        
+    print(dp[n-1])
 
 if __name__ == "__main__":
-    main()
+    solve()
 """
 
 # ---------------------------------------------------------
 # 4. 파일 저장 및 테스트케이스 생성
 # ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
 
-# 내부 정답 로직 (테스트케이스 생성용)
-def solve_internal(s):
-    stack = []
-    for char in s:
-        if char == '(':
-            stack.append(char)
-        else:
-            if not stack:
-                return "NO"
-            stack.pop()
-    return "YES" if not stack else "NO"
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
 
-# 랜덤 괄호 생성 함수
-def generate_random_parentheses(length, balanced_probability=0.5):
-    # 50% 확률로 의도적인 정답(Balanced) 생성
-    if random.random() < balanced_probability:
-        if length % 2 != 0: length += 1 # 짝수 길이 보장
-        
-        # 셔플 방식으로는 올바른 괄호 만들기 어려움 -> 생성 로직
-        # 간단하게: 랜덤한 위치에 삽입하거나 감싸기 (재귀적 or 반복적)
-        # 여기서는 단순하게: 올바른 괄호 리스트를 만들고 합치는 방식 등을 섞음
-        temp_stack = []
-        result = []
-        # 절반은 열고 절반은 닫으면 될 것 같지만 순서가 중요함
-        # 가장 쉬운 방법: 카탈란 수 생성기 대신, 유효한 괄호 생성 알고리즘 사용
-        
-        # 검증된 생성법:
-        # 열린 괄호 남은 개수(open_rem), 닫힌 괄호 남은 개수(close_rem) 추적
-        def generate(p, left, right, parens=[]):
-            if left: generate(p + '(', left-1, right)
-            if right > left: generate(p + ')', left, right-1)
-            if not right: parens.append(p)
-            return parens
-        
-        # 길이가 길면 위 재귀는 비효율적 -> 랜덤 워크 방식
-        # 0부터 시작, +1('('), -1(')'), 음수 안됨, 마지막에 0
-        current_balance = 0
-        s_list = []
-        # 절반은 '(', 절반은 ')'
-        half = length // 2
-        opens = half
-        closes = half
-        
-        while opens > 0 or closes > 0:
-            # 닫을 수 있는 상황: balance > 0
-            can_close = (current_balance > 0) and (closes > 0)
-            # 열 수 있는 상황: opens > 0. 단, 남은 공간이 최소 닫을 횟수보다 많아야 함(안전하게)
-            # 여기선 간단히 opens가 있으면 열 수 있다고 가정하되, 마지막에 0이 되도록 유도
-            
-            # 랜덤 선택 (열기 vs 닫기)
-            # 닫아야만 하는 상황: 남은 칸 == 현재 밸런스 (모두 닫아야 0됨)
-            if (opens + closes) == current_balance:
-                s_list.append(')')
-                closes -= 1
-                current_balance -= 1
-            elif opens == 0:
-                s_list.append(')')
-                closes -= 1
-                current_balance -= 1
-            elif not can_close:
-                s_list.append('(')
-                opens -= 1
-                current_balance += 1
-            else:
-                if random.random() < 0.5:
-                    s_list.append('(')
-                    opens -= 1
-                    current_balance += 1
-                else:
-                    s_list.append(')')
-                    closes -= 1
-                    current_balance -= 1
-        return "".join(s_list)
-        
-    else:
-        # 무작위 생성 (오답일 확률 높음)
-        s_list = [random.choice(['(', ')']) for _ in range(length)]
-        return "".join(s_list)
+# 정답 생성 로직 함수 (내부용)
+def get_ans(n, tips):
+    if n == 1: return tips[0]
+    dp = [0] * n
+    dp[0] = tips[0]
+    dp[1] = max(tips[0], tips[1])
+    for i in range(2, n):
+        dp[i] = max(dp[i-1], dp[i-2] + tips[i])
+    return dp[n-1]
 
-# 테스트 케이스 20개 생성
+# 20개의 테스트 케이스 생성
 for i in range(1, 21):
-    t = random.randint(5, 15) # 한 파일당 테스트 케이스 수
-    inputs = []
-    outputs = []
+    if i <= 5:
+        # 소규모 테스트 (N=1~10)
+        n_val = i * 2
+    elif i <= 10:
+        # 중규모 테스트 (N=100~500)
+        n_val = i * 50
+    else:
+        # 대규모 테스트 (N=10,000~100,000) - DP 저격 구간
+        n_val = (i - 10) * 10000
     
-    inputs.append(str(t))
+    tips_list = [random.randint(0, 1000) for _ in range(n_val)]
     
-    for _ in range(t):
-        length = random.randint(2, 50) * 2 # 짝수로 길이 설정 (4 ~ 100)
-        s = generate_random_parentheses(length, balanced_probability=0.5)
-        inputs.append(s)
-        outputs.append(solve_internal(s))
+    input_str = f"{n_val}\n" + " ".join(map(str, tips_list))
+    ans_str = str(get_ans(n_val, tips_list))
     
-    input_str = "\n".join(inputs)
-    output_str = "\n".join(outputs)
-    
-    save_file(os.path.join(test_dir, f"{i}.in"), input_str)
-    save_file(os.path.join(test_dir, f"{i}.out"), output_str)
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
+        f.write(input_str)
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
+        f.write(ans_str)
 
-print(f"✅ 'Level02/P004' 생성이 완료되었습니다.")
+print(f"✅ 'Level02/P004' 문제 생성이 완료되었습니다.")

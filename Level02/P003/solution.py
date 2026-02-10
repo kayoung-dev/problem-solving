@@ -1,36 +1,34 @@
 import sys
-from collections import deque
 
-def main():
-    input = sys.stdin.readline
+def solve():
+    line = sys.stdin.readline()
+    if not line:
+        return
     
     try:
-        line = input().strip()
-        if not line: return
-        n = int(line)
-    except ValueError:
-        return
-
-    # 큐 생성
-    queue = deque()
-
-    for _ in range(n):
-        command_line = input().split()
-        if not command_line: break
+        n = int(line.strip())
         
-        cmd = command_line[0]
-
-        if cmd == "in":
-            number = int(command_line[1])
-            queue.append(number) # 줄 서기
+        # 가로 길이가 1이면 세로 타일 1개만 놓을 수 있습니다.
+        if n == 1:
+            print(1)
+            return
+        
+        # n이 2일 때까지 초기값을 설정합니다.
+        dp = [0] * (n + 1)
+        dp[1] = 1
+        dp[2] = 2
+        
+        # n이 3 이상일 때부터 점화식을 적용합니다.
+        # 가로 i를 채우는 방법은:
+        # 1. (i-1)까지 채우고 세로 타일 1개를 붙이는 경우
+        # 2. (i-2)까지 채우고 가로 타일 2개를 눕혀서 붙이는 경우
+        for i in range(3, n + 1):
+            dp[i] = dp[i-1] + dp[i-2]
             
-        elif cmd == "out":
-            if queue:
-                # 맨 앞사람 입장 (출력)
-                print(queue.popleft())
-            else:
-                # 줄 선 사람이 없음
-                print("-1")
+        print(dp[n])
+        
+    except ValueError:
+        pass
 
 if __name__ == "__main__":
-    main()
+    solve()

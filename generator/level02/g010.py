@@ -1,9 +1,8 @@
 import os
 import random
-import sys
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level02/P10 폴더 생성)
+# 1. 경로 설정 (Level02/P010 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -18,141 +17,97 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""---
-title: "텍스트 에디터"
+problem_md = r"""---
+title: "거듭제곱 수열의 분해 법칙"
 level: "2"
 time_limit: 1000
-memory_limit: 128
+memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Stack"]
+tags: ["DP", "Mathematics"]
 ---
 
+
 ## description
-한 줄로 된 간단한 텍스트 에디터를 구현하려고 합니다. <br />
-이 에디터에는 커서(cursor)가 존재하며, 커서는 문장의 맨 앞, 문장의 맨 뒤, 또는 문장 중간의 임의의 곳에 위치할 수 있습니다. <br />
 
-초기에 편집기에 입력되어 있는 문자열의 길이가 $N$이라고 할 때, 커서가 위치할 수 있는 곳은 $N+1$가지 경우가 있습니다.
-초기 상태에서 커서는 문장의 맨 뒤에 위치합니다.
+수학자 가우스는 모든 양의 정수가 $1, 2, 4, 8, 16, \dots$ 와 같은 $2^k$ ($k$는 $0$ 이상의 정수) 형태의 서로 다른 수들의 합으로 단 한 가지 방법으로만 표현될 수 있다는 사실에 주목했습니다. 
 
-그 후 $M$개의 명령어가 입력됩니다. 명령어는 다음 4가지입니다.<br />
+예를 들어, 숫자 $13$은 다음과 같이 분해됩니다:
+$$13 = 8 + 4 + 1$$
+이때 사용된 항의 개수는 총 $3$개입니다. 반면, 숫자 $16$은 $16$ 그 자체로 표현되므로 항의 개수는 $1$개입니다. 
 
-* `L`: 커서를 왼쪽으로 한 칸 옮깁니다. (커서가 문장의 맨 앞이면 무시됨)
-* `D`: 커서를 오른쪽으로 한 칸 옮깁니다. (커서가 문장의 맨 뒤면 무시됨)
-* `B`: 커서 왼쪽에 있는 문자를 삭제합니다. (커서가 문장의 맨 앞이면 무시됨)
-* `P x`: 문자 $x$를 커서 왼쪽에 추가합니다.
+우리는 임의의 정수 $n$이 주어졌을 때, $0$부터 $n$까지의 모든 정수들이 각각 몇 개의 항으로 분해되는지 그 개수를 조사하려고 합니다. 
 
-모든 명령어를 수행하고 난 뒤의 최종 문자열을 출력하세요. <br />
-예를들어 초기 문자열이 `abcd`이고, 초기 커서는 맨 뒤(`abcd|`)에 있습니다.<br />
+여기에는 흥미로운 수학적 규칙이 숨어 있습니다. 짝수 $2m$을 분해할 때 필요한 항의 개수는 그 절반인 $m$을 분해할 때와 정확히 같습니다. 반면, 홀수 $2m+1$을 분해할 때 필요한 항의 개수는 그 절반의 몫인 $m$을 분해할 때보다 정확히 $1$이 더 큽니다.
 
-1. `P x`: $x$를 커서 왼쪽에 추가합니다. -> `abcdx|`
-2. `L`: 커서를 왼쪽으로 이동합니다. -> `abcd|x`
-3. `P y`: $y$를 커서 왼쪽에 추가합니다. -> `abcdy|x`
+이러한 수의 성질을 이용하여, $0$부터 $n$까지 각 숫자를 분해하는 데 필요한 **항의 개수**를 순서대로 나열하는 프로그램을 작성해 주세요.
 
-최종 결과: `abcdyx`
 
 ## input_description
-- 첫째 줄에 초기에 입력되어 있는 문자열이 주어집니다. (길이 $N$, $1 \\le N \\le 100,000$)
-- 둘째 줄에 명령어의 개수 $M$이 주어집니다. ($1 \\le M \\le 500,000$)
-- 셋째 줄부터 $M$개의 줄에 걸쳐 입력할 명령어가 순서대로 주어집니다.
+- 첫 번째 줄에 조사할 범위의 상한선인 정수 $n$이 주어집니다.
+- $0 \le n \le 100,000$
 
 ## output_description
-- 모든 명령어를 수행한 후의 문자열을 출력합니다.
+- $0$부터 $n$까지 각 숫자를 분해할 때 필요한 항의 개수를 공백으로 구분하여 한 줄에 출력합니다.
 
 # samples
 
 ### input 1
+**Input:**
 {TICK}
-abcd
-3
-P x
-L
-P y
+2
+{TICK}
+**Output:**
+{TICK}
+0 1 1
 {TICK}
 
 ### output 1
+**Input:**
 {TICK}
-abcdyx
+5
+{TICK}
+**Output:**
+{TICK}
+0 1 1 2 1 2
 {TICK}
 
+
 ### input 2
+**Input:**
 {TICK}
-abc
-9
-L
-L
-L
-L
-L
-P x
-L
-B
-P y
+0
 {TICK}
 
 ### output 2
 {TICK}
-yxabc
+0
 {TICK}
-
-## hint
-* 문자열의 길이 $N$은 최대 $100,000$, 명령어의 개수 $M$은 최대 $500,000$입니다.
-* 일반적인 배열(List)에서 중간에 데이터를 삽입하거나 삭제하는 연산은 $O(N)$의 시간이 걸립니다.
-* 이를 $M$번 반복하면 총 시간 복잡도는 $O(N \\times M)$이 되어 시간 초과가 발생합니다.
-* 두 개의 스택(Stack)을 사용하여 커서를 기준으로 왼쪽 문자들과 오른쪽 문자들을 나누어 관리하면, 모든 명령을 $O(1)$에 처리할 수 있습니다.
-
-"""
+""".replace("{TICK}", TICK)
 
 # ---------------------------------------------------------
 # 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = r"""import sys
 
 def solve():
-    # 빠른 입출력을 위해 sys.stdin.readline 사용
-    input = sys.stdin.readline
-    
-    # 초기 문자열 읽기 (개행문자 제거)
-    initial_str = input().strip()
-    
-    try:
-        line = input().strip()
-        if not line: return
-        m = int(line)
-    except ValueError:
+    # 입력을 읽어 정수로 변환합니다.
+    input_data = sys.stdin.read().split()
+    if not input_data:
         return
-
-    # 두 개의 스택을 사용 (커서 기준 왼쪽 스택, 오른쪽 스택)
-    # 예: "abc|de" 상태라면 left=['a','b','c'], right=['e','d'] (오른쪽은 거꾸로 쌓임)
-    left_stack = list(initial_str)
-    right_stack = []
     
-    for _ in range(m):
-        command = input().split()
-        op = command[0]
+    n = int(input_data[0])
+    
+    # 결과를 저장할 리스트를 생성합니다.
+    # dp[i]는 숫자 i를 분해할 때 필요한 항의 개수입니다.
+    dp = [0] * (n + 1)
+    
+    for i in range(1, n + 1):
+        # 수학적 귀납법에 따른 점화식:
+        # i를 2로 나눈 몫의 결과에 i를 2로 나눈 나머지를 더합니다.
+        dp[i] = dp[i // 2] + (i % 2)
         
-        if op == 'L':
-            # 커서를 왼쪽으로: 왼쪽 스택의 문자를 오른쪽 스택으로 이동
-            if left_stack:
-                right_stack.append(left_stack.pop())
-                
-        elif op == 'D':
-            # 커서를 오른쪽으로: 오른쪽 스택의 문자를 왼쪽 스택으로 이동
-            if right_stack:
-                left_stack.append(right_stack.pop())
-                
-        elif op == 'B':
-            # 커서 왼쪽 문자 삭제: 왼쪽 스택에서 pop
-            if left_stack:
-                left_stack.pop()
-                
-        elif op == 'P':
-            # 커서 왼쪽에 문자 추가: 왼쪽 스택에 push
-            char_to_add = command[1]
-            left_stack.append(char_to_add)
-            
-    # 최종 결과 출력
-    # right_stack은 스택 구조상 문자열 순서가 반대이므로 뒤집어서 출력
-    print("".join(left_stack + right_stack[::-1]))
+    # 리스트의 요소들을 공백으로 구분하여 출력합니다.
+    print(*(dp))
 
 if __name__ == "__main__":
     solve()
@@ -161,76 +116,32 @@ if __name__ == "__main__":
 # ---------------------------------------------------------
 # 4. 파일 저장 및 테스트케이스 생성
 # ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
 
-# 내부 정답 로직 (테스트케이스 생성 및 검증용)
-def solve_internal(initial, commands):
-    left = list(initial)
-    right = []
-    
-    for cmd in commands:
-        parts = cmd.split()
-        op = parts[0]
-        
-        if op == 'L':
-            if left: right.append(left.pop())
-        elif op == 'D':
-            if right: left.append(right.pop())
-        elif op == 'B':
-            if left: left.pop()
-        elif op == 'P':
-            left.append(parts[1])
-            
-    return "".join(left + right[::-1])
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
 
-# 테스트 케이스 20개 생성
-# 주의: N과 M이 크므로, 시간 효율을 고려하여 생성
-for i in range(1, 21):
-    # 난이도 설정
-    if i <= 5:
-        # 작은 케이스 (디버깅용)
-        init_len = random.randint(1, 10)
-        m = random.randint(1, 20)
-    elif i <= 15:
-        # 중간 케이스
-        init_len = random.randint(100, 1000)
-        m = random.randint(100, 1000)
-    else:
-        # 큰 케이스 (최대 10만/50만 근접)
-        # 생성 시간 단축을 위해 실제 최대치보다는 약간 작게 설정하되 충분히 크게
-        init_len = random.randint(10000, 30000)
-        m = random.randint(10000, 30000)
-        
-    # 초기 문자열 생성 (알파벳 소문자)
-    chars_pool = "abcdefghijklmnopqrstuvwxyz"
-    init_str = "".join(random.choice(chars_pool) for _ in range(init_len))
+def solve_internal(n):
+    dp = [0] * (n + 1)
+    for i in range(1, n + 1):
+        dp[i] = dp[i // 2] + (i % 2)
+    return " ".join(map(str, dp))
+
+# 테스트 케이스 생성 (20개)
+test_inputs = [
+    0, 1, 2, 3, 4, 7, 8, 15, 16, 31, 32, 63, 64, 100, 512, 1024, 12345, 67890, 99999, 100000
+]
+
+for i, n_val in enumerate(test_inputs, 1):
+    input_str = str(n_val)
+    ans_str = solve_internal(n_val)
     
-    # 명령어 생성
-    commands_list = []
-    for _ in range(m):
-        dice = random.random()
-        # 명령어 확률 조정 (삽입/삭제/이동)
-        if dice < 0.25:
-            commands_list.append("L")
-        elif dice < 0.5:
-            commands_list.append("D")
-        elif dice < 0.7:
-            commands_list.append("B")
-        else:
-            char = random.choice(chars_pool)
-            commands_list.append(f"P {char}")
-            
-    # 입력 파일 저장
-    input_content = f"{init_str}\n{m}\n" + "\n".join(commands_list)
-    save_file(os.path.join(test_dir, f"{i}.in"), input_content)
-    
-    # 출력 파일 저장 (파이썬 내부 로직으로 정답 생성)
-    output_content = solve_internal(init_str, commands_list)
-    save_file(os.path.join(test_dir, f"{i}.out"), output_content)
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
+        f.write(input_str)
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
+        f.write(ans_str)
 
 print(f"✅ 'Level02/P010' 문제 생성이 완료되었습니다.")

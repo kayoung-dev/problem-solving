@@ -2,7 +2,7 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정
+# 1. 경로 설정 
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -18,96 +18,106 @@ TICK = "`" * 3
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
 md_content = f"""---
-title: "배고픈 모험가의 사과 수확"
+title: "연료 전지 충전소"
 level: "1"
 time_limit: 1000
 memory_limit: 128
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Array"]
+tags: ["Stack"]
 ---
 
 ## description
-모험가 **'로이'** 는 숲을 지나가다 사과나무 한 그루를 발견했습니다. 이 나무에는 $N$개의 사과가 열려 있으며, 각 사과마다 **무게** $W_i$가 다릅니다.
+우주선 엔진에 에너지를 공급하는 연료 전지 보관함은 입구와 출구가 하나인 수직 원통형 구조로 되어 있습니다. 이 구조의 특성상 가장 나중에 넣은 연료 캡슐을 가장 먼저 꺼내어 사용해야 합니다.
 
-**'로이'** 는 배가 많이 고프지만, 너무 작은 사과는 맛이 없어서 무게가 **$K$ 미만** 인 사과는 먹지 않기로 했습니다. 
+당신은 우주선의 연료 관리 시스템을 구축해야 합니다. 시스템은 다음과 같은 두 가지 명령을 처리합니다. <br />
 
-**'로이'** 가 수확한 사과의 **개수**와 수확한 모든 사과의 **총 무게**를 구하는 프로그램을 작성하세요.
+1. **Push (1 $X$):** 에너지 수치가 $X$인 연료 캡슐 하나를 보관함에 넣습니다.
+2. **Pop (2):** 보관함의 가장 위에 있는 연료 캡슐을 꺼내어 에너지를 엔진에 공급합니다. 이때 꺼낸 캡슐의 에너지 수치를 출력합니다. 만약 보관함이 비어있다면 -1을 출력합니다.
 
-
+명령의 개수 $Q$와 $Q$개의 명령이 주어졌을 때, 각 Pop 명령에 대한 결과를 출력하는 프로그램을 작성하세요.
 
 ## input_description
-- 모든 데이터는 **한 줄**에 공백으로 구분되어 주어집니다.
-- $N$ $K$ $W_1$ $W_2$ ... $W_N$
-- (1 ≤ $N$ ≤ 100, 1 ≤ $K, W_i$ ≤ 1,000)
+- 첫 번째 줄에 명령의 개수 $Q$가 주어집니다. 
+- $1 \\le Q \\le 1,000$
+- 두 번째 줄부터 $Q$개의 줄에 걸쳐 명령이 주어집니다.
+- 1 $X$ : 보관함에 에너지 수치 $X$를 넣습니다. 
+- $1 \\le X \\le 10,000$
+- 2 : 가장 위의 캡슐을 꺼내고 그 수치를 출력합니다.
 
 ## output_description
-- 수확한 사과의 **개수**와 **총 무게**를 공백으로 구분하여 출력합니다.
+- 2번 명령(Pop)이 주어질 때마다 한 줄에 하나씩 결과를 출력합니다.
 
 # samples
 
 ### input 1
 {TICK}
-5 150 100 200 150 80 300
+5
+1 10
+1 20
+2
+1 30
+2
 {TICK}
 
 ### output 1
 {TICK}
-3 650
+20
+30
 {TICK}
+
 
 ### input 2
 {TICK}
-3 500 100 200 300
+4
+2
+1 500
+1 600
+2
 {TICK}
 
 ### output 2
 {TICK}
-0 0
+-1
+600
 {TICK}
+
 """
 
-
-
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) 
+# 3. 정답 코드 (solution.py)
 # ---------------------------------------------------------
 py_solution = """import sys
 
 def main():
-    # input()은 한 줄을 읽은 뒤 엔터가 입력되면 즉시 다음 코드로 진행합니다.
-    try:
-        line = input()
-        if not line:
-            return
-
-        # 데이터를 공백 기준으로 나누어 정수로 변환
-        data = list(map(int, line.split()))
-        
-        if len(data) < 2:
-            return
-
-        n = data[0]
-        k = data[1]
-        weights = data[2:2+n]
-        
-        # 무게가 K 이상인 사과만 필터링
-        picked = [w for w in weights if w >= k]
-        
-        if not picked:
-            print("0 0")
+    input_data = sys.stdin.read().split()
+    if not input_data:
+        return
+    
+    q = int(input_data[0])
+    stack = []
+    results = []
+    
+    idx = 1
+    for _ in range(q):
+        op = int(input_data[idx])
+        if op == 1:
+            x = int(input_data[idx+1])
+            stack.append(x)
+            idx += 2
         else:
-            # 개수와 총 무게 출력 후 프로그램 종료
-            print(f"{len(picked)} {sum(picked)}")
+            if not stack:
+                results.append("-1")
+            else:
+                results.append(str(stack.pop()))
+            idx += 1
             
-    except EOFError:
-        pass
+    if results:
+        print("\\n".join(results))
 
 if __name__ == "__main__":
     main()
 """
-# ---------------------------------------------------------
-# 4. 파일 저장 및 테스트케이스 생성
-# ---------------------------------------------------------
+
 def save_file(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -115,18 +125,37 @@ def save_file(path, content):
 save_file(os.path.join(base_dir, "problem.md"), md_content)
 save_file(os.path.join(base_dir, "solution.py"), py_solution)
 
-# 임의의 테스트 케이스 생성
+# ---------------------------------------------------------
+# 4. 임의의 테스트 케이스 생성
+# ---------------------------------------------------------
 for i in range(1, 21):
-    n = random.randint(5, 15)
-    k = random.randint(100, 500)
-    weights = [random.randint(50, 600) for _ in range(n)]
+    q = random.randint(10, 50)
+    stack = []
+    ops = []
+    outputs = []
     
-    input_str = f"{n} {k} " + " ".join(map(str, weights))
-    picked = [w for w in weights if w >= k]
-    ans_str = f"{len(picked)} {sum(picked)}" if picked else "0 0"
+    for _ in range(q):
+        if not stack or random.random() > 0.4:  
+            val = random.randint(1, 1000)
+            ops.append(f"1 {val}")
+            stack.append(val)
+        else:
+            ops.append("2")
+            if not stack:
+                outputs.append("-1")
+            else:
+                outputs.append(str(stack.pop()))
+                
+    if not outputs:
+        ops.append("2")
+        outputs.append("-1")
+        q = len(ops)
+
+    input_str = f"{len(ops)}\\n" + "\\n".join(ops)
+    ans_str = "\\n".join(outputs)
     
+
     save_file(os.path.join(test_dir, f"{i}.in"), input_str)
     save_file(os.path.join(test_dir, f"{i}.out"), ans_str)
 
 print(f"✅ 'Level01/P001' 생성이 완료되었습니다.")
-

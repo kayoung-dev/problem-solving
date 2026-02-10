@@ -2,15 +2,11 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정
+# 1. 경로 설정 (Level01/P12 폴더 생성)
 # ---------------------------------------------------------
-current_dir = os.path.dirname(os.path.abspath(__file__))  
-# current_dir = Easy/generator/easy
-
-easy_dir = os.path.abspath(os.path.join(current_dir, "..", "..", "Easy"))  
-# easy_dir = Easy/
-
-base_dir = os.path.join(easy_dir, "P12")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
+base_dir = os.path.join(root_dir, "Level01", "P12")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -21,118 +17,152 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 유진의 최고 기온 찾기 (Max Temperature)
+problem_md = f"""# 애니팡팡 버그 수정
 
 ## 문제 설명
-기상 관측을 맡은 유진은 오늘 기록된 기온들 중 가장 높은 값을 빠르게 확인하려고 합니다.
-여러 개의 기온 값이 주어질 때, 가장 높은 기온을 출력하는 프로그램을 작성하세요.
+게임 개발자 **민수**는 새로운 퍼즐 게임 '애니팡팡'을 개발 중입니다. 이 게임에는 알파벳 소문자가 적힌 블록들이 일렬로 내려오는 스테이지가 있습니다. 
+
+게임의 핵심 로직은 다음과 같습니다.
+1. 같은 알파벳이 적힌 블록 두 개가 연속해서 붙어 있게 되면, 두 블록은 팡! 소리를 내며 사라집니다.
+2. 블록이 사라진 후, 떨어진 빈자리를 메우기 위해 나머지 블록들이 다시 붙게 됩니다.
+3. 이때 다시 붙은 블록끼리 또 같은 알파벳이라면 연쇄적으로 사라집니다.
+
+민수는 모든 블록을 성공적으로 제거할 수 있는지 확인하는 테스트 프로그램을 만들려고 합니다. 문자열 $S$가 주어졌을 때, 모든 블록을 제거할 수 있다면 $1$을, 남는 블록이 있다면 $0$을 반환하는 프로그램을 작성하세요.
 
 ---
 
 ## 입력 형식 (Input Format)
-- 첫째 줄에 정수 N이 주어집니다. (1 ≤ N ≤ 100)
-- 둘째 줄에 N개의 정수(기온)가 공백으로 구분되어 주어집니다. (-50 ≤ 기온 ≤ 50)
+* 첫 번째 줄에 알파벳 소문자로만 구성된 문자열 $S$가 주어집니다.
+* 문자열 $S$의 길이는 $1$ 이상 $1,000,000$ 이하입니다.
 
 ## 출력 형식 (Output Format)
-- 가장 높은 기온을 출력합니다.
+* 모든 블록을 제거할 수 있으면 $1$, 아니면 $0$을 출력합니다.
 
 ---
 
 ## 입출력 예시 (Sample I/O)
 
 ### 예시 1
-
-Input:
+**Input:**
 {TICK}
-5
-3 -2 5 1 0
+baabaa
 {TICK}
 
-Output:
+**Output:**
 {TICK}
-5
+1
 {TICK}
-
----
+* `aa`가 먼저 제거되어 `bbaa`가 됩니다.
+* 이어서 `bb`가 제거되어 `aa`가 됩니다.
+* 마지막으로 `aa`가 제거되어 빈 문자열이 되므로 $1$을 출력합니다.
 
 ### 예시 2
-
-Input:
+**Input:**
 {TICK}
-4
--10 -3 -7 -50
+cdcd
 {TICK}
 
-Output:
+**Output:**
 {TICK}
--3
+0
 {TICK}
 """
 
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
+
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
-py_solution = """def main():
-    try:
-        n_line = input().strip()
-        if not n_line:
-            return
-        n = int(n_line)
+solution_code = """import sys
 
-        arr_line = input().strip()
-        if not arr_line:
-            return
-        arr = list(map(int, arr_line.split()))
-
-        max_val = arr[0]
-        for x in arr[:n]:
-            if x > max_val:
-                max_val = x
-
-        print(max_val)
-
-    except EOFError:
-        pass
+def solution(s):
+    stack = []
+    for char in s:
+        if stack and stack[-1] == char:
+            stack.pop()
+        else:
+            stack.append(char)
+    
+    return 1 if not stack else 0
 
 if __name__ == "__main__":
-    main()
+    input_data = sys.stdin.read().strip()
+    if not input_data:
+        print(1)
+    else:
+        print(solution(input_data))
 """
 
-# ---------------------------------------------------------
-# 4. 파일 저장 및 테스트케이스 생성
-# ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_code)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+# ---------------------------------------------------------
+# 4. 파일 저장 및 테스트케이스 생성 (총 20개)
+# ---------------------------------------------------------
 
-# 테스트 케이스 생성 (20개)
-fixed_cases = [
-    (5, [3, -2, 5, 1, 0]),
-    (4, [-10, -3, -7, -50]),
-    (1, [0]),
-    (1, [-50]),
-    (6, [1, 1, 1, 1, 1, 1]),
-    (6, [-1, -1, -1, -1, -1, -1]),
-    (7, [-50, -20, 0, 10, 20, 30, 50]),
-    (7, [50, 30, 20, 10, 0, -20, -50]),
-    (8, [2, 2, 2, 3, 2, 2, 2, 2]),
-    (10, [5, 4, 3, 2, 1, 0, -1, -2, -3, -4]),
+def solve(s):
+    stack = []
+    for char in s:
+        if stack and stack[-1] == char:
+            stack.pop()
+        else:
+            stack.append(char)
+    return 1 if not stack else 0
+
+def generate_valid_case(target_length):
+    """모든 문자가 짝지어 제거되는 문자열 생성"""
+    stack = []
+    res = []
+    for _ in range(target_length // 2):
+        c = random.choice("abcdefghijklmnopqrstuvwxyz")
+        res.append(c)
+        res.append(c)
+    random.shuffle(res)
+    # 셔플만 하면 안 되고, 스택 구조를 유지하며 무작위 삽입 필요
+    # 간단하게 구현하기 위해: 괄호 생성 원리와 유사하게 처리
+    s = []
+    for _ in range(target_length // 2):
+        char = random.choice("abcde")
+        insert_pos = random.randint(0, len(s))
+        s.insert(insert_pos, char)
+        s.insert(insert_pos, char)
+    return "".join(s)
+
+manual_cases = [
+    ("baabaa", 1),
+    ("cdcd", 0),
+    ("abccba", 1),
+    ("aa", 1),
+    ("ab", 0),
+    ("aaa", 0),
+    ("aaaa", 1),
+    ("aabbccddeeff", 1)
 ]
 
-for i in range(1, 21):
-    if i <= len(fixed_cases):
-        n, arr = fixed_cases[i - 1]
+test_cases = manual_cases[:]
+
+# 9~20번: 랜덤 및 대규모 케이스 생성
+while len(test_cases) < 20:
+    case_type = len(test_cases) % 2
+    if case_type == 0:
+        # 성공 케이스 (짝수 길이)
+        length = random.randint(10, 100)
+        inp = generate_valid_case(length if length % 2 == 0 else length + 1)
     else:
-        n = random.randint(1, 100)
-        arr = [random.randint(-50, 50) for _ in range(n)]
+        # 실패 가능성이 높은 무작위 케이스
+        length = random.randint(10, 100)
+        inp = "".join(random.choice("abc") for _ in range(length))
+    
+    out = solve(inp)
+    if (inp, out) not in test_cases:
+        test_cases.append((inp, out))
 
-    input_str = f"{n}\n" + " ".join(map(str, arr))
-    output_str = str(max(arr))
+# 파일 쓰기
+for i, (inp, out) in enumerate(test_cases, 1):
+    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+        f.write(inp)
+    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+        f.write(str(out)) # int/bool을 문자열로 변환
 
-    save_file(os.path.join(test_dir, f"input_{i:02d}.in"), input_str)
-    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), output_str)
-
-print("✅ 'Easy/P12' 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P12' 문제 생성이 완료되었습니다.")

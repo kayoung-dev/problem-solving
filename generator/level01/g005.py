@@ -2,7 +2,7 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정
+# 1. 경로 설정 (Level02/P05 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -18,92 +18,97 @@ TICK = "`" * 3
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
 md_content = f"""---
-title: "태양이의 보물 지도 탐험"
+title: "같은 숫자는 싫어"
 level: "1"
 time_limit: 1000
 memory_limit: 128
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Array"]
+tags: ["Stack"]
 ---
 
 ## description
-꼬마 탐험가 **'태양이'** 는 오래된 보물 지도를 발견했습니다. 지도에는 보물이 숨겨진 장소로 가기 위한 이동 명령들이 적혀 있습니다.
+배열 `arr`가 주어집니다. 배열 `arr`의 각 원소는 숫자 0부터 9까지로 이루어져 있습니다. <br />
+배열 `arr`에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다. <br />
+단, 제거된 후 남은 수들을 반환할 때는 배열 `arr`의 원소들의 순서를 유지해야 합니다. <br />
 
-**'태양이'** 는 현재 좌표 $(0, 0)$에 서 있으며, 지도에 적힌 명령에 따라 다음과 같이 이동합니다.
+예를 들어:
+* `arr = [1, 1, 3, 3, 0, 1, 1]` 이면 `[1, 3, 0, 1]` 을 return 합니다.
+* `arr = [4, 4, 4, 3, 3]` 이면 `[4, 3]` 을 return 합니다.
 
-* **U (Up)**: 위로 이동 ($y$ 좌표 $+1$)
-* **D (Down)**: 아래로 이동 ($y$ 좌표 $-1$)
-* **L (Left)**: 왼쪽으로 이동 ($x$ 좌표 $-1$)
-* **R (Right)**: 오른쪽으로 이동 ($x$ 좌표 $+1$)
-
-명령어들이 나열된 문자열이 주어질 때, 모든 이동을 마친 후 **'태양이'** 가 도착하게 될 최종 좌표 $(x, y)$를 구하는 프로그램을 작성하세요.
+스택(Stack)이나 리스트를 활용하여, **직전에 넣은 숫자와 현재 숫자가 다를 때만 저장**하는 로직을 구현해 보세요.
 
 
 
 ## input_description
-- 이동 명령어가 공백으로 구분된 하나의 문자열 $S$가 한 줄에 주어집니다.
-- 명령어의 개수는 1개 이상 100개 이하입니다.
+- 첫 번째 줄에 배열의 크기 $N$이 주어집니다. 
+- $1 \le N \le 100,000$
+- 두 번째 줄에 $N$개의 정수가 공백으로 구분되어 주어집니다.
 
 ## output_description
-- 최종 위치의 $x$ 좌표와 $y$ 좌표를 공백으로 구분하여 출력합니다.
+- 연속된 중복이 제거된 숫자들을 공백으로 구분하여 출력합니다.
 
 # samples
-
 ### input 1
 {TICK}
-U R U R
+7
+1 1 3 3 0 1 1
 {TICK}
 
 ### output 1
 {TICK}
-2 2
+1 3 0 1
 {TICK}
-
 
 ### input 2
 {TICK}
-R R L D U U
+5
+4 4 4 3 3
 {TICK}
 
 ### output 2
 {TICK}
-1 1
+4 3
 {TICK}
 """
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
 py_solution = """import sys
 
-def main():
+def solve():
+    input = sys.stdin.readline
+    
+    # N 입력 (사실 Python에서는 리스트를 바로 읽으면 되므로 크게 필요 없지만 형식상 받음)
     try:
-        # 한 줄의 명령어를 입력받습니다.
-        line = input()
+        line = input().strip()
         if not line:
             return
-            
-        commands = line.split()
-        x, y = 0, 0
+        n = int(line)
+    except ValueError:
+        return
+
+    # 배열 입력
+    arr_line = input().strip()
+    if not arr_line:
+        # 빈 배열일 경우
+        print("") 
+        return
         
-        for cmd in commands:
-            if cmd == 'U':
-                y += 1
-            elif cmd == 'D':
-                y -= 1
-            elif cmd == 'L':
-                x -= 1
-            elif cmd == 'R':
-                x += 1
-        
-        # 최종 좌표 출력
-        print(f"{x} {y}")
+    arr = list(map(int, arr_line.split()))
+    
+    stack = []
+    
+    for num in arr:
+        # 스택이 비어있거나, 스택의 마지막 요소(직전에 넣은 값)가 현재 값과 다르면 추가
+        if not stack or stack[-1] != num:
+            stack.append(num)
             
-    except EOFError:
-        pass
+    # 결과 출력 (공백으로 구분)
+    print(*(stack))
 
 if __name__ == "__main__":
-    main()
+    solve()
 """
 
 # ---------------------------------------------------------
@@ -116,22 +121,33 @@ def save_file(path, content):
 save_file(os.path.join(base_dir, "problem.md"), md_content)
 save_file(os.path.join(base_dir, "solution.py"), py_solution)
 
-# 테스트 케이스 생성
+# 내부 정답 로직 (테스트케이스 생성용)
+def solve_internal(arr):
+    if not arr:
+        return ""
+    stack = []
+    for num in arr:
+        if not stack or stack[-1] != num:
+            stack.append(num)
+    # 리스트를 공백 구분 문자열로 변환
+    return " ".join(map(str, stack))
+
+# 테스트 케이스 20개 생성
 for i in range(1, 21):
-    count = random.randint(5, 30)
-    cmds = [random.choice(['U', 'D', 'L', 'R']) for _ in range(count)]
-    input_str = " ".join(cmds)
+    # N의 크기 (랜덤)
+    n = random.randint(10, 1000)
     
-    # 정답 계산
-    x, y = 0, 0
-    for c in cmds:
-        if c == 'U': y += 1
-        elif c == 'D': y -= 1
-        elif c == 'L': x -= 1
-        elif c == 'R': x += 1
+    # 0~9 사이의 숫자로 구성된 리스트 생성
+    # 연속된 중복이 잘 발생하도록 0~5 정도로 범위를 좁히거나 choice 사용
+    arr = [random.randint(0, 9) for _ in range(n)]
     
-    # input_str 끝에 개행 문자를 붙여 실제 줄바꿈이 포함되게 저장
-    save_file(os.path.join(test_dir, f"{i}.in"), input_str + "\n")
-    save_file(os.path.join(test_dir, f"{i}.out"), f"{x} {y}")
+    # 입력 문자열 구성
+    input_str = f"{n}\n" + " ".join(map(str, arr))
+    
+    # 정답 문자열 구성
+    output_str = solve_internal(arr)
+    
+    save_file(os.path.join(test_dir, f"{i}.in"), input_str)
+    save_file(os.path.join(test_dir, f"{i}.out"), output_str)
 
 print(f"✅ 'Level01/P005' 생성이 완료되었습니다.")

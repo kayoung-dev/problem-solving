@@ -1,50 +1,35 @@
 import sys
 
-def main():
-    # 입력을 빠르게 받기 위해 sys.stdin 사용
-    input = sys.stdin.readline
+def solve():
+    line = sys.stdin.readline()
+    if not line:
+        return
     
     try:
-        line = input().strip()
-        if not line:
-            return
-        n = int(line)
-    except ValueError:
-        return
-
-    # 방문 기록을 저장할 스택
-    history = []
-
-    for _ in range(n):
-        command_line = input().split()
-        if not command_line:
-            break
+        n = int(line.strip())
         
-        cmd = command_line[0]
-
-        if cmd == "visit":
-            url = command_line[1]
-            history.append(url)
-            print(f"[V] {url}")
-
-        elif cmd == "back":
-            if history:
-                history.pop() # 현재 페이지 삭제 (pop)
-                if history:
-                    # 이전 페이지가 남아있음
-                    print(f"[B] {history[-1]}")
-                else:
-                    # 스택이 비었으므로 HOME
-                    print("[B] HOME")
-            else:
-                # 이미 비어있음
-                print("[B] IGNORED")
-
-        elif cmd == "current":
-            if history:
-                print(history[-1])
-            else:
-                print("HOME")
+        if n == 1:
+            print(1)
+            return
+        if n == 2:
+            print(2)
+            return
+            
+        # 정보를 기록할 바구니(DP 테이블)를 준비합니다.
+        # 각 칸에는 해당 계단까지 도달하는 방법의 수를 저장합니다.
+        dp = [0] * (n + 1)
+        dp[1] = 1
+        dp[2] = 2
+        
+        # 3번째 계단부터 N번째 계단까지 순서대로 계산합니다.
+        # i번째 계단에 도달하는 방법 = (i-1번째에서 온 경우) + (i-2번째에서 온 경우)
+        for i in range(3, n + 1):
+            dp[i] = dp[i-1] + dp[i-2]
+            
+        print(dp[n])
+        
+    except ValueError:
+        pass
 
 if __name__ == "__main__":
-    main()
+    solve()

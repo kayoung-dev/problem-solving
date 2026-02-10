@@ -1,35 +1,43 @@
 import sys
 
 def solve():
-    input = sys.stdin.readline
+    # 표준 입력을 통해 데이터를 읽어옵니다.
+    input_data = sys.stdin.read().split()
+    if not input_data:
+        return
     
-    # N 입력 (사실 Python에서는 리스트를 바로 읽으면 되므로 크게 필요 없지만 형식상 받음)
-    try:
-        line = input().strip()
-        if not line:
-            return
-        n = int(line)
-    except ValueError:
-        return
-
-    # 배열 입력
-    arr_line = input().strip()
-    if not arr_line:
-        # 빈 배열일 경우
-        print("") 
-        return
+    n = int(input_data[0])
+    m = int(input_data[1])
+    
+    # 거실 지도를 구성합니다.
+    grid = []
+    idx = 2
+    for r in range(n):
+        grid.append(list(map(int, input_data[idx:idx+m])))
+        idx += m
         
-    arr = list(map(int, arr_line.split()))
+    # 각 지점까지의 최소 먼지 합을 저장할 기록지(DP 테이블)
+    dp = [[0] * m for _ in range(n)]
     
-    stack = []
+    # 시작 지점 설정
+    dp[0][0] = grid[0][0]
     
-    for num in arr:
-        # 스택이 비어있거나, 스택의 마지막 요소(직전에 넣은 값)가 현재 값과 다르면 추가
-        if not stack or stack[-1] != num:
-            stack.append(num)
+    # 가장 윗줄은 왼쪽에서 오는 방법밖에 없습니다.
+    for j in range(1, m):
+        dp[0][j] = dp[0][j-1] + grid[0][j]
+        
+    # 가장 왼쪽줄은 위쪽에서 오는 방법밖에 없습니다.
+    for i in range(1, n):
+        dp[i][0] = dp[i-1][0] + grid[i][0]
+        
+    # 나머지 칸들을 순차적으로 채워 나갑니다.
+    # 현재 칸까지의 최소 먼지 = 현재 칸의 먼지 + min(위에서 올 때의 최소합, 왼쪽에서 올 때의 최소합)
+    for i in range(1, n):
+        for j in range(1, m):
+            dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])
             
-    # 결과 출력 (공백으로 구분)
-    print(*(stack))
+    # 목적지인 오른쪽 아래 칸의 결과를 출력합니다.
+    print(dp[n-1][m-1])
 
 if __name__ == "__main__":
     solve()

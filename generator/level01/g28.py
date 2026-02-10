@@ -2,13 +2,11 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 및 기본 설정
+# 1. 경로 설정 (Level01/P28 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
-# 실제 사용 시 경로 구조에 맞춰 수정 가능
-easy_dir = os.path.abspath(os.path.join(current_dir, "..", "..", "Easy")) 
-
-base_dir = os.path.join(easy_dir, "P28")
+root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
+base_dir = os.path.join(root_dir, "Level01", "P28")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -17,136 +15,139 @@ os.makedirs(test_dir, exist_ok=True)
 TICK = "`" * 3
 
 # ---------------------------------------------------------
-# 2. 문제 설명 (Markdown)
+# 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 과자 공장의 포장 기계
+problem_md = f"""# 심해 탐사선의 신호 차단 분석
 
 ## 문제 설명
-과자 공장의 신입 사원 '민수'는 쿠키를 포장하는 업무를 맡았습니다.
-포장 기계는 한 상자에 정확히 **`box_size`** 개의 쿠키를 담을 수 있습니다.
+심해 탐사선 **울릉1호**는 해저 지형을 조사하기 위해 오른쪽 방향으로 연속해서 음파 신호를 쏩니다. 각 신호는 고유한 세기(Intensity)를 가지고 있으며, 발사된 신호는 장애물을 만나기 전까지 오른쪽으로 계속 나아갑니다.
 
-컨베이어 벨트를 통해 여러 묶음의 쿠키들이 도착합니다. 기계는 다음 규칙에 따라 작동합니다.
+이때, 어떤 신호의 진행을 막는 **장애물**이란, 그 신호보다 **세기가 더 강한(값이 큰) 신호**를 의미합니다. 모든 신호는 발사된 직후 오른쪽으로 날아가다가, 자신보다 강한 신호를 처음 만나는 순간 그 신호에 부딪혀 소멸합니다.
 
-1. 도착한 쿠키 묶음의 개수가 **`box_size`** 로 **남김없이 나누어 떨어질 때만** 포장을 진행합니다.
-2. 포장이 가능한 경우, 해당 묶음으로 **몇 개의 상자**를 만들 수 있는지(몫)를 계산합니다.
-3. 만들어진 상자 개수들을 **오름차순** (작은 수부터 큰 수)으로 정렬하여 기록합니다.
-4. 만약 포장할 수 있는 쿠키 묶음이 하나도 없다면, **-1** 을 기록합니다.
+예를 들어, 발사된 신호들의 세기가 `[10, 3, 7, 12]` 라면:
+1. **1번 신호 (10)**: 오른쪽으로 날아가다 2번 (3), 3번 (7)은 가뿐히 지나치지만, 자신보다 강한 **4번 신호 (12)** 를 만나면 부딪혀 소멸합니다.
+2. **2번 신호 (3)**: 오른쪽으로 가자마자 자신보다 강한 **3번 신호 (7)** 를 만나서 곧바로 소멸합니다.
+3. **3번 신호 (7)**: 오른쪽으로 가다가 자신보다 강한 **4번 신호 (12)** 를 만나 소멸합니다.
+4. **4번 신호 (12)**: 오른쪽을 봐도 자신보다 강한 신호가 없으므로, 아무것도 부딪히지 않고 끝까지 나아갑니다.
 
-쿠키 묶음 배열 `arr`와 상자 용량 `box_size`가 주어질 때, 민수가 기록해야 할 상자 개수 목록을 구하는 프로그램을 작성하세요.
-
----
-
-## 입력 형식
-* 첫 번째 줄에 쿠키 묶음의 수 $N$과 상자 용량 `box_size`가 공백으로 구분되어 주어집니다. ($1 \\le N \\le 100$, $1 \\le box\_size \\le 100$)
-* 두 번째 줄에 $N$개의 쿠키 묶음 데이터(자연수)가 공백으로 구분되어 주어집니다.
-
-## 출력 형식
-* 만들어진 상자의 개수(몫)를 오름차순으로 정렬하여 공백으로 구분해 출력합니다.
-* 포장 가능한 묶음이 없다면 **-1** 을 출력합니다.
+각 신호가 발사되었을 때, 이 신호의 진행을 막아 소멸시키는 **첫 번째 신호의 번호** 가 무엇인지 구하는 프로그램을 작성하세요.
 
 ---
 
-## 입출력 예시
+## 입출력 예시 (Sample I/O)
 
 ### 예시 1
 **Input:**
 {TICK}
-5 4
-4 12 7 8 3
+10 3 7 12
 {TICK}
 
 **Output:**
 {TICK}
-1 2 3
+4 3 4 0
 {TICK}
 
-* **4개 묶음:** 4 / 4 = **1** 상자 (가능)
-* **12개 묶음:** 12 / 4 = **3** 상자 (가능)
-* **7개 묶음:** 나누어 떨어지지 않음 (불가능)
-* **8개 묶음:** 8 / 4 = **2** 상자 (가능)
-* **3개 묶음:** 나누어 떨어지지 않음 (불가능)
-* 결과인 1, 3, 2를 오름차순 정렬하면 **1 2 3** 이 됩니다.
+* 1번 (10)은 4번 (12)에 막힙니다. $\\rightarrow$ **4**
+* 2번 (3)은 3번 (7)에 막힙니다. $\\rightarrow$ **3**
+* 3번 (7)은 4번 (12)에 막힙니다. $\\rightarrow$ **4**
+* 4번 (12)은 막는 신호가 없습니다. $\\rightarrow$ **0**
+
 
 ### 예시 2
 **Input:**
 {TICK}
-3 5
-2 4 9
+20 15 10 5
 {TICK}
 
 **Output:**
 {TICK}
--1
+0 0 0 0
 {TICK}
 
-* 5개씩 포장할 수 있는 묶음이 하나도 없습니다. 따라서 **-1** 을 출력합니다.
+* 모든 신호가 오른쪽으로 갈수록 약해집니다. 즉, 뒤에 오는 어떤 신호도 앞선 신호보다 강하지 않으므로 아무도 가로막히지 않습니다.
 """
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (Python Solution)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = f"""import sys
 
-def main():
-    # 입력 처리
-    line1 = sys.stdin.readline().split()
-    if not line1: return
-    n = int(line1[0])
-    box_size = int(line1[1])
+def solve():
+    # 문자열을 읽어 정수 리스트로 변환
+    data = sys.stdin.read().split()
+    if not data:
+        return
     
-    # 쿠키 묶음 배열
-    arr = list(map(int, sys.stdin.readline().split()))
-    
-    # 로직: 나누어 떨어지는 경우, 몫(num // box_size)을 저장
-    results = []
-    for num in arr:
-        if num % box_size == 0:
-            results.append(num // box_size)
-    
-    # 예외 처리 및 정렬
-    if not results:
-        print("-1")
-    else:
-        results.sort()
-        print(*results)
+    intensities = list(map(int, data))
+    n = len(intensities)
+    result = [0] * n
+    stack = [] # 아직 자신을 막을 장벽을 찾지 못한 신호들의 인덱스
 
-if __name__ == "__main__": main()
-"""
-
-# ---------------------------------------------------------
-# 4. 파일 생성 및 테스트 케이스 생성
-# ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-# 메인 문제 파일 및 솔루션 저장
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
-
-# 테스트 케이스 20개 생성
-for i in range(1, 21):
-    # 랜덤 데이터 생성
-    n = random.randint(1, 100)
-    box_size = random.randint(1, 20)
-    # 최소한 box_size보다는 큰 값들이 섞이도록 범위 설정
-    arr = [random.randint(1, 100 * box_size) for _ in range(n)]
-    
-    # Input 파일 작성
-    input_content = f"{n} {box_size}\n" + " ".join(map(str, arr))
-    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
-    save_file(input_path, input_content)
-    
-    # Output 계산: 몫을 리스트에 담음
-    quotients = [x // box_size for x in arr if x % box_size == 0]
-    quotients.sort()
-    
-    if not quotients:
-        output_content = "-1"
-    else:
-        output_content = " ".join(map(str, quotients))
+    for i in range(n):
+        # 현재 신호(i)가 스택에 대기 중인 신호들보다 강하다면, 
+        # 현재 신호가 그들의 진행을 가로막는 '첫 번째 장벽'이 됨
+        while stack and intensities[stack[-1]] < intensities[i]:
+            target_idx = stack.pop()
+            result[target_idx] = i + 1 # 신호 번호는 1부터 시작
         
-    output_path = os.path.join(test_dir, f"output_{i:02d}.out")
-    save_file(output_path, output_content)
+        # 현재 신호도 누군가에게 막힐 때까지 대기하기 위해 스택에 추가
+        stack.append(i)
+    
+    print(*(result))
 
-print(f"✅ 'Easy/P28' 생성이 완료되었습니다.")
+if __name__ == "__main__":
+    solve()
+"""
+
+# ---------------------------------------------------------
+# 4. 테스트케이스 생성 및 파일 저장
+# ---------------------------------------------------------
+def generate_test_cases():
+    cases = []
+    # 1-4: 고정 예제 및 엣지 케이스
+    cases.append(("10 3 7 12", "4 3 4 0"))
+    cases.append(("20 15 10 5", "0 0 0 0"))
+    cases.append(("5 10 15 20", "2 3 4 0"))
+    cases.append(("100", "0"))
+    
+    # 5-20: 다양한 패턴의 랜덤 케이스
+    for i in range(5, 21):
+        size = i * 200 # 데이터 크기 점진적 증가
+        # 일부러 오름차순, 내림차순, 지그재그 섞어서 생성
+        pattern_type = i % 3
+        if pattern_type == 0: # 오름차순 경향
+            nums = sorted([random.randint(1, 10**6) for _ in range(size)])
+        elif pattern_type == 1: # 내림차순 경향
+            nums = sorted([random.randint(1, 10**6) for _ in range(size)], reverse=True)
+        else: # 완전 랜덤
+            nums = [random.randint(1, 10**6) for _ in range(size)]
+        
+        # 정답 계산 (O(N) 모노토닉 스택)
+        ans = [0] * size
+        stk = []
+        for curr in range(size):
+            while stk and nums[stk[-1]] < nums[curr]:
+                prev = stk.pop()
+                ans[prev] = curr + 1
+            stk.append(curr)
+        
+        cases.append((" ".join(map(str, nums)), " ".join(map(str, ans))))
+    return cases
+
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
+
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
+
+all_cases = generate_test_cases()
+for i, (inp, out) in enumerate(all_cases, 1):
+    in_file = os.path.join(test_dir, f"input_{i:02d}.in")
+    out_file = os.path.join(test_dir, f"output_{i:02d}.out")
+    with open(in_file, "w", encoding="utf-8") as f:
+        f.write(inp)
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write(out)
+
+print(f"✅ 'Level01/P28' 문제 생성이 완료되었습니다.")

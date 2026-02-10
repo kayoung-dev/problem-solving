@@ -1,32 +1,50 @@
 import sys
 
 def main():
-    # 첫 번째 줄(N) 읽기
-    line1 = sys.stdin.readline()
-    if not line1:
-        return
-    n = int(line1.strip())
+    # 입력을 빠르게 받기 위해 sys.stdin 사용
+    input = sys.stdin.readline
     
-    target_count = 0
-    
-    # N번만큼 반복하며 각 줄의 데이터를 읽음
-    for _ in range(n):
-        line = sys.stdin.readline()
+    try:
+        line = input().strip()
         if not line:
+            return
+        n = int(line)
+    except ValueError:
+        return
+
+    # 방문 기록을 저장할 스택
+    history = []
+
+    for _ in range(n):
+        command_line = input().split()
+        if not command_line:
             break
-            
-        data = list(map(int, line.split()))
-        m = data[0]      # 위험 기준치
-        c = data[1]      # 간식 개수
-        days = data[2:]  # 유통기한 데이터
         
-        urgent_items = [d for d in days if d <= 3]
-        urgent_sum = sum(urgent_items)
-        
-        if urgent_items and urgent_sum <= m:
-            target_count += 1
-            
-    print(target_count)
+        cmd = command_line[0]
+
+        if cmd == "visit":
+            url = command_line[1]
+            history.append(url)
+            print(f"[V] {url}")
+
+        elif cmd == "back":
+            if history:
+                history.pop() # 현재 페이지 삭제 (pop)
+                if history:
+                    # 이전 페이지가 남아있음
+                    print(f"[B] {history[-1]}")
+                else:
+                    # 스택이 비었으므로 HOME
+                    print("[B] HOME")
+            else:
+                # 이미 비어있음
+                print("[B] IGNORED")
+
+        elif cmd == "current":
+            if history:
+                print(history[-1])
+            else:
+                print("HOME")
 
 if __name__ == "__main__":
     main()

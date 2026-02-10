@@ -2,7 +2,7 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level02/P08 폴더 생성)
+# 1. 경로 설정 (Level02/P008 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -17,106 +17,100 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""---
-title: "따뜻한 날 기다리기"
+problem_md = r"""---
+title: "연속된 열을 피하는 행렬의 최대 합"
 level: "2"
 time_limit: 1000
-memory_limit: 128
+memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["stack"]
+tags: ["DP", "Mathematics"]
 ---
 
 ## description
-매일매일의 기온이 리스트 형태인 `temperatures`로 주어집니다. <br />
-각 날짜별로, '더 따뜻한 날씨를 보려면 며칠을 기다려야 하는지' 알고 싶습니다. <br />
+$N$개의 행과 $3$개의 열로 구성된 행렬 $A$가 주어집니다. 각 행의 $j$번째 열에 있는 원소를 $A_{i,j}$라고 합니다. (단, $1 \le i \le N, 1 \le j \le 3$)<br />
 
-만약 더 따뜻해지는 날이 앞으로 영영 없다면 `0`을 기록하면 됩니다. 기온이 `[10, 11, 9, 13]` 이라고 가정해 봅시다. <br />
+우리는 각 행에서 정확히 하나의 원소를 선택하여 그 합을 최대화하려고 합니다. 원소를 선택할 때는 다음과 같은 제약 조건을 반드시 만족해야 합니다:<br />
 
-1. 첫째 날(10도): 바로 다음 날(11도)이 더 따뜻합니다. -> 1일 기다림
-2. 둘째 날(11도): 셋째 날(9도)은 춥습니다. 넷째 날(13도)이 되어야 더 따뜻해집니다. -> 2일 기다림
-3. 셋째 날(9도): 넷째 날(13도)이 더 따뜻합니다. -> 1일 기다림
-4. 넷째 날(13도): 뒤에 날짜가 없습니다. -> 0일
+**"연속된 두 행에서 선택한 원소의 열 번호는 서로 달라야 한다."**<br />
 
-따라서 정답은 `[1, 2, 1, 0]` 입니다.
-
+주어진 행렬에서 이 조건을 만족하며 선택할 수 있는 원소들의 합 중 최댓값을 구하는 프로그램을 작성하세요.<br />
 
 ## input_description
-- 첫 번째 줄에 날짜의 수 $N$이 주어집니다. ($1 \le N \le 100,000$)
-- 두 번째 줄에 $N$일 동안의 기온이 공백으로 구분되어 주어집니다. (기온은 -100 ~ 100 사이 정수)
+- 첫 번째 줄에 행의 개수 $N$이 주어집니다. 
+- $1 \le N \le 100,000$
+- 두 번째 줄부터 $N$개의 줄에 걸쳐 각 행의 원소 $A_{i,1}, A_{i,2}, A_{i,3}$이 공백으로 구분되어 주어집니다.
+- $0 \le A_{i,j} \le 10,000$
 
 ## output_description
-- 각 날짜별로 더 따뜻한 날까지 며칠이 걸리는지 공백으로 구분하여 출력합니다.
+- 제약 조건을 만족하며 선택한 원소들의 합 중 최댓값을 정수로 출력합니다.
 
 # samples
 
 ### input 1
 {TICK}
-8
-13 14 15 11 10 12 16 14
+3
+10 40 70
+50 10 20
+40 60 50
 {TICK}
 
 ### output 1
 {TICK}
-1 1 4 2 1 1 0 0
+180
 {TICK}
 
 
 ### input 2
 {TICK}
-5
-20 19 18 17 16
+3
+10 20 30
+100 1 1
+1 100 1
 {TICK}
 
 ### output 2
 {TICK}
-0 0 0 0 0
+230
 {TICK}
 
-## hint
-- 이중 반복문($O(N^2)$)을 쓰면 시간 초과가 발생할 수 있습니다.
-- 스택(Stack)을 사용하여 한 번만 훑어서($O(N)$) 해결할 수 있습니다.
-- 스택에는 기온 그 자체가 아니라, '그 기온이 발생한 날짜(인덱스)'를 넣어야 날짜 차이를 계산할 수 있습니다.
-
-"""
+""".replace("{TICK}", TICK)
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) 
+# 3. 정답 코드 (solution.py)
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = r"""import sys
 
 def solve():
-    input = sys.stdin.readline
-    
-    # N 입력
-    try:
-        line = input().strip()
-        if not line: return
-        n = int(line)
-    except ValueError:
+    # 빠른 입력을 위해 전체 데이터를 읽어옵니다.
+    input_data = sys.stdin.read().split()
+    if not input_data:
         return
-
-    # 기온 리스트 입력
-    temps = list(map(int, input().split()))
     
-    # 정답 배열 (기본값 0으로 초기화)
-    answer = [0] * n
+    n = int(input_data[0])
     
-    # 스택: "아직 더 따뜻한 날을 찾지 못한 날짜들의 인덱스"를 모아둡니다.
-    stack = []
+    # 1행의 데이터로 초기값을 설정합니다.
+    # dp_a, dp_b, dp_c는 각각 현재 행에서 1열, 2열, 3열을 선택했을 때의 최대 누적합입니다.
+    dp_a = int(input_data[1])
+    dp_b = int(input_data[2])
+    dp_c = int(input_data[3])
     
-    for i in range(n):
-        # 스택이 비어있지 않고, 
-        # 현재 기온(temps[i])이 스택의 가장 최근 날짜(stack[-1])의 기온보다 높다면?
-        # -> 드디어 더 따뜻한 날을 만난 것입니다!
-        while stack and temps[stack[-1]] < temps[i]:
-            past_day = stack.pop()
-            # 기다린 날짜 = 현재 날짜(i) - 과거 날짜(past_day)
-            answer[past_day] = i - past_day
-            
-        # 현재 날짜도 아직 더 따뜻한 날을 못 만났으므로 스택에 넣고 다음으로 넘어갑니다.
-        stack.append(i)
+    idx = 4
+    for i in range(1, n):
+        # 현재 행의 각 열 값을 읽어옵니다.
+        cur_a = int(input_data[idx])
+        cur_b = int(input_data[idx+1])
+        cur_c = int(input_data[idx+2])
+        idx += 3
         
-    print(*(answer))
+        # 이전 행에서 다른 열을 선택했던 값들 중 큰 값을 더해 현재의 최댓값을 갱신합니다.
+        next_a = cur_a + max(dp_b, dp_c)
+        next_b = cur_b + max(dp_a, dp_c)
+        next_c = cur_c + max(dp_a, dp_b)
+        
+        dp_a, dp_b, dp_c = next_a, next_b, next_c
+        
+    # 마지막 행까지 계산된 세 가지 상태 중 최댓값을 출력합니다.
+    print(max(dp_a, dp_b, dp_c))
 
 if __name__ == "__main__":
     solve()
@@ -125,53 +119,45 @@ if __name__ == "__main__":
 # ---------------------------------------------------------
 # 4. 파일 저장 및 테스트케이스 생성
 # ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
 
-# 내부 정답 로직 (검증용)
-def solve_internal(temps):
-    n = len(temps)
-    answer = [0] * n
-    stack = [] # 인덱스 저장
-    
-    for i in range(n):
-        while stack and temps[stack[-1]] < temps[i]:
-            prev_index = stack.pop()
-            answer[prev_index] = i - prev_index
-        stack.append(i)
-        
-    return " ".join(map(str, answer))
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
 
-# 테스트 케이스 20개 생성
+# 정답 도출 함수 (내부용)
+def get_ans(n, data):
+    dp = [0, 0, 0]
+    dp[0], dp[1], dp[2] = data[0]
+    for i in range(1, n):
+        na = data[i][0] + max(dp[1], dp[2])
+        nb = data[i][1] + max(dp[0], dp[2])
+        nc = data[i][2] + max(dp[0], dp[1])
+        dp = [na, nb, nc]
+    return max(dp)
+
+# 20개의 테스트 케이스 생성
 for i in range(1, 21):
-    # N의 크기
     if i <= 5:
-        n = random.randint(5, 20)
+        n_val = i * 2 # 2, 4, 6...
     elif i <= 15:
-        n = random.randint(1000, 5000)
+        n_val = 1000 # 중규모
     else:
-        n = random.randint(50000, 100000)
-        
-    # 기온 데이터 생성 (-10 ~ 35도)
-    dice = random.random()
-    if dice < 0.2:
-        # 계속 추워짐 (내림차순) -> 답이 모두 0
-        temps = sorted([random.randint(0, 30) for _ in range(n)], reverse=True)
-    elif dice < 0.4:
-        # 계속 따뜻해짐 (오름차순) -> 답이 모두 1 (마지막 제외)
-        temps = sorted([random.randint(0, 30) for _ in range(n)])
-    else:
-        # 랜덤
-        temps = [random.randint(-10, 35) for _ in range(n)]
-        
-    input_str = f"{n}\n" + " ".join(map(str, temps))
-    output_str = solve_internal(temps)
+        n_val = 100000 # 대규모 (DP 최적화 확인용)
     
-    save_file(os.path.join(test_dir, f"{i}.in"), input_str)
-    save_file(os.path.join(test_dir, f"{i}.out"), output_str)
+    matrix_data = [[random.randint(0, 5000) for _ in range(3)] for _ in range(n_val)]
+    
+    input_str = f"{n_val}\n"
+    for row in matrix_data:
+        input_str += f"{row[0]} {row[1]} {row[2]}\n"
+        
+    ans_str = str(get_ans(n_val, matrix_data))
+    
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
+        f.write(input_str)
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
+        f.write(ans_str)
 
-print(f"✅ 'Level02/P08' 생성이 완료되었습니다.")
+print(f"✅ 'Level02/P008' 문제 생성이 완료되었습니다.")

@@ -1,30 +1,46 @@
 import sys
 
-def main():
+def solve():
+    input = sys.stdin.readline
+    
+    # N 입력
     try:
-        # 1. 책의 개수 N 입력
-        line1 = input()
-        if not line1: return
-        n = int(line1.strip())
-        
-        # 2. 찾을 책 제목 입력
-        target_book = input().strip()
-        
-        # 3. 책 리스트 입력
-        line3 = input()
-        if not line3: return
-        books = line3.split()
-        
-        # 선형 탐색 (Linear Search)
-        # 파이썬 리스트의 index() 메서드를 활용하거나 반복문으로 찾을 수 있습니다.
-        if target_book in books:
-            # index는 0부터 시작하므로 +1 해줍니다.
-            print(books.index(target_book) + 1)
+        line = input().strip()
+        if not line:
+            return
+        n = int(line)
+    except ValueError:
+        return
+
+    # 식 입력
+    expression = input().split()
+    stack = []
+
+    for token in expression:
+        if token not in ["+", "-", "*", "/"]:
+            # 숫자일 경우 push
+            stack.append(int(token))
         else:
-            print("-1")
+            # 연산자일 경우 pop 2번
+            val2 = stack.pop()
+            val1 = stack.pop()
             
-    except (EOFError, ValueError):
-        pass
+            if token == '+':
+                res = val1 + val2
+            elif token == '-':
+                res = val1 - val2
+            elif token == '*':
+                res = val1 * val2
+            elif token == '/':
+                # C/Java 스타일의 정수 나눗셈 (0을 향해 버림)
+                # Python의 //는 내림(floor)이므로 음수 계산시 차이가 있음
+                # 문제 의도에 맞게 int(val1 / val2) 사용
+                res = int(val1 / val2)
+                
+            stack.append(res)
+            
+    # 최종 결과 출력
+    print(stack[0])
 
 if __name__ == "__main__":
-    main()
+    solve()

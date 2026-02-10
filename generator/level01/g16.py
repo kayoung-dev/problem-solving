@@ -2,15 +2,11 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정
+# 1. 경로 설정 (Level01/P16 폴더 생성)
 # ---------------------------------------------------------
-current_dir = os.path.dirname(os.path.abspath(__file__))  
-# current_dir = Easy/generator/easy
-
-easy_dir = os.path.abspath(os.path.join(current_dir, "..", "..", "Easy"))  
-# easy_dir = Easy/
-
-base_dir = os.path.join(easy_dir, "P16")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
+base_dir = os.path.join(root_dir, "Level01", "P16")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -21,154 +17,134 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 엘리베이터 층 이동 로그
+problem_md = f"""# 무거운 상자 쌓기
 
 ## 문제 설명
-아파트 엘리베이터가 **현재 1층**에 있습니다.  
-관리실은 엘리베이터가 움직인 기록을 보고 최종 도착 층을 확인하려고 합니다.
+물류 창고에서 일하는 **지수**는 컨베이어 벨트를 통해 들어오는 상자들을 차곡차곡 쌓으려고 합니다. 하지만 이 창고의 상자들은 재질이 약해서 특이한 규칙을 가지고 있습니다.
 
-한 줄에 이동 기록이 공백으로 주어집니다.
+1. 새로운 상자를 기존에 쌓인 상자 위에 올릴 때, 만약 새로운 상자가 바로 아래에 있는 상자보다 더 무겁다면 아래에 있는 상자는 찌그러져서 제거됩니다.
+2. 상자가 찌그러져 제거되면, 새로운 상자는 그 아래에 있던 상자와 다시 비교하게 됩니다.
+3. 새로운 상자보다 무겁거나 같은 상자를 만날 때까지 이 과정이 반복되며, 더 이상 찌그러질 상자가 없거나 자신보다 무거운 상자를 만나면 그 위에 안착합니다.
 
-- `Uk` : 엘리베이터가 **k층 위로** 올라갑니다. (Up)
-- `Dk` : 엘리베이터가 **k층 아래로** 내려갑니다. (Down)
 
-규칙은 다음과 같습니다.
 
-- 시작 층은 **1층**입니다.
-- 건물의 층 범위는 **1층 ~ 50층**입니다.
-- 이동을 적용한 결과가
-  - 1층 미만이면 **1층으로 고정**
-  - 50층 초과이면 **50층으로 고정**
-- 모든 기록을 처리한 뒤 **최종 층**을 출력하세요.
+컨베이어 벨트를 통해 들어오는 상자들의 무게 순서가 주어질 때, 모든 상자가 지나간 후 최종적으로 쌓여 있는 상자들의 무게를 밑바닥부터 순서대로 출력하는 프로그램을 작성하세요.
 
 ---
 
 ## 입력 형식 (Input Format)
-- 한 줄에 기록들이 공백으로 구분되어 주어집니다.
-- 기록의 개수는 1개 이상입니다.
-- 각 기록은 `Uk` 또는 `Dk` 형태입니다.
-  - k는 0 이상 50 이하의 정수입니다.
+* 첫 번째 줄에 상자들의 무게를 나타내는 정수들이 공백으로 구분되어 주어집니다.
+* 상자의 개수 $n$은 $1 \le n \le 100,000$ 입니다.
+* 각 상자의 무게는 $1$ 이상 $1,000,000$ 이하의 자연수입니다.
 
 ## 출력 형식 (Output Format)
-- 최종 층(정수)을 출력합니다.
+* 최종적으로 남은 상자들의 무게를 밑바닥부터 순서대로 공백으로 구분하여 출력합니다.
 
 ---
 
 ## 입출력 예시 (Sample I/O)
 
 ### 예시 1
-Input:
+**Input:**
 {TICK}
-U3 U10 D4 U100
-{TICK}
-
-Output:
-{TICK}
-50
+5 3 4
 {TICK}
 
-- 1 → 4 → 14 → 10 → 110 (50으로 고정)
+**Output:**
+{TICK}
+5 4
+{TICK}
+* 처음에 5가 놓이고, 그 위에 3이 쌓입니다.
+* 다음에 오는 4는 3보다 무겁기 때문에 3을 찌그러뜨리고 제거합니다.
+* 4는 그 아래에 있는 5보다는 가볍기 때문에 5 위에 안전하게 쌓여 최종적으로 [5, 4]가 남습니다.
 
 ### 예시 2
-Input:
+**Input:**
 {TICK}
-D5 U2 D10
-{TICK}
-
-Output:
-{TICK}
-1
+10 8 6 12 5
 {TICK}
 
-- 1 → -4(1로 고정) → 3 → -7 (1로 고정)
+**Output:**
+{TICK}
+12 5
+{TICK}
 """
 
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
+
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
-py_solution = """def main():
+solution_code = """import sys
+
+def solution():
     try:
-        logs = input().split()
-        floor = 1
-
-        for log in logs:
-            action = log[0]
-            value = int(log[1:]) if len(log) > 1 else 0
-
-            if action == 'U':
-                floor += value
-            elif action == 'D':
-                floor -= value
-
-            if floor < 1:
-                floor = 1
-            elif floor > 50:
-                floor = 50
-
-        print(floor)
-
+        line = sys.stdin.read().split()
+        if not line:
+            return
+        weights = list(map(int, line))
     except EOFError:
-        pass
+        return
+
+    stack = []
+    for w in weights:
+        # 새로운 상자(w)가 스택 맨 위 상자보다 무거우면 찌그러뜨림
+        while stack and stack[-1] < w:
+            stack.pop()
+        stack.append(w)
+    
+    print(*(stack))
 
 if __name__ == "__main__":
-    main()
+    solution()
 """
 
-# ---------------------------------------------------------
-# 4. 파일 저장 함수
-# ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_code)
 
 # ---------------------------------------------------------
-# 5. 테스트 케이스 생성
+# 4. 파일 저장 및 테스트케이스 생성 (총 20개)
 # ---------------------------------------------------------
-def simulate(logs):
-    floor = 1
-    for log in logs:
-        action = log[0]
-        value = int(log[1:]) if len(log) > 1 else 0
 
-        if action == "U":
-            floor += value
-        elif action == "D":
-            floor -= value
+def solve_internal(weights):
+    stack = []
+    for w in weights:
+        while stack and stack[-1] < w:
+            stack.pop()
+        stack.append(w)
+    return " ".join(map(str, stack))
 
-        floor = max(1, min(50, floor))
-    return floor
-
-fixed_cases = [
-    ["U3", "U10", "D4", "U100"],          # 50
-    ["D5", "U2", "D10"],                  # 1
-    ["U49"],                              # 50 (1->50)
-    ["D1"],                               # 1
-    ["U0", "D0", "U0"],                   # 1
-    ["U10", "U10", "U10"],                # 31
-    ["D50", "U1"],                        # 2 (1->1->2)
-    ["U20", "D5", "D30", "U7"],           # 1->21->16->1->8 => 8
-    ["U1000"],                            # 50
-    ["U5", "D3", "U4", "D10", "U2"],      # 1->6->3->7->1->3 => 3
+# 수동 케이스
+manual_cases = [
+    ([5, 3, 4], "5 4"),
+    ([10, 8, 6, 12, 5], "12 5"),
+    ([1, 2, 3, 4, 5], "5"),
+    ([5, 4, 3, 2, 1], "5 4 3 2 1"),
+    ([10, 10, 10], "10 10 10"),
+    ([20, 10, 15, 5, 8], "20 15 8"),
+    ([100], "100"),
+    ([50, 60, 40, 30, 70, 10], "70 10")
 ]
 
-for i in range(1, 21):
-    if i <= len(fixed_cases):
-        logs = fixed_cases[i - 1]
-    else:
-        length = random.randint(1, 30)
-        logs = []
-        for _ in range(length):
-            action = random.choice(["U", "D"])
-            value = random.randint(0, 50)
-            logs.append(f"{action}{value}")
+test_cases = []
+for inp, out in manual_cases:
+    test_cases.append((" ".join(map(str, inp)), out))
 
-    input_str = " ".join(logs)
-    output_str = str(simulate(logs))
+# 랜덤 케이스 생성
+while len(test_cases) < 20:
+    length = random.randint(10, 50)
+    nums = [random.randint(1, 100) for _ in range(length)]
+    inp_str = " ".join(map(str, nums))
+    out_str = solve_internal(nums)
+    if (inp_str, out_str) not in test_cases:
+        test_cases.append((inp_str, out_str))
 
-    save_file(os.path.join(test_dir, f"input_{i:02d}.in"), input_str)
-    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), output_str)
+# 파일 저장 (형식: input_01.in / output_01.out)
+for i, (inp, out) in enumerate(test_cases, 1):
+    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+        f.write(inp)
+    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+        f.write(str(out))
 
-print("✅ 'Easy/P16' 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P16' 문제 생성이 완료되었습니다.")

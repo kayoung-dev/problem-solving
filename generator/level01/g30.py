@@ -1,15 +1,12 @@
 import os
 import random
-import string
 
 # ---------------------------------------------------------
-# 1. 경로 설정 및 기본 설정
+# 1. 경로 설정 (Level01/P30 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
-# 실제 사용 시 경로 구조에 맞춰 수정 가능
-easy_dir = os.path.abspath(os.path.join(current_dir, "..", "..", "Easy")) 
-
-base_dir = os.path.join(easy_dir, "P30")
+root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
+base_dir = os.path.join(root_dir, "Level01", "P30")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -18,190 +15,164 @@ os.makedirs(test_dir, exist_ok=True)
 TICK = "`" * 3
 
 # ---------------------------------------------------------
-# 2. 문제 설명 (Markdown)
+# 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 오염된 데이터 복구
+# LaTeX 수식 충돌 방지용 변수
+FIFO_LATEX = r"$FIFO(First-In, \,\, First-Out)$"
+SUM_LATEX = r"$\sum Weight$"
+ARROW_LATEX = r"$\rightarrow$"  # \r 충돌 방지를 위해 raw string으로 정의
+
+problem_md = f"""# 데이터 센터의 가중치 패킷 버퍼
 
 ## 문제 설명
-서버실의 정전 사고로 인해 데이터베이스의 파일명들이 손상되었습니다.
-시스템 관리자 '현우'는 백업 시스템에서 파일 리스트 `arr`를 복구했지만, 불필요한 임시 파일들이 섞여 있습니다.
+컴퓨터 아키텍처를 전공하는 **케이트**는 고성능 네트워크 스위치의 패킷 스케줄러를 설계하고 있습니다. 이 시스템은 도착한 순서대로 패킷을 처리하는 {FIFO_LATEX} 방식을 따르지만, 하드웨어 구조상 두 개의 스택 자료구조만을 사용하여 이를 구현해야 합니다.
 
-현우는 다음 규칙을 적용하여 중요한 파일만 필터링하고 표준 형식으로 변환하려 합니다.
+각 패킷은 고유한 가중치(Weight)를 가지고 있습니다. 관리자는 패킷이 처리될 때마다 **처리된 패킷의 가중치**와 **현재 버퍼에 남아있는 모든 패킷의 가중치 합({SUM_LATEX})** 을 실시간으로 보고받길 원합니다.
 
-1. **검색 조건 1:** 파일명이 특정 접두사 **`prefix`** 로 시작해야 합니다.
-2. **검색 조건 2:** 파일명의 길이가 **`min_len`** 보다 **커야(초과)** 합니다. (같으면 안 됩니다.)
-3. **변환 규칙:** 위 두 조건을 만족하는 파일명은 모두 **대문자(Uppercase)** 로 변환해야 합니다.
-4. **정렬:** 변환된 파일명 목록은 **사전 순(오름차순)** 으로 정렬합니다.
-5. **예외 처리:** 조건을 만족하는 파일이 하나도 없다면 **-1** 을 출력합니다.
+다음 명령어를 처리하는 프로그램을 작성하세요:
 
-파일 리스트와 검색 조건이 주어졌을 때, 복구된 파일 목록을 출력하는 프로그램을 작성하세요.
+1. `IN X`: 가중치가 $X$인 패킷이 버퍼에 들어옵니다.
+2. `OUT`: 버퍼에서 가장 오래된 패킷을 꺼내고, (꺼낸 패킷의 가중치) (남은 패킷들의 가중치 총합)을 공백으로 구분하여 출력합니다. 만약 버퍼가 비어있다면 `-1`을 출력합니다.
 
 ---
 
-## 입력 형식
-* 첫 번째 줄에 검색할 접두사 `prefix`와 기준 길이 `min_len`이 공백으로 구분되어 주어집니다.
-    * `prefix`는 영문 소문자로 구성됩니다.
-    * `min_len`은 1 이상 50 이하의 자연수입니다.
-* 두 번째 줄에 공백으로 구분된 $N$개의 파일명(문자열)들이 주어집니다. ($1 \\le N \\le 100$)
+## 입력 형식 (Input Format)
+* 첫 번째 줄부터 명령어가 한 줄에 하나씩 주어집니다.
+* 명령어의 총 개수는 $1$개 이상 $200,000$개 이하입니다.
+* 가중치 $X$는 $1$ 이상 $10^6$ 이하의 정수입니다.
 
-## 출력 형식
-* 조건을 만족하는 파일명을 대문자로 변환하여 오름차순으로 정렬한 뒤 공백으로 구분해 출력합니다.
-* 만족하는 파일이 없다면 **-1** 을 출력합니다.
+## 출력 형식 (Output Format)
+* `OUT` 명령이 주어질 때마다 결과를 출력합니다.
+* 패킷이 있을 경우: `(가중치) (남은 총합)` 형태로 출력합니다.
+* 패킷이 없을 경우: `-1`을 출력합니다.
 
 ---
 
-## 입출력 예시
+## 입출력 예시 (Sample I/O)
 
 ### 예시 1
 **Input:**
 {TICK}
-sys 5
-system sysfile autoexec sys config systematic
+IN 10
+IN 20
+OUT
+IN 5
+OUT
+OUT
 {TICK}
 
 **Output:**
 {TICK}
-SYSTEM SYSTEMATIC SYSFILE
+10 20
+20 5
+5 0
 {TICK}
 
-* **조건:** 'sys'로 시작하고 길이가 5보다 커야 합니다.
-* `system` (길이 6): 조건 만족 -> **SYSTEM** (변환)
-* `sysfile` (길이 7): 조건 만족 -> **SYSFILE** (변환)
-* `autoexec`: 'sys'로 시작하지 않음 (제외)
-* `sys` (길이 3): 길이가 5보다 크지 않음 (제외)
-* `config`: 'sys'로 시작하지 않음 (제외)
-* `systematic` (길이 10): 조건 만족 -> **SYSTEMATIC** (변환)
-* SYSTEM, SYSTEMATIC, SYSFILE 순서대로 정렬됩니다.
+* `IN 10`, `IN 20` 후 총합은 $30$입니다.
+* 첫 번째 `OUT`: 가장 먼저 들어온 **10**이 나가고, 남은 가중치는 **20**입니다. {ARROW_LATEX} `10 20`
+* `IN 5`: 버퍼에 $20, 5$가 있으며 총합은 $25$입니다.
+* 두 번째 `OUT`: **20**이 나가고 남은 가중치는 **5**입니다. {ARROW_LATEX} `20 5`
+* 세 번째 `OUT`: **5**가 나가고 남은 가중치는 **0**입니다. {ARROW_LATEX} `5 0`
 
 ### 예시 2
 **Input:**
 {TICK}
-temp 10
-tempfile template temporary
+IN 100
+OUT
+OUT
 {TICK}
 
 **Output:**
 {TICK}
+100 0
 -1
 {TICK}
 
-* `tempfile` (길이 8), `template` (길이 8), `temporary` (길이 9) 모두 길이는 10보다 크지 않습니다.
-* 따라서 조건을 만족하는 파일이 없어 **-1** 을 출력합니다.
+* 하나뿐인 패킷 **100**이 나가면 남은 합은 **0**입니다. 그 후 빈 버퍼에 `OUT`을 시도하면 **-1**을 출력합니다.
 """
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (Python Solution)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = f"""import sys
 
-def main():
-    # 입력 처리
-    line1 = sys.stdin.readline().split()
-    if not line1: return
+def solve():
+    lines = sys.stdin.read().splitlines()
+    in_stack = []
+    out_stack = []
+    total_weight = 0
     
-    prefix = line1[0]
-    min_len = int(line1[1])
-    
-    # 파일명 리스트 입력
-    files = sys.stdin.readline().split()
-    
-    # 로직: 조건 필터링 및 대문자 변환
-    # 1. startswith(prefix): 접두사 확인
-    # 2. len(s) > min_len: 길이 확인
-    # 3. upper(): 대문자 변환
-    
-    result = []
-    for f in files:
-        if f.startswith(prefix) and len(f) > min_len:
-            result.append(f.upper())
-            
-    # 예외 처리 및 정렬
-    if not result:
-        print("-1")
-    else:
-        result.sort()
-        print(*result)
-
-if __name__ == "__main__": main()
-"""
-
-# ---------------------------------------------------------
-# 4. 파일 생성 및 테스트 케이스 생성
-# ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-# 메인 문제 파일 및 솔루션 저장
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
-
-# 랜덤 단어 생성 함수
-def generate_random_word(length):
-    return ''.join(random.choices(string.ascii_lowercase, k=length))
-
-# 테스트 케이스 20개 생성
-for i in range(1, 21):
-    # 랜덤 파라미터 생성
-    prefix_len = random.randint(2, 4)
-    prefix = generate_random_word(prefix_len)
-    min_len = random.randint(3, 10)
-    
-    n = random.randint(5, 50)
-    
-    # 데이터셋 생성 전략:
-    # 1. 완전 랜덤 단어
-    # 2. prefix는 맞지만 길이가 짧은 단어 (실패 케이스)
-    # 3. prefix도 맞고 길이도 긴 단어 (정답 후보)
-    
-    arr = []
-    for _ in range(n):
-        case_type = random.random()
+    for line in lines:
+        parts = line.split()
+        if not parts: continue
         
-        # 1. 정답 후보 (조건 만족)
-        if case_type < 0.3:
-            word_len = random.randint(min_len + 1, min_len + 8)
-            suffix = generate_random_word(word_len - len(prefix))
-            arr.append(prefix + suffix)
+        if parts[0] == 'IN':
+            w = int(parts[1])
+            in_stack.append(w)
+            total_weight += w
+        elif parts[0] == 'OUT':
+            if not out_stack:
+                while in_stack:
+                    out_stack.append(in_stack.pop())
             
-        # 2. prefix는 맞지만 길이가 짧거나 같은 경우 (실패 케이스)
-        elif case_type < 0.6:
-            # [수정된 부분] prefix 길이가 min_len보다 크면, "길이가 짧은 실패 케이스"를 만들 수 없음
-            # 따라서 이 경우에는 그냥 랜덤 단어를 생성하거나, 로직을 건너뜀
-            if len(prefix) > min_len:
-                # 불가능하므로 그냥 아무 랜덤 단어(실패) 생성
-                arr.append(generate_random_word(random.randint(3, 10)))
+            if not out_stack:
+                print("-1")
             else:
-                # 정상적인 범위(prefix 길이 ~ min_len) 내에서 생성
-                word_len = random.randint(len(prefix), min_len)
-                suffix = generate_random_word(word_len - len(prefix))
-                arr.append(prefix + suffix)
-                
-        # 3. 아예 다른 단어 (실패 케이스)
-        else:
-            word_len = random.randint(3, 15)
-            arr.append(generate_random_word(word_len))
-            
-    # 섞기
-    random.shuffle(arr)
+                popped = out_stack.pop()
+                total_weight -= popped
+                print(f"{{popped}} {{total_weight}}")
+
+if __name__ == "__main__":
+    solve()
+"""
+
+# ---------------------------------------------------------
+# 4. 테스트케이스 생성 및 파일 저장
+# ---------------------------------------------------------
+def generate_test_cases():
+    cases = []
+    # 고정 케이스
+    cases.append(("IN 10\\nIN 20\\nOUT\\nIN 5\\nOUT\\nOUT", "10 20\\n20 5\\n5 0"))
+    cases.append(("IN 100\\nOUT\\nOUT", "100 0\\n-1"))
     
-    # Input 파일 작성
-    input_content = f"{prefix} {min_len}\n" + " ".join(arr)
-    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
-    save_file(input_path, input_content)
-    
-    # Output 계산
-    result = []
-    for f in arr:
-        if f.startswith(prefix) and len(f) > min_len:
-            result.append(f.upper())
-    result.sort()
-    
-    if not result:
-        output_content = "-1"
-    else:
-        output_content = " ".join(result)
+    for i in range(len(cases) + 1, 21):
+        num_cmds = i * 1000
+        cmds = []
+        ans = []
+        q = [] # 정답 검증용 실제 큐
+        total = 0
         
-    output_path = os.path.join(test_dir, f"output_{i:02d}.out")
-    save_file(output_path, output_content)
-print(f"✅ 'Easy/P30' 생성이 완료되었습니다.")
+        for _ in range(num_cmds):
+            if random.random() < 0.6 or not q:
+                v = random.randint(1, 1000)
+                cmds.append(f"IN {v}")
+                q.append(v)
+                total += v
+            else:
+                cmds.append("OUT")
+                if not q:
+                    ans.append("-1")
+                else:
+                    p = q.pop(0)
+                    total -= p
+                    ans.append(f"{p} {total}")
+                    
+        cases.append(("\\n".join(cmds), "\\n".join(ans)))
+    return cases
+
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
+
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
+
+all_cases = generate_test_cases()
+for i, (inp, out) in enumerate(all_cases, 1):
+    real_inp = inp.replace("\\\\n", "\\n").replace("\\n", "\n")
+    real_out = out.replace("\\\\n", "\\n").replace("\\n", "\n")
+    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+        f.write(real_inp)
+    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+        f.write(real_out)
+
+print(f"✅ 'Level01/P30' 문제 생성이 완료되었습니다.")

@@ -1,9 +1,8 @@
 import os
 import random
-import string
 
 # ---------------------------------------------------------
-# 1. 경로 설정
+# 1. 경로 설정 (Level01/P07 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -19,47 +18,66 @@ TICK = "`" * 3
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
 md_content = f"""---
-title: "초코의 특정 문자 세기"
+title: "햄버거 만들기"
 level: "1"
 time_limit: 1000
 memory_limit: 128
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["String"]
+tags: ["Stack"]
 ---
 
 ## description
-호기심 많은 강아지 **'초코'** 는 문장 속에 숨어 있는 특정 알파벳을 찾는 놀이를 좋아합니다.
+당신은 햄버거 가게에서 아르바이트를 하고 있습니다.<br />
+이 가게만의 특별한 햄버거 레시피는 재료를 반드시 **[빵 - 야채 - 고기 - 빵]** 순서로 쌓아야만 햄버거 하나가 완성된다는 것입니다. <br />
 
-**'초코'** 가 찾으려고 하는 **알파벳 한 개**와 **긴 문장**이 주어졌을 때, 그 문장 안에 해당 알파벳이 총 몇 번 등장하는지 세어보는 프로그램을 작성하세요.
+재료는 조리된 순서대로 컨베이어 벨트를 타고 하나씩 당신에게 도착합니다. 당신은 도착한 재료를 순서대로 쌓아 올리다가, **[빵, 야채, 고기, 빵]** 순서가 완성되는 즉시 햄버거를 포장해야 합니다. 포장된 햄버거는 쌓아둔 재료 더미에서 사라집니다.
 
-(단, 대문자와 소문자는 서로 다른 문자로 취급합니다.)
+재료는 다음과 같이 숫자로 표기됩니다:
+* 1: 빵 (Bread)
+* 2: 야채 (Vegetable)
+* 3: 고기 (Meat)
 
+예를 들어, 재료가 `[2, 1, 1, 2, 3, 1, 2, 3, 1]` 순서로 들어온다고 가정해 봅시다. <br />
 
+1. `2(야채)`: 쌓음
+2. `1(빵)`: 쌓음
+3. `1(빵)`: 쌓음
+4. `2(야채)`: 쌓음
+5. `3(고기)`: 쌓음
+6. `1(빵)`: 쌓음 -> 현재 스택의 윗부분이 `1, 2, 3, 1` (빵, 야채, 고기, 빵)이 되었습니다!
+7. **포장!**: 스택에서 `1, 2, 3, 1`을 제거합니다. (남은 스택: `[2, 1]`)
+8. `2(야채)`: 쌓음
+9. `3(고기)`: 쌓음 (현재 스택: `[2, 1, 2, 3]`)
+10. `1(빵)`: 쌓음 -> 현재 스택의 윗부분이 `1, 2, 3, 1`이 되었습니다!
+11. **포장!**: 제거합니다.
+
+총 2개의 햄버거를 만들 수 있습니다.
+주어진 재료 리스트를 보고 만들 수 있는 햄버거의 총개수를 구하세요.
 
 ## input_description
-- 첫 번째 줄에 찾으려는 **알파벳 한 글자** $C$가 주어집니다.
-- 두 번째 줄에 검색 대상이 되는 **문장** $S$가 주어집니다. (길이는 1000 이하, 공백 포함)
+- 첫 번째 줄에 재료의 개수 $N$이 주어집니다. ($1 \le N \le 1,000,000$)
+- 두 번째 줄에 $N$개의 재료 숫자가 공백으로 구분되어 주어집니다. (1, 2, 3 중 하나)
 
 ## output_description
-- 문장 $S$ 안에 알파벳 $C$가 몇 번 포함되어 있는지 정수로 출력합니다.
+- 만들 수 있는 햄버거의 개수를 출력합니다.
 
 # samples
 
 ### input 1
 {TICK}
-a
-Banana and Apple
+9
+2 1 1 2 3 1 2 3 1
 {TICK}
 
 ### output 1
 {TICK}
-4
+2
 {TICK}
 
 ### input 2
 {TICK}
-P
-pineapple
+9
+1 3 2 3 2 1 1 2 3
 {TICK}
 
 ### output 2
@@ -70,30 +88,51 @@ pineapple
 """
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
 py_solution = """import sys
 
-def main():
+def solve():
+    input = sys.stdin.readline
+    
+    # N 입력
     try:
-        # 1. 찾을 문자 입력 (엔터 포함 문자열 처리)
-        line1 = input()
-        if not line1: return
-        target_char = line1.strip()
+        line = input().strip()
+        if not line:
+            return
+        n = int(line)
+    except ValueError:
+        return
+
+    # 재료 리스트 입력
+    ingredients = list(map(int, input().split()))
+    
+    stack = []
+    count = 0
+    
+    # 햄버거 레시피: 1 (빵) -> 2 (야채) -> 3 (고기) -> 1 (빵)
+    # 스택에 쌓을 때는 [1, 2, 3, 1] 패턴을 찾아야 함
+    
+    for ingredient in ingredients:
+        stack.append(ingredient)
         
-        # 2. 전체 문장 입력
-        sentence = input()
-        
-        # 3. 개수 세기
-        count = sentence.count(target_char)
-        
-        print(count)
-            
-    except EOFError:
-        pass
+        # 스택에 재료가 4개 이상 모였을 때 패턴 확인
+        if len(stack) >= 4:
+            # 스택의 끝 4개가 [1, 2, 3, 1] 인지 확인
+            # (슬라이싱을 사용하면 코드가 간결해짐)
+            if stack[-4:] == [1, 2, 3, 1]:
+                count += 1
+                # 4개 제거 (pop 4번)
+                for _ in range(4):
+                    stack.pop()
+                
+                # [최적화 팁]
+                # Python에서는 del stack[-4:] 가 pop() 루프보다 조금 더 빠를 수 있음
+                
+    print(count)
 
 if __name__ == "__main__":
-    main()
+    solve()
 """
 
 # ---------------------------------------------------------
@@ -106,50 +145,46 @@ def save_file(path, content):
 save_file(os.path.join(base_dir, "problem.md"), md_content)
 save_file(os.path.join(base_dir, "solution.py"), py_solution)
 
-# 테스트 데이터 생성 (다양한 빈도수 유도)
+# 내부 정답 로직 (테스트케이스 생성용)
+def solve_internal(ingredients):
+    stack = []
+    count = 0
+    for x in ingredients:
+        stack.append(x)
+        if len(stack) >= 4 and stack[-4:] == [1, 2, 3, 1]:
+            count += 1
+            del stack[-4:]
+    return str(count)
+
+# 테스트 케이스 생성 로직
+def generate_burger_case():
+    # 랜덤한 재료 생성 (1, 2, 3)
+    length = random.randint(20, 100)
+    base_ingredients = [random.choice([1, 2, 3]) for _ in range(length)]
+    
+    # 햄버거 패턴 [1, 2, 3, 1] 을 랜덤 위치에 강제로 주입
+    # 주입 시, 기존 재료 사이에 끼워 넣어서 연쇄 작용(pop 후 합쳐짐)이 일어나도록 유도
+    # 예: 1 2 (1 2 3 1) 3 1 -> 괄호 부분 빠지면 1 2 3 1 됨
+    
+    # 햄버거 주입 횟수
+    num_burgers = random.randint(5, 20)
+    
+    for _ in range(num_burgers):
+        # 현재 리스트의 랜덤 위치에 [1, 2, 3, 1] 삽입
+        insert_idx = random.randint(0, len(base_ingredients))
+        # 리스트 슬라이스 끼워넣기
+        base_ingredients[insert_idx:insert_idx] = [1, 2, 3, 1]
+        
+    return base_ingredients
+
+# 테스트 케이스 20개 생성
 for i in range(1, 21):
-    target = random.choice(string.ascii_letters)
+    ingredients = generate_burger_case()
     
-    # 0~100 사이의 난수로 케이스 유형 결정
-    chance = random.randint(1, 100)
+    input_str = f"{len(ingredients)}\n" + " ".join(map(str, ingredients))
+    output_str = solve_internal(ingredients)
     
-    if chance <= 20: 
-        # [Case 1: 0개] 타겟 문자가 아예 없는 경우
-        pool = string.ascii_letters.replace(target, "") + " "
-        sentence_chars = random.choices(pool, k=random.randint(20, 50))
-        
-    elif chance <= 60:
-        # [Case 2: 적당히 많음] 2~10개 정도 강제 주입
-        pool = string.ascii_letters + " "
-        base_len = random.randint(30, 80)
-        sentence_chars = random.choices(pool, k=base_len)
-        
-        inject_count = random.randint(2, 10)
-        for _ in range(inject_count):
-            pos = random.randint(0, len(sentence_chars) - 1)
-            sentence_chars[pos] = target
-            
-    else:
-        # [Case 3: 매우 많음] 타겟 문자를 20% 확률로 도배
-        length = random.randint(50, 200)
-        sentence_chars = []
-        for _ in range(length):
-            if random.random() < 0.3: # 30% 확률로 타겟 문자
-                sentence_chars.append(target)
-            else:
-                sentence_chars.append(random.choice(string.ascii_letters + " "))
-    
-    sentence = "".join(sentence_chars)
-    
-    # 정답 계산
-    ans = sentence.count(target)
-    
-    # 파일 저장
-    input_file = os.path.join(test_dir, f"{i}.in")
-    with open(input_file, "w", encoding="utf-8") as f:
-        f.write(f"{target}\n")
-        f.write(f"{sentence}")
-        
-    save_file(os.path.join(test_dir, f"{i}.out"), str(ans))
+    save_file(os.path.join(test_dir, f"{i}.in"), input_str)
+    save_file(os.path.join(test_dir, f"{i}.out"), output_str)
 
 print(f"✅ 'Level01/P007' 생성이 완료되었습니다.")

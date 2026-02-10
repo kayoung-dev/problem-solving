@@ -1,20 +1,36 @@
 import sys
+from collections import deque
 
 def main():
-    # input()을 사용하여 엔터가 입력되는 즉시 한 줄을 읽습니다.
+    input = sys.stdin.readline
+    
     try:
-        line = input()
-        if not line:
-            return
-            
-        # 파이썬의 슬라이싱 기능을 사용하여 문자열을 뒤집습니다.
-        reversed_str = line[::-1]
+        line = input().strip()
+        if not line: return
+        n = int(line)
+    except ValueError:
+        return
+
+    # 큐 생성
+    queue = deque()
+
+    for _ in range(n):
+        command_line = input().split()
+        if not command_line: break
         
-        # 결과 출력 후 즉시 종료
-        print(reversed_str)
+        cmd = command_line[0]
+
+        if cmd == "in":
+            number = int(command_line[1])
+            queue.append(number) # 줄 서기
             
-    except EOFError:
-        pass
+        elif cmd == "out":
+            if queue:
+                # 맨 앞사람 입장 (출력)
+                print(queue.popleft())
+            else:
+                # 줄 선 사람이 없음
+                print("-1")
 
 if __name__ == "__main__":
     main()

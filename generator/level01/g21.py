@@ -1,16 +1,13 @@
 import os
 import random
+import sys
 
 # ---------------------------------------------------------
-# 1. 경로 설정
+# 1. 경로 설정 (Level01/P21 폴더 생성)
 # ---------------------------------------------------------
-current_dir = os.path.dirname(os.path.abspath(__file__))  
-# current_dir = Easy/generator/easy
-
-easy_dir = os.path.abspath(os.path.join(current_dir, "..", "..", "Easy"))  
-# easy_dir = Easy/
-
-base_dir = os.path.join(easy_dir, "P21")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
+base_dir = os.path.join(root_dir, "Level01", "P21")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -21,23 +18,33 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 포근이의 요일 맞추기 (Day of the Week)
+problem_md = f"""# 연금술사의 물약 제조
 
 ## 문제 설명
-강아지 '포근이'는 매주 특정 요일에 산책 나가는 것을 좋아합니다. 오늘은 **월요일**입니다.
+왕국 최고의 연금술사 **지수**는 마법의 물약을 만들기 위해 재료 창고에 왔습니다. 재료 창고에는 $N \\times N$ 크기의 격자 모양 선반이 있고, 각 칸에는 다양한 마법 재료들이 쌓여 있습니다. (0은 빈 칸을 의미합니다.)
 
-포근이는 오늘로부터 정확히 $N$일이 지났을 때가 무슨 요일인지 궁금해졌습니다. 요일은 다음과 같은 순서로 반복됩니다:
-**월요일 -> 화요일 -> 수요일 -> 목요일 -> 금요일 -> 토요일 -> 일요일** (다시 월요일...)
+지수는 마법의 집게를 이용해 특정 열(Column)을 선택하여 가장 위에 있는 재료를 하나 꺼냅니다. 꺼낸 재료는 즉시 옆에 있는 **마법의 솥**에 넣습니다.
 
-$N$이 주어졌을 때, 오늘(월요일)로부터 $N$일 후의 요일을 출력하는 프로그램을 작성하세요.
+마법의 솥은 **스택(Stack)** 구조로 되어 있어 재료가 아래서부터 차곡차곡 쌓입니다. 이때, 솥 안에 **같은 종류의 재료 두 개가 연속해서 닿게 되면**, 두 재료는 화학 반응을 일으켜 **폭발하며 사라집니다.**
+
+지수가 재료를 꺼내는 순서가 담긴 배열 `moves`가 주어질 때, 모든 과정을 마친 후 **폭발하여 사라진 재료의 총 개수**를 구하는 프로그램을 작성하세요.
+
+### 규칙 상세
+1. 격자의 각 칸에는 정수로 표현된 재료가 들어있으며, 0은 빈 칸입니다.
+2. 집게는 해당 열의 가장 위에 있는 재료를 집어 올립니다. 만약 해당 열에 재료가 없다면 아무 일도 일어나지 않습니다.
+3. 솥에 넣을 때, 솥의 가장 위에 있는 재료와 현재 넣는 재료가 같다면 둘 다 사라집니다. (폭발)
+4. 폭발은 연쇄적으로 일어날 수 있습니다. (예: `1`이 있는 상태에서 `1`이 들어와 폭발해 사라졌는데, 그 아래에 `2`가 있었고, 솥에 원래 `2`가 있었다면 또 폭발)
 
 ---
 
 ## 입력 형식 (Input Format)
-* 첫 번째 줄에 지날 날짜를 의미하는 정수 $N$이 주어집니다. ($0 \\le N \\le 10,000$)
+* 첫 번째 줄에 격자의 크기 $N$이 주어집니다. ($5 \\le N \\le 30$)
+* 두 번째 줄부터 $N$개의 줄에 걸쳐 격자의 상태가 주어집니다. 각 줄은 $N$개의 정수(재료 번호)로 이루어져 있습니다. ($0 \\le \\text{{재료}} \\le 100$)
+* 그 다음 줄에 지수가 움직인 횟수 $M$이 주어집니다. ($1 \\le M \\le 1,000$)
+* 마지막 줄에 지수가 선택한 열의 번호 `moves`가 공백으로 구분되어 주어집니다. (열 번호는 $1$부터 $N$까지입니다.)
 
 ## 출력 형식 (Output Format)
-* $N$일 후의 요일을 한글로 출력합니다. (예: 월요일, 화요일 등)
+* 폭발하여 사라진 재료의 총 개수를 출력합니다.
 
 ---
 
@@ -46,86 +53,186 @@ $N$이 주어졌을 때, 오늘(월요일)로부터 $N$일 후의 요일을 출�
 ### 예시 1
 **Input:**
 {TICK}
-3
+5
+0 0 0 0 0
+0 0 1 0 3
+0 2 5 0 1
+4 2 4 4 2
+3 5 1 3 1
+8
+1 5 3 5 1 2 1 4
 {TICK}
 
 **Output:**
 {TICK}
-목요일
+4
 {TICK}
 
-* 월요일부터 1일 후는 화요일, 2일 후는 수요일, 3일 후는 **목요일**입니다.
+* 격자의 상태:
+`[0,0,0,0,0] [0,0,1,0,3] [0,2,5,0,1] [4,2,4,4,2] [3,5,1,3,1]`
+
+* moves(열선택): `[1, 5, 3, 5, 1, 2, 1, 4]`
+* 과정
+  * 1번 열: `4` 꺼냄 $\\rightarrow$ 솥: `[4]`
+  * 5번 열: `3` 꺼냄 $\\rightarrow$ 솥: `[4, 3]`
+  * 3번 열: `1` 꺼냄 $\\rightarrow$ 솥: `[4, 3, 1]`
+  * 5번 열: `1` 꺼냄 $\\rightarrow$ 솥: `[4, 3, 1, 1]` $\\rightarrow$ **1-1 폭발!** (+2개 사라짐) $\\rightarrow$ 솥: `[4, 3]`
+  * 1번 열: `3` 꺼냄 $\\rightarrow$ 솥: `[4, 3, 3]` $\\rightarrow$ **3-3 폭발!** (+2개 사라짐) $\\rightarrow$ 솥: `[4]`
+  * 2번 열: `2` 꺼냄 $\\rightarrow$ 솥: `[4, 2]`
+  * 1번 열: 빈 칸 (무시)
+  * 4번 열: `4` 꺼냄 $\\rightarrow$ 솥: `[4, 2, 4]`
+* 총 사라진 개수: $2 + 2 = 4$
 
 ### 예시 2
 **Input:**
 {TICK}
-10
+4
+0 0 0 0
+0 0 0 0
+1 2 3 4
+1 2 3 4
+8
+1 2 3 4 4 3 2 1
 {TICK}
 
 **Output:**
 {TICK}
-목요일
+8
 {TICK}
-
-* 7일이 지나면 다시 월요일이 됩니다. 10을 7로 나눈 나머지는 3이므로, 월요일로부터 3일 뒤인 **목요일**이 됩니다.
 """
 
-# ---------------------------------------------------------
-# 3. 정답 코드 (solution.py)
-# ---------------------------------------------------------
-py_solution = """import sys
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+  f.write(problem_md)
 
-def main():
-    line = sys.stdin.readline().strip()
-    if not line:
-        return
-    
-    try:
-        n = int(line)
-        
-        # 요일 리스트 (0: 월요일, 1: 화요일, ..., 6: 일요일)
-        days = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
-        
-        # 7일 주기로 반복되므로 모듈러 연산 사용
-        target_index = n % 7
-        
-        print(days[target_index])
-            
-    except ValueError:
-        pass
+# ---------------------------------------------------------
+# 3. 정답 코드 (solution.py) 
+# ---------------------------------------------------------
+solution_code = """import sys
+
+def solution():
+ input = sys.stdin.readline
+ 
+ # 입력 처리
+ try:
+     line1 = input().strip()
+     if not line1: return # End of input
+     n = int(line1)
+     
+     board = []
+     for _ in range(n):
+         board.append(list(map(int, input().split())))
+         
+     m = int(input().strip())
+     moves = list(map(int, input().split()))
+ except ValueError:
+     return
+
+ stack = []
+ answer = 0
+ 
+ for move in moves:
+     col = move - 1  # 0-based index 변환
+     
+     for row in range(n):
+         if board[row][col] != 0:
+             picked_item = board[row][col]
+             board[row][col] = 0  # 집어간 자리는 빈칸(0)으로 만듦
+             
+             # 스택 로직
+             if stack and stack[-1] == picked_item:
+                 stack.pop()
+                 answer += 2
+             else:
+                 stack.append(picked_item)
+             
+             break # 인형을 하나 집었으면 해당 열 탐색 종료
+
+ print(answer)
 
 if __name__ == "__main__":
-    main()
+ solution()
 """
 
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+ f.write(solution_code)
+
 # ---------------------------------------------------------
-# 4. 파일 저장 및 테스트케이스 생성
+# 4. 파일 저장 및 테스트케이스 생성 (총 20개)
 # ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+def solve_internal(n, board_origin, moves):
+ # board_origin이 수정되지 않도록 깊은 복사
+ board = [row[:] for row in board_origin]
+ stack = []
+ answer = 0
+ 
+ for move in moves:
+     col = move - 1
+     for row in range(n):
+         if board[row][col] != 0:
+             picked = board[row][col]
+             board[row][col] = 0
+             
+             if stack and stack[-1] == picked:
+                 stack.pop()
+                 answer += 2
+             else:
+                 stack.append(picked)
+             break
+ return answer
 
-# 요일 리스트 정의
-days_list = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
+# 수동 케이스 (예제 1)
+manual_n = 5
+manual_board = [
+ [0, 0, 0, 0, 0],
+ [0, 0, 1, 0, 3],
+ [0, 2, 5, 0, 1],
+ [4, 2, 4, 4, 2],
+ [3, 5, 1, 3, 1]
+]
+manual_moves = [1, 5, 3, 5, 1, 2, 1, 4]
+manual_ans = solve_internal(manual_n, manual_board, manual_moves)
 
-for i in range(1, 21):
-    # 테스트 케이스 생성 (0부터 10000까지 다양하게)
-    if i <= 7:
-        n = i - 1  # 0~6일 테스트
-    else:
-        n = random.randint(7, 10000)
-    
-    # 정답 계산
-    ans = days_list[n % 7]
-    
-    # 입력 파일 저장
-    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
-    with open(input_path, "w", encoding="utf-8") as f:
-        f.write(str(n))
-        
-    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), ans)
+test_cases = []
+# 입력 문자열 포맷팅 함수
+def format_input(n, board, moves):
+ res = f"{n}\n"
+ for row in board:
+     res += " ".join(map(str, row)) + "\n"
+ res += f"{len(moves)}\n"
+ res += " ".join(map(str, moves))
+ return res
 
-print(f"✅ 'Easy/P21' 생성이 완료되었습니다.")
+test_cases.append((format_input(manual_n, manual_board, manual_moves), str(manual_ans)))
+
+# 랜덤 케이스 생성
+for _ in range(19):
+ n = random.randint(5, 30)
+ # 0(빈칸)을 포함하여 재료 채우기 (빈칸 비율 30% 정도)
+ board = []
+ for __ in range(n):
+     row = []
+     for ___ in range(n):
+         if random.random() < 0.3:
+             row.append(0)
+         else:
+             row.append(random.randint(1, 100))
+     board.append(row)
+ 
+ # moves 생성
+ m = random.randint(10, 500)
+ moves = [random.randint(1, n) for _ in range(m)]
+ 
+ # 정답 계산
+ ans = solve_internal(n, board, moves)
+ 
+ test_cases.append((format_input(n, board, moves), str(ans)))
+
+# 파일 저장 (형식: input_01.in / output_01.out)
+for i, (inp, out) in enumerate(test_cases, 1):
+ with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+     f.write(inp)
+ with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+     f.write(out)
+
+print(f"✅ 'Level01/P21' 문제 생성이 완료되었습니다.")

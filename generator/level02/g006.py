@@ -2,7 +2,7 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level02/P06 폴더 생성)
+# 1. 경로 설정 (Level02/P006 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -17,111 +17,91 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""---
-title: "후위 표기식 계산"
+problem_md = r"""---
+title: "과일 가게의 연속 대박 기간 찾기"
 level: "2"
 time_limit: 1000
-memory_limit: 128
+memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Stack"]
+tags: ["DP", "Kadane"]
 ---
 
 ## description
-일반적인 수식은 `2 + 3 * 4`처럼 연산자가 피연산자 사이에 들어가는 **중위 표기식(Infix Notation)**을 사용합니다. <br />
-하지만 컴퓨터가 수식을 계산할 때는 연산자가 피연산자 뒤에 오는 **후위 표기식(Postfix Notation)** 이 훨씬 처리하기 쉽습니다. <br />
+동네에서 작은 과일 가게를 운영하는 사장님은 지난 $N$일 동안 매일매일의 순이익을 장부에 기록해 왔습니다.<br />
 
-후위 표기식의 계산 규칙은 다음과 같습니다:
-1. 수식을 앞에서부터 읽으면서 숫자를 만나면 **스택(Stack)**에 넣습니다 (`push`).
-2. 연산자(`+`, `-`, `*`, `/`)를 만나면 스택에서 두 개의 숫자를 꺼냅니다 (`pop`).
-   * 먼저 꺼낸 수가 연산자의 오른쪽 피연산자, 나중에 꺼낸 수가 왼쪽 피연산자가 됩니다.
-3. 두 수에 대해 해당 연산을 수행하고, 그 결과를 다시 스택에 넣습니다.
-4. 수식이 끝나면 스택에 남은 마지막 숫자가 최종 결과입니다.
+순이익은 장사가 잘된 날은 양수($+$)로 기록되지만, 태풍이 오거나 과일값이 폭등하여 손해를 본 날은 음수($-$)로 기록되기도 합니다.
+사장님은 문득 장부를 보며 이런 궁금증이 생겼습니다.<br />
+**"지난 $N$일 중에서, 연속된 며칠 동안의 이익을 합쳤을 때 가장 큰 금액은 얼마였을까?"**<br />
 
-문자열 배열 형태의 후위 표기식이 주어졌을 때, 그 계산 결과를 구하는 프로그램을 작성하세요.
-(나눗셈은 정수 나눗셈으로, 소수점 이하는 버립니다. 예를 들어 `3 / 2`는 `1`입니다.)
+예를 들어, $5$일 동안의 순이익이 순서대로 $[3, -2, 5, -1, 2]$였다면, 전체를 합친 금액은 $7$이지만, 첫째 날부터 셋째 날까지($3, -2, 5$)만 합치면 $6$이 됩니다.
+하지만 이보다 더 좋은 구간이 있을 수도 있습니다. 사장님이 궁금해하는 **연속된 기간의 최대 이익 합**을 구하는 프로그램을 작성해 주세요.<br /><br />
+
+단, 기록된 기간 중 적어도 하루 이상은 포함해야 하며, 모든 날의 순이익이 마이너스라면 그중 가장 손해가 적은 날의 금액이 정답이 됩니다.
 
 ## input_description
-* 첫 번째 줄에 연산(토큰)의 개수 $N$이 주어집니다. ($1 \le N \le 100$)
-* 두 번째 줄에 후위 표기식이 공백으로 구분되어 주어집니다.
-    * 피연산자는 정수이며, 연산자는 `+`, `-`, `*`, `/` 중 하나입니다.
-    * 주어지는 식은 항상 유효한 후위 표기식임이 보장됩니다.
-    * 0으로 나누는 경우는 없습니다.
+- 첫 번째 줄에 장부를 기록한 일수 $N$이 주어집니다. 
+- $1 \le N \le 100,000$
+- 두 번째 줄에 $N$일 동안의 일일 순이익 $P_i$가 공백으로 구분되어 주어집니다. 
+- $-10,000 \le P_i \le 10,000$
 
 ## output_description
-* 수식의 계산 결과를 정수로 출력합니다.
+- 연속된 며칠 동안 얻을 수 있는 최대 이익 합을 정수로 출력합니다.
 
 # samples
+
 ### input 1
 {TICK}
 5
-2 3 + 5 *
+3 -2 5 -1 2
 {TICK}
 
 ### output 1
 {TICK}
-25
+7
 {TICK}
 
 
 ### input 2
 {TICK}
-5
-4 13 5 / +
+6
+-2 1 -3 4 -1 2
 {TICK}
 
 ### output 2
 {TICK}
-6
+5
 {TICK}
 
-"""
+""".replace("{TICK}", TICK)
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) 
+# 3. 정답 코드 (solution.py - DP 방식)
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = r"""import sys
 
 def solve():
-    input = sys.stdin.readline
-    
-    # N 입력
-    try:
-        line = input().strip()
-        if not line:
-            return
-        n = int(line)
-    except ValueError:
+    # 대량의 데이터를 효율적으로 읽어옵니다.
+    input_data = sys.stdin.read().split()
+    if not input_data:
         return
-
-    # 식 입력
-    expression = input().split()
-    stack = []
-
-    for token in expression:
-        if token not in ["+", "-", "*", "/"]:
-            # 숫자일 경우 push
-            stack.append(int(token))
-        else:
-            # 연산자일 경우 pop 2번
-            val2 = stack.pop()
-            val1 = stack.pop()
+    
+    n = int(input_data[0])
+    profits = list(map(int, input_data[1:]))
+    
+    # dp[i]는 i번째 날을 반드시 포함했을 때 얻을 수 있는 연속된 구간의 최대 합입니다.
+    # 공간을 절약하기 위해 배열 대신 변수 하나만 사용할 수도 있습니다.
+    current_max = profits[0]
+    total_max = profits[0]
+    
+    for i in range(1, n):
+        # "이전까지의 최대합에 나를 더하는 것"과 "오늘 새로 시작하는 것" 중 더 큰 것을 선택합니다.
+        current_max = max(profits[i], current_max + profits[i])
+        
+        # 지금까지 발견한 전체 최댓값을 갱신합니다.
+        if current_max > total_max:
+            total_max = current_max
             
-            if token == '+':
-                res = val1 + val2
-            elif token == '-':
-                res = val1 - val2
-            elif token == '*':
-                res = val1 * val2
-            elif token == '/':
-                # C/Java 스타일의 정수 나눗셈 (0을 향해 버림)
-                # Python의 //는 내림(floor)이므로 음수 계산시 차이가 있음
-                # 문제 의도에 맞게 int(val1 / val2) 사용
-                res = int(val1 / val2)
-                
-            stack.append(res)
-            
-    # 최종 결과 출력
-    print(stack[0])
+    print(total_max)
 
 if __name__ == "__main__":
     solve()
@@ -130,97 +110,50 @@ if __name__ == "__main__":
 # ---------------------------------------------------------
 # 4. 파일 저장 및 테스트케이스 생성
 # ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
 
-# 내부 정답 로직 (테스트케이스 생성용)
-def solve_internal(tokens):
-    stack = []
-    for token in tokens:
-        if token not in ["+", "-", "*", "/"]:
-            stack.append(int(token))
-        else:
-            val2 = stack.pop()
-            val1 = stack.pop()
-            if token == '+': res = val1 + val2
-            elif token == '-': res = val1 - val2
-            elif token == '*': res = val1 * val2
-            elif token == '/': res = int(val1 / val2)
-            stack.append(res)
-    return str(stack[0])
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
 
-# 유효한 RPN 생성기
-def generate_rpn(num_count):
-    # num_count개의 숫자를 사용하려면 num_count-1 개의 연산자가 필요
-    # 생성 규칙:
-    # 1. 스택에 숫자가 2개 이상 있어야 연산자를 넣을 수 있음 (안전을 위해)
-    # 2. 숫자를 다 쓰면 남은 만큼 연산자를 채워 넣어야 함
-    
-    nums_to_add = num_count
-    ops_to_add = num_count - 1
-    
-    tokens = []
-    current_stack_size = 0
-    
-    while nums_to_add > 0 or ops_to_add > 0:
-        # 선택지: 숫자(N) 또는 연산자(O)
-        choices = []
-        
-        if nums_to_add > 0:
-            choices.append("NUM")
-        
-        # 연산자는 스택에 최소 2개가 있어야 안전하게 연산 가능
-        if ops_to_add > 0 and current_stack_size >= 2:
-            choices.append("OP")
-            
-        # 강제 선택 조건
-        # 마지막에 연산자가 부족하면 안되므로 적절히 섞어야 하지만
-        # 위 조건만으로도 유효한 RPN이 생성됨 (단, 숫자가 너무 몰리면 스택이 깊어짐)
-        
-        choice = random.choice(choices)
-        
-        if choice == "NUM":
-            # 숫자 추가 (단순화를 위해 1~9, 나눗셈 0 방지 및 크기 조절)
-            num = random.randint(1, 10) 
-            tokens.append(str(num))
-            current_stack_size += 1
-            nums_to_add -= 1
-        else:
-            # 연산자 추가
-            op = random.choice(["+", "-", "*", "/"])
-            tokens.append(op)
-            current_stack_size -= 1 # 2개 꺼내서 1개 넣으므로 -1
-            ops_to_add -= 1
-            
-    return tokens
+# 정답 생성 로직 함수 (내부용)
+def get_ans(n, profits):
+    curr = profits[0]
+    total = profits[0]
+    for i in range(1, n):
+        curr = max(profits[i], curr + profits[i])
+        if curr > total:
+            total = curr
+    return total
 
-# 테스트 케이스 20개 생성
+# 20개의 테스트 케이스 생성
 for i in range(1, 21):
-    while True:
-        try:
-            # 숫자의 개수 랜덤 (3 ~ 15) -> 전체 토큰은 약 2배
-            n_nums = random.randint(3, 15)
-            rpn_tokens = generate_rpn(n_nums)
-            
-            # 0으로 나누기 등의 런타임 에러 확인을 위해 미리 계산
-            result = solve_internal(rpn_tokens)
-            
-            # 결과가 너무 크거나 작으면 다시 생성 (가독성 위함)
-            if abs(int(result)) > 100000:
-                continue
-                
-            input_str = f"{len(rpn_tokens)}\n" + " ".join(rpn_tokens)
-            output_str = result
-            
-            save_file(os.path.join(test_dir, f"{i}.in"), input_str)
-            save_file(os.path.join(test_dir, f"{i}.out"), output_str)
-            break # 성공적으로 생성되면 루프 탈출
-        except ZeroDivisionError:
-            # 0으로 나누기 발생 시 재생성
-            continue
+    if i <= 5:
+        # 소규모 테스트 (N=1~20)
+        n_val = i * 4
+    elif i <= 15:
+        # 중규모 테스트 (N=1,000~5,000)
+        n_val = i * 300
+    else:
+        # 대규모 테스트 (N=100,000) - DP 저격 구간
+        n_val = 100000
+    
+    # 양수와 음수가 섞인 무작위 이익 생성
+    profits_list = [random.randint(-1000, 1000) for _ in range(n_val)]
+    
+    # 특정 구간에 아주 큰 대박이나 손실을 임의로 삽입하여 변별력 강화
+    if i > 15:
+        profits_list[random.randint(0, n_val-1)] = 10000
+        profits_list[random.randint(0, n_val-1)] = -10000
+    
+    input_str = f"{n_val}\n" + " ".join(map(str, profits_list))
+    ans_str = str(get_ans(n_val, profits_list))
+    
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
+        f.write(input_str)
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
+        f.write(ans_str)
 
-print(f"✅ 'Level02/P006' 생성이 완료되었습니다.")
+print(f"✅ 'Level02/P006' 문제 생성이 완료되었습니다.")

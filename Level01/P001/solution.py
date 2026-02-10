@@ -1,33 +1,30 @@
 import sys
 
 def main():
-    # input()은 한 줄을 읽은 뒤 엔터가 입력되면 즉시 다음 코드로 진행합니다.
-    try:
-        line = input()
-        if not line:
-            return
-
-        # 데이터를 공백 기준으로 나누어 정수로 변환
-        data = list(map(int, line.split()))
-        
-        if len(data) < 2:
-            return
-
-        n = data[0]
-        k = data[1]
-        weights = data[2:2+n]
-        
-        # 무게가 K 이상인 사과만 필터링
-        picked = [w for w in weights if w >= k]
-        
-        if not picked:
-            print("0 0")
+    input_data = sys.stdin.read().split()
+    if not input_data:
+        return
+    
+    q = int(input_data[0])
+    stack = []
+    results = []
+    
+    idx = 1
+    for _ in range(q):
+        op = int(input_data[idx])
+        if op == 1:
+            x = int(input_data[idx+1])
+            stack.append(x)
+            idx += 2
         else:
-            # 개수와 총 무게 출력 후 프로그램 종료
-            print(f"{len(picked)} {sum(picked)}")
+            if not stack:
+                results.append("-1")
+            else:
+                results.append(str(stack.pop()))
+            idx += 1
             
-    except EOFError:
-        pass
+    if results:
+        print("\n".join(results))
 
 if __name__ == "__main__":
     main()

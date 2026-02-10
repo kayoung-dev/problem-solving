@@ -2,7 +2,7 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level02/P07 폴더 생성)
+# 1. 경로 설정 (Level02/P007 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -17,174 +17,159 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""---
-title: "햄버거 만들기"
+problem_md = r"""---
+title: "최소 비용 징검다리 건너기"
 level: "2"
 time_limit: 1000
-memory_limit: 128
+memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Stack"]
+tags: ["DP", "Kadane"]
 ---
 
 ## description
-당신은 햄버거 가게에서 아르바이트를 하고 있습니다.<br />
-이 가게만의 특별한 햄버거 레시피는 재료를 반드시 **[빵 - 야채 - 고기 - 빵]** 순서로 쌓아야만 햄버거 하나가 완성된다는 것입니다. <br />
+민수는 강 건너편으로 가기 위해 일렬로 놓인 $N$개의 징검다리를 건너야 합니다.<br />
 
-재료는 조리된 순서대로 컨베이어 벨트를 타고 하나씩 당신에게 도착합니다. 당신은 도착한 재료를 순서대로 쌓아 올리다가, **[빵, 야채, 고기, 빵]** 순서가 완성되는 즉시 햄버거를 포장해야 합니다. 포장된 햄버거는 쌓아둔 재료 더미에서 사라집니다.
+각 징검다리는 이끼가 끼어 있어 밟을 때마다 미끄러지지 않기 위해 소모되는 에너지가 다릅니다. $i$번째 징검다리를 밟을 때 소모되는 에너지 $E_i$가 각각 정해져 있습니다.<br />
 
-재료는 다음과 같이 숫자로 표기됩니다:
-* 1: 빵 (Bread)
-* 2: 야채 (Vegetable)
-* 3: 고기 (Meat)
+민수는 한 번에 **$1$칸**을 점프하여 바로 다음 다리로 가거나, 혹은 힘을 내어 **$2$칸**을 한꺼번에 점프하여 한 다리를 건너뛸 수 있습니다.<br />
 
-예를 들어, 재료가 `[2, 1, 1, 2, 3, 1, 2, 3, 1]` 순서로 들어온다고 가정해 봅시다. <br />
+민수의 목표는 **가장 마지막($N$번째) 징검다리에 도달**하는 것입니다. 민수는 처음에 강가에서 출발하며, 첫 번째 다리 혹은 두 번째 다리로 바로 점프하며 시작할 수 있습니다.<br />
 
-1. `2(야채)`: 쌓음
-2. `1(빵)`: 쌓음
-3. `1(빵)`: 쌓음
-4. `2(야채)`: 쌓음
-5. `3(고기)`: 쌓음
-6. `1(빵)`: 쌓음 -> 현재 스택의 윗부분이 `1, 2, 3, 1` (빵, 야채, 고기, 빵)이 되었습니다!
-7. **포장!**: 스택에서 `1, 2, 3, 1`을 제거합니다. (남은 스택: `[2, 1]`)
-8. `2(야채)`: 쌓음
-9. `3(고기)`: 쌓음 (현재 스택: `[2, 1, 2, 3]`)
-10. `1(빵)`: 쌓음 -> 현재 스택의 윗부분이 `1, 2, 3, 1`이 되었습니다!
-11. **포장!**: 제거합니다.
+마지막 다리에 발을 내디뎠을 때까지 소모된 **에너지 합의 최솟값**을 구하는 프로그램을 작성하세요.<br />
 
-총 2개의 햄버거를 만들 수 있습니다.
-주어진 재료 리스트를 보고 만들 수 있는 햄버거의 총개수를 구하세요.
 
 ## input_description
-- 첫 번째 줄에 재료의 개수 $N$이 주어집니다. ($1 \le N \le 1,000,000$)
-- 두 번째 줄에 $N$개의 재료 숫자가 공백으로 구분되어 주어집니다. (1, 2, 3 중 하나)
+- 첫 번째 줄에 징검다리의 개수 $N$이 주어집니다. 
+- $1 \le N \le 100,000$
+- 두 번째 줄에 각 징검다리를 밟을 때 소모되는 에너지 $E_i$가 $N$개 공백으로 구분되어 주어집니다. 
+- $1 \le E_i \le 1,000$
 
 ## output_description
-- 만들 수 있는 햄버거의 개수를 출력합니다.
+- 마지막 $N$번째 징검다리에 도달했을 때 소모된 에너지 합의 최솟값을 출력합니다.
 
 # samples
 
 ### input 1
 {TICK}
-9
-2 1 1 2 3 1 2 3 1
+3
+10 20 30
 {TICK}
 
 ### output 1
 {TICK}
-2
+40
 {TICK}
+
 
 ### input 2
 {TICK}
-9
-1 3 2 3 2 1 1 2 3
+4
+10 15 20 10
 {TICK}
 
 ### output 2
 {TICK}
-0
+25
 {TICK}
 
-"""
+""".replace("{TICK}", TICK)
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py) 
+# 3. 정답 코드 (solution.py - DP 방식)
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = r"""import sys
 
 def solve():
-    input = sys.stdin.readline
+    # 데이터를 읽어옵니다.
+    input_data = sys.stdin.read().split()
+    if not input_data:
+        return
     
-    # N 입력
-    try:
-        line = input().strip()
-        if not line:
-            return
-        n = int(line)
-    except ValueError:
+    n = int(input_data[0])
+    energy = list(map(int, input_data[1:]))
+    
+    if n == 1:
+        print(energy[0])
+        return
+    if n == 2:
+        print(energy[1]) # 바로 2번 다리로 점프하는 것이 1번 거치는 것보다 항상 유리하거나 같음 (에너지는 양수이므로)
+        # 하지만 문제 규칙상 '도착'이 목적이므로 시작점에서의 최소화를 고려합니다.
+        print(min(energy[0] + energy[1], energy[1]))
+        # 실제 로직에서는 아래 DP가 이를 처리합니다.
         return
 
-    # 재료 리스트 입력
-    ingredients = list(map(int, input().split()))
+    # dp[i]는 i번째 다리에 도달했을 때의 최소 에너지 합입니다.
+    dp = [0] * n
     
-    stack = []
-    count = 0
+    # 초기값 설정
+    dp[0] = energy[0] # 첫 번째 다리로 시작
+    dp[1] = energy[1] # 바로 두 번째 다리로 시작 (0번을 거치지 않음)
     
-    # 햄버거 레시피: 1 (빵) -> 2 (야채) -> 3 (고기) -> 1 (빵)
-    # 스택에 쌓을 때는 [1, 2, 3, 1] 패턴을 찾아야 함
-    
-    for ingredient in ingredients:
-        stack.append(ingredient)
+    # 3번째 다리(인덱스 2)부터 계산
+    for i in range(2, n):
+        # (바로 전 다리에서 왔을 때)와 (한 다리 건너뛰어 왔을 때) 중 최소 에너지를 선택
+        dp[i] = min(dp[i-1], dp[i-2]) + energy[i]
         
-        # 스택에 재료가 4개 이상 모였을 때 패턴 확인
-        if len(stack) >= 4:
-            # 스택의 끝 4개가 [1, 2, 3, 1] 인지 확인
-            # (슬라이싱을 사용하면 코드가 간결해짐)
-            if stack[-4:] == [1, 2, 3, 1]:
-                count += 1
-                # 4개 제거 (pop 4번)
-                for _ in range(4):
-                    stack.pop()
-                
-                # [최적화 팁]
-                # Python에서는 del stack[-4:] 가 pop() 루프보다 조금 더 빠를 수 있음
-                
-    print(count)
+    print(dp[n-1])
+
+# 정확한 로직을 위해 n=2일 때의 처리를 포함한 코드를 다시 작성합니다.
+def correct_solve():
+    input_data = sys.stdin.read().split()
+    if not input_data: return
+    n = int(input_data[0])
+    e = list(map(int, input_data[1:]))
+    if n == 1:
+        print(e[0])
+        return
+    dp = [0] * n
+    dp[0] = e[0]
+    dp[1] = e[1] # 시작할 때 1번 혹은 2번으로 바로 갈 수 있음
+    for i in range(2, n):
+        dp[i] = min(dp[i-1], dp[i-2]) + e[i]
+    print(dp[n-1])
 
 if __name__ == "__main__":
-    solve()
+    correct_solve()
 """
 
 # ---------------------------------------------------------
 # 4. 파일 저장 및 테스트케이스 생성
 # ---------------------------------------------------------
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
 
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
 
-# 내부 정답 로직 (테스트케이스 생성용)
-def solve_internal(ingredients):
-    stack = []
-    count = 0
-    for x in ingredients:
-        stack.append(x)
-        if len(stack) >= 4 and stack[-4:] == [1, 2, 3, 1]:
-            count += 1
-            del stack[-4:]
-    return str(count)
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
 
-# 테스트 케이스 생성 로직
-def generate_burger_case():
-    # 랜덤한 재료 생성 (1, 2, 3)
-    length = random.randint(20, 100)
-    base_ingredients = [random.choice([1, 2, 3]) for _ in range(length)]
-    
-    # 햄버거 패턴 [1, 2, 3, 1] 을 랜덤 위치에 강제로 주입
-    # 주입 시, 기존 재료 사이에 끼워 넣어서 연쇄 작용(pop 후 합쳐짐)이 일어나도록 유도
-    # 예: 1 2 (1 2 3 1) 3 1 -> 괄호 부분 빠지면 1 2 3 1 됨
-    
-    # 햄버거 주입 횟수
-    num_burgers = random.randint(5, 20)
-    
-    for _ in range(num_burgers):
-        # 현재 리스트의 랜덤 위치에 [1, 2, 3, 1] 삽입
-        insert_idx = random.randint(0, len(base_ingredients))
-        # 리스트 슬라이스 끼워넣기
-        base_ingredients[insert_idx:insert_idx] = [1, 2, 3, 1]
-        
-    return base_ingredients
+# 정답 생성용 내부 함수
+def get_ans(n, e):
+    if n == 1: return e[0]
+    dp = [0] * n
+    dp[0] = e[0]
+    dp[1] = e[1]
+    for i in range(2, n):
+        dp[i] = min(dp[i-1], dp[i-2]) + e[i]
+    return dp[n-1]
 
-# 테스트 케이스 20개 생성
+# 20개의 테스트 케이스 생성
 for i in range(1, 21):
-    ingredients = generate_burger_case()
+    if i <= 5:
+        n_val = i * 2 # 2, 4, 6... 10
+    elif i <= 15:
+        n_val = i * 100 # 600... 1500
+    else:
+        n_val = 100000 # 대규모 (DP 변별)
     
-    input_str = f"{len(ingredients)}\n" + " ".join(map(str, ingredients))
-    output_str = solve_internal(ingredients)
+    energy_list = [random.randint(1, 1000) for _ in range(n_val)]
     
-    save_file(os.path.join(test_dir, f"{i}.in"), input_str)
-    save_file(os.path.join(test_dir, f"{i}.out"), output_str)
+    input_str = f"{n_val}\n" + " ".join(map(str, energy_list))
+    ans_str = str(get_ans(n_val, energy_list))
+    
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
+        f.write(input_str)
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
+        f.write(ans_str)
 
-print(f"✅ 'Level02/P007' 생성이 완료되었습니다.")
+print(f"✅ 'Level02/P007' 문제 생성이 완료되었습니다.")

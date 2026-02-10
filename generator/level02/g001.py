@@ -1,8 +1,7 @@
 import os
-import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 
+# 1. 경로 설정 (Level02/P001 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
@@ -17,145 +16,136 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""---
-title: "연료 전지 충전소"
+problem_md = r"""---
+title: "친환경 수직 농장 설계"
 level: "2"
 time_limit: 1000
-memory_limit: 128
+memory_limit: 256
 languages: ["c", "cpp", "java", "js", "go", "python"]
-tags: ["Stack"]
+tags: ["DP"]
 ---
 
 ## description
-우주선 엔진에 에너지를 공급하는 연료 전지 보관함은 입구와 출구가 하나인 수직 원통형 구조로 되어 있습니다. 이 구조의 특성상 가장 나중에 넣은 연료 캡슐을 가장 먼저 꺼내어 사용해야 합니다.
+친환경 도시 설계 전문가인 수빈이는 좁은 부지에서도 많은 식물을 재배할 수 있는 '수직 농장'을 설계하고 있습니다. 이 농장은 층이 높아질수록 식물이 더 잘 자라는 특수한 구조를 가지고 있으며, 각 층에 배치할 수 있는 화분의 수는 특별한 규칙을 따릅니다.
 
-당신은 우주선의 연료 관리 시스템을 구축해야 합니다. 시스템은 다음과 같은 두 가지 명령을 처리합니다. <br />
+수빈이가 세운 규칙은 다음과 같습니다.<br/>
+- 가장 아래층인 $1$층에는 $1$개의 화분을 놓습니다. <br/>
+- 그 위층인 $2$층에도 $1$개의 화분을 놓습니다. <br/>
+- $3$층부터는 바로 아래에 있는 두 개 층의 화분 개수를 합친 만큼 화분을 놓습니다. <br/>
 
-1. **Push (1 $X$):** 에너지 수치가 $X$인 연료 캡슐 하나를 보관함에 넣습니다.
-2. **Pop (2):** 보관함의 가장 위에 있는 연료 캡슐을 꺼내어 에너지를 엔진에 공급합니다. 이때 꺼낸 캡슐의 에너지 수치를 출력합니다. 만약 보관함이 비어있다면 -1을 출력합니다.
+즉, $3$층에는 $1$층과 $2$층의 화분 개수를 더한 $2$개의 화분이 놓이게 됩니다. 수빈이는 농장이 아주 높게 설계되었을 때, 특정 층 $k$에 놓이게 될 화분의 총개수가 몇 개인지 미리 계산하여 자재를 준비하려고 합니다.
 
-명령의 개수 $Q$와 $Q$개의 명령이 주어졌을 때, 각 Pop 명령에 대한 결과를 출력하는 프로그램을 작성하세요.
+수빈이를 도와 $k$층에 놓일 화분의 개수를 구하는 프로그램을 작성하세요. 단, 층수가 높아질수록 계산이 매우 복잡해질 수 있으므로, 효율적인 계산 방법을 고민해야 합니다.
 
 ## input_description
-- 첫 번째 줄에 명령의 개수 $Q$가 주어집니다. 
-- $1 \\le Q \\le 1,000$
-- 두 번째 줄부터 $Q$개의 줄에 걸쳐 명령이 주어집니다.
-- 1 $X$ : 보관함에 에너지 수치 $X$를 넣습니다. 
-- $1 \\le X \\le 10,000$
-- 2 : 가장 위의 캡슐을 꺼내고 그 수치를 출력합니다.
+- 첫 번째 줄에 화분의 개수를 알고자 하는 수직 농장의 층수 $k$가 주어집니다.
+- $1 \le k \le 80$
 
 ## output_description
-- 2번 명령(Pop)이 주어질 때마다 한 줄에 하나씩 결과를 출력합니다.
+- $k$층에 배치될 화분의 개수를 정수로 출력합니다.
 
 # samples
 
 ### input 1
 {TICK}
-5
-1 10
-1 20
-2
-1 30
-2
+3
 {TICK}
 
 ### output 1
 {TICK}
-20
-30
+2
 {TICK}
 
 
 ### input 2
 {TICK}
-4
-2
-1 500
-1 600
-2
+7
 {TICK}
 
 ### output 2
 {TICK}
--1
-600
+13
 {TICK}
 
-"""
+
+### input 3
+{TICK}
+50
+{TICK}
+
+### output 3
+{TICK}
+12586269025
+{TICK}
+
+""".replace("{TICK}", TICK)
 
 # ---------------------------------------------------------
-# 3. 정답 코드 (solution.py)
+# 3. 정답 코드 (solution.py) 
 # ---------------------------------------------------------
-py_solution = """import sys
+solution_py = r"""import sys
 
-def main():
+def solve():
     input_data = sys.stdin.read().split()
     if not input_data:
         return
+    k = int(input_data[0])
     
-    q = int(input_data[0])
-    stack = []
-    results = []
+    if k <= 2:
+        print(1)
+        return
     
-    idx = 1
-    for _ in range(q):
-        op = int(input_data[idx])
-        if op == 1:
-            x = int(input_data[idx+1])
-            stack.append(x)
-            idx += 2
-        else:
-            if not stack:
-                results.append("-1")
-            else:
-                results.append(str(stack.pop()))
-            idx += 1
-            
-    if results:
-        print("\\n".join(results))
+    # 중복 계산을 피하기 위해 각 층의 결과를 순차적으로 저장
+    floor_info = [0] * (k + 1)
+    floor_info[1] = 1
+    floor_info[2] = 1
+    
+    for i in range(3, k + 1):
+        # 이전 두 층의 정보를 합산하여 현재 층의 정보 생성
+        floor_info[i] = floor_info[i-1] + floor_info[i-2]
+        
+    print(floor_info[k])
 
 if __name__ == "__main__":
-    main()
+    solve()
 """
 
-def save_file(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-save_file(os.path.join(base_dir, "problem.md"), md_content)
-save_file(os.path.join(base_dir, "solution.py"), py_solution)
-
 # ---------------------------------------------------------
-# 4. 임의의 테스트 케이스 생성
+# 4. 파일 저장 및 테스트케이스 생성
 # ---------------------------------------------------------
+
+# 파일 저장
+with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
+    f.write(problem_md)
+
+with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
+    f.write(solution_py)
+
+# [정답 로직 함수] .out 파일 생성용
+def calculate_ans(n):
+    if n <= 2: return 1
+    a, b = 1, 1
+    for _ in range(n - 2):
+        a, b = b, a + b
+    return b
+
+# 20개의 테스트 케이스 생성
 for i in range(1, 21):
-    q = random.randint(10, 50)
-    stack = []
-    ops = []
-    outputs = []
+    if i <= 10:
+        # 1~10번: 작은 값 (로직 확인용)
+        k_val = i * 3 
+    else:
+        # 11~20번: 큰 값 (DP 변별력 강화 구간)
+        # k가 40 이상이면 일반 재귀(O(2^n))는 1초 내에 통과할 수 없음
+        k_val = 35 + (i - 10) * 4 # 39, 43, 47 ... 75, 79
+        if k_val > 80: k_val = 80
+        
+    input_str = str(k_val)
+    ans_str = str(calculate_ans(k_val))
     
-    for _ in range(q):
-        if not stack or random.random() > 0.4:  
-            val = random.randint(1, 1000)
-            ops.append(f"1 {val}")
-            stack.append(val)
-        else:
-            ops.append("2")
-            if not stack:
-                outputs.append("-1")
-            else:
-                outputs.append(str(stack.pop()))
-                
-    if not outputs:
-        ops.append("2")
-        outputs.append("-1")
-        q = len(ops)
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
+        f.write(input_str)
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
+        f.write(ans_str)
 
-    input_str = f"{len(ops)}\\n" + "\\n".join(ops)
-    ans_str = "\\n".join(outputs)
-    
-
-    save_file(os.path.join(test_dir, f"{i}.in"), input_str)
-    save_file(os.path.join(test_dir, f"{i}.out"), ans_str)
-
-print(f"✅ 'Level02/P001' 생성이 완료되었습니다.")
+print(f"✅ 'Level02/P001' 문제 생성이 완료되었습니다.")
