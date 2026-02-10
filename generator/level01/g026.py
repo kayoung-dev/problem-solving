@@ -6,7 +6,7 @@ import random
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P26")
+base_dir = os.path.join(root_dir, "Level01", "P026")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -17,59 +17,53 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-LIFO_LATEX = r"$LIFO(Last \,\, In, \,\, First \,\, Out)$"
-BRACKETS_LATEX = r"$\{\}$"
+problem_md = f"""---
+title: "우주선 통제실의 괄호 보안 시스템"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-problem_md = f"""# 우주선 통제실의 괄호 보안 시스템
-
-## 문제 설명
-우주 통제실의 보안 요원 **케이트**는 외계 행성에서 전송된 암호화된 보안 코드를 분석하고 있습니다. 이 코드는 여러 종류의 괄호들로 구성되어 있으며, 코드가 유효하기 위해서는 모든 괄호가 올바른 순서로 닫혀야 합니다.
-
-보안 코드가 유효하기 위한 조건은 다음과 같습니다:
+## description
+우주 통제실의 보안 요원 **케이트**는 외계 행성에서 전송된 암호화된 보안 코드를 분석하고 있습니다.<br/>
+이 코드는 여러 종류의 괄호들로 구성되어 있으며, 코드가 유효하기 위해서는 모든 괄호가 올바른 순서로 닫혀야 합니다.
+보안 코드가 유효하기 위한 조건은 다음과 같습니다.
 1. 모든 열린 괄호는 반드시 같은 종류의 닫힌 괄호와 짝을 이뤄야 합니다.
-2. 나중에 열린 괄호가 먼저 닫혀야 하는 {LIFO_LATEX} 원칙을 준수해야 합니다.
+2. 나중에 열린 괄호가 먼저 닫혀야 하는 LIFO(Last In, First Out) 원칙을 준수해야 합니다.
 3. 모든 괄호 검사가 끝난 후, 남는 괄호가 없어야 합니다.
+사용되는 괄호의 종류는 소괄호 $( )$, 중괄호 ${{}}$, 대괄호 $[ ]$ 총 3종류입니다. 주어진 보안 코드가 유효한지 판별하는 프로그램을 작성하세요.
 
-사용되는 괄호의 종류는 소괄호 $( )$, 중괄호 {BRACKETS_LATEX}, 대괄호 $[ ]$ 총 3종류입니다. 주어진 보안 코드가 유효한지 판별하는 프로그램을 작성하세요.
+## input_description
+- 첫 번째 줄에 보안 코드 문자열이 주어집니다.
+- 문자열의 길이는 $1$ 이상 $10^5$ 이하이며, `(`, `)`, `[`, `]`, `{{`, `}}`로만 구성됩니다.
 
----
+## output_description
+- 보안 코드가 유효하면 `PASS`를, 유효하지 않으면 `FAIL`을 출력합니다.
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 보안 코드 문자열이 주어집니다. 
-* 문자열의 길이는 $1$ 이상 $10^5$ 이하이며, `(`, `)`, `[`, `]`, `{{`, `}}`로만 구성됩니다.
+# samples
 
-## 출력 형식 (Output Format)
-* 보안 코드가 유효하면 `PASS`를, 유효하지 않으면 `FAIL`을 출력합니다.
-
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 ([]) {{}}
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 PASS
 {TICK}
 
-* `(`와 `)`가 짝을 이루고, `[`와 `]`가 짝을 이룹니다. 마지막에 `{{`와 `}}`도 올바르게 닫혔으므로 유효합니다.
 
-### 예시 2
-**Input:**
+### input 2
 {TICK}
 ([)]
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 FAIL
 {TICK}
-
-* `[`가 열린 후 `(`가 열렸으므로, `)`가 먼저 나와야 하지만 `]`가 먼저 나왔습니다. {LIFO_LATEX} 원칙에 어긋나므로 유효하지 않습니다.
 """
 
 # ---------------------------------------------------------
@@ -166,12 +160,12 @@ with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
 
 all_cases = generate_test_cases()
 for i, (inp, out) in enumerate(all_cases, 1):
-    in_file = os.path.join(test_dir, f"input_{i:02d}.in")
-    out_file = os.path.join(test_dir, f"output_{i:02d}.out")
+    in_file = os.path.join(test_dir, f"{i}.in")
+    out_file = os.path.join(test_dir, f"{i}.out")
     
     with open(in_file, "w", encoding="utf-8") as f:
         f.write(inp)
     with open(out_file, "w", encoding="utf-8") as f:
         f.write(out)
 
-print(f"✅ 'Level01/P26' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P026' 문제 생성이 완료되었습니다.")

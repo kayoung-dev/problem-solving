@@ -276,12 +276,12 @@ for idx, meetings in enumerate(test_data, 1):
         input_lines.append(" ".join(map(str, m)))
     input_str = "\n".join(input_lines) + "\n"
 
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
 
     # output 파일: ans 자체에 이미 끝 개행 포함 
     ans = solve_internal(meetings)
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print("✅ 'Level01/P107' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P107' 문제 생성이 완료되었습니다. ")

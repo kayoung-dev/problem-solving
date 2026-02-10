@@ -7,7 +7,7 @@ import sys
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P18")
+base_dir = os.path.join(root_dir, "Level01", "P018")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -18,38 +18,36 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 편집증 작가의 원고
+problem_md = f"""---
+title: "편집증 작가의 원고"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-## 문제 설명
-베스트셀러 작가 **제인**은 원고를 쓸 때 문장을 끊임없이 수정하는 편집증적인 습관이 있습니다. 그녀는 이미 작성된 문장의 중간으로 커서(Cursor)를 이동시켜 글자를 지우거나 새로운 글자를 끼워 넣곤 합니다.
-
-제인이 초기에 작성한 문장이 주어지고, 그 후 $M$개의 명령어가 입력됩니다. 명령어는 다음과 같습니다.
-
-* `L`: 커서를 왼쪽으로 한 칸 옮김 (커서가 문장의 맨 앞이면 무시됨)
-* `D`: 커서를 오른쪽으로 한 칸 옮김 (커서가 문장의 맨 뒤면 무시됨)
-* `B`: 커서 왼쪽에 있는 문자를 삭제함 (커서가 문장의 맨 앞이면 무시됨)
-* `P $`: `$`(문자)를 커서 왼쪽에 추가함
-
+## description
+베스트셀러 작가 **제인**은 원고를 쓸 때 문장을 끊임없이 수정하는 편집증적인 습관이 있습니다.<br/>
+그녀는 이미 작성된 문장의 중간으로 커서(Cursor)를 이동시켜 글자를 지우거나 새로운 글자를 끼워 넣곤 합니다.<br/>
+제인이 초기에 작성한 문장이 주어지고, 그 후 $M$개의 명령어가 입력됩니다. 명령어는 다음과 같습니다.<br/>
+- `L`: 커서를 왼쪽으로 한 칸 옮김 (커서가 문장의 맨 앞이면 무시됨)<br/>
+- `D`: 커서를 오른쪽으로 한 칸 옮김 (커서가 문장의 맨 뒤면 무시됨)<br/>
+- `B`: 커서 왼쪽에 있는 문자를 삭제함 (커서가 문장의 맨 앞이면 무시됨)<br/>
+- `P x`: 문자 $x$를 커서 왼쪽에 추가함<br/>
 초기 문장이 주어지고, 커서는 문장의 **맨 뒤**에 위치한 상태로 시작합니다. 모든 명령어를 수행한 후 제인의 원고에 남은 최종 문자열을 출력하는 프로그램을 작성하세요.
 
-(참고: 문자열의 길이가 길고 명령어가 많으므로, 시간 복잡도를 고려하여 $O(N)$ 또는 그에 준하는 효율적인 알고리즘을 사용해야 합니다.)
+## input_description
+- 첫째 줄에 초기에 작성된 문자열이 주어집니다. (길이는 $100,000$을 넘지 않음, 소문자만 포함)
+- 둘째 줄에 입력할 명령어의 개수 $M$이 주어집니다. ($1 \\le M \\le 500,000$)
+- 셋째 줄부터 $M$개의 줄에 걸쳐 명령어가 주어집니다.
 
----
+## output_description
+- 모든 명령어를 수행한 후의 최종 문자열을 출력합니다.
 
-## 입력 형식 (Input Format)
-* 첫째 줄에 초기에 작성된 문자열이 주어집니다. (길이는 $100,000$을 넘지 않음, 소문자만 포함)
-* 둘째 줄에 입력할 명령어의 개수 $M$이 주어집니다. ($1 \\le M \\le 500,000$)
-* 셋째 줄부터 $M$개의 줄에 걸쳐 명령어가 주어집니다.
+# samples
 
-## 출력 형식 (Output Format)
-* 모든 명령어를 수행한 후의 최종 문자열을 출력합니다.
-
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 abcd
 3
@@ -58,18 +56,13 @@ L
 P y
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 abcdyx
 {TICK}
-* 초기: `abcd|` (커서는 맨 뒤)
-* `P x`: `abcdx|`
-* `L`: `abcd|x`
-* `P y`: `abcdy|x`
-* 최종 결과: `abcdyx`
 
-### 예시 2
-**Input:**
+
+### input 2
 {TICK}
 abc
 9
@@ -84,16 +77,10 @@ B
 P y
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 yxabc
 {TICK}
-* 커서를 왼쪽으로 계속 옮겨 맨 앞(`|abc`)으로 이동합니다.
-* `P x` -> `x|abc`
-* `L` -> `|xabc`
-* `B` -> 무시됨 (맨 앞이라 삭제 불가)
-* `P y` -> `y|xabc`
-* 최종 결과: `yxabc`
 """
 
 with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
@@ -213,11 +200,11 @@ while len(test_cases) < 20:
     if not any(tc[0] == inp_str for tc in test_cases):
         test_cases.append((inp_str, out_s))
 
-# 파일 저장 (형식: input_01.in / output_01.out)
+# 파일 저장 
 for i, (inp, out) in enumerate(test_cases, 1):
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(out)
 
-print(f"✅ 'Level01/P18' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P018' 문제 생성이 완료되었습니다.")

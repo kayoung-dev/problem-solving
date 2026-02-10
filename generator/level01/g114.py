@@ -339,9 +339,9 @@ for i, (n, m, edges) in enumerate(test_data, 1):
     input_str = f"{n} {m}\n" + "\n".join(f"{u} {v} {w}" for (u, v, w) in edges) + "\n"
     ans = solve_internal(n, edges) + "\n"
 
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print("✅ 'Level01/P114' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P114' 문제 생성이 완료되었습니다. ")

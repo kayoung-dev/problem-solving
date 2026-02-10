@@ -213,10 +213,10 @@ for idx, intervals in enumerate(test_data, 1):
 
     ans = solve_internal(intervals)
 
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
 
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(ans + "\n")
 
-print("✅ 'Level01/P105' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P105' 문제 생성이 완료되었습니다. ")

@@ -7,7 +7,7 @@ import sys
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P19")
+base_dir = os.path.join(root_dir, "Level01", "P019")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -18,60 +18,55 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 괄호의 값
+problem_md = f"""---
+title: "괄호의 값"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-## 문제 설명
-수학자 **오일러**는 고대 유적에서 발견된 기묘한 문자열을 연구하고 있습니다. 이 문자열은 오직 `(`, `)`, `[`, `]` 네 개의 기호로만 이루어져 있으며, 다음과 같은 규칙에 따라 점수가 매겨진다는 것을 밝혀냈습니다.
-
+## description
+수학자 **오일러**는 고대 유적에서 발견된 기묘한 문자열을 연구하고 있습니다.<br/>
+이 문자열은 오직 `(`, `)`, `[`, `]` 네 개의 기호로만 이루어져 있으며, 다음과 같은 규칙에 따라 점수가 매겨진다는 것을 밝혀냈습니다.
 1. `()` 형태의 괄호열 값은 $2$입니다.
 2. `[]` 형태의 괄호열 값은 $3$입니다.
-3. `(X)` 의 값은 $2 \\times \\text{{값}}(X)$ 입니다. (단, $X$는 올바른 괄호열)
-4. `[X]` 의 값은 $3 \\times \\text{{값}}(X)$ 입니다. (단, $X$는 올바른 괄호열)
-5. `XY` 의 값은 $\\text{{값}}(X) + \\text{{값}}(Y)$ 입니다. (단, $X, Y$는 올바른 괄호열)
-6. 만약 올바르지 않은 괄호열이라면 값은 $0$입니다.
+3. `(X)` 의 값은 $2 \\times$ (X의 값) 입니다. (단, $X$는 올바른 괄호열)
+4. `[X]` 의 값은 $3 \\times$ (X의 값) 입니다. (단, $X$는 올바른 괄호열)
+5. `XY` 의 값은 (X의 값) $+$ (Y의 값) 입니다. (단, $X$, $Y$는 올바른 괄호열)
+6. 올바르지 않은 괄호열이라면 값은 $0$입니다.
+예를 들어 `(()[[]])`의 값은 $2 \\times (2 + 3 \\times 3) = 22$가 됩니다. 문자열 $S$가 주어졌을 때, 그 값을 계산하는 프로그램을 작성하세요.
 
-예를 들어 `(()[[]])`의 값은 $2 \\times (2 + 3 \\times 3) = 22$가 됩니다.
-문자열 $S$가 주어졌을 때, 그 값을 계산하는 프로그램을 작성하세요.
+## input_description
+- 첫 번째 줄에 괄호로 이루어진 문자열 $S$가 주어집니다.
+- 문자열의 길이는 $1$ 이상 $30$ 이하입니다. (결과값이 $2^{{30}}$을 넘지 않도록 제한)
 
----
+## output_description
+- 주어진 괄호열의 값을 정수로 출력합니다. 올바르지 않은 괄호열이라면 $0$을 출력합니다.
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 괄호로 이루어진 문자열 $S$가 주어집니다.
-* 문자열의 길이는 $1$ 이상 $30$ 이하입니다. (결과값이 $2^{{30}}$을 넘지 않도록 제한)
+# samples
 
-## 출력 형식 (Output Format)
-* 주어진 괄호열의 값을 정수로 출력합니다. 올바르지 않은 괄호열이라면 $0$을 출력합니다.
-
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 (()[[]])
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 22
 {TICK}
-* `()` $\\rightarrow 2$
-* `[[]]` $\\rightarrow 3 \\times 3 = 9$
-* `() + [[]]` $\\rightarrow 2 + 9 = 11$
-* `( ... )` 로 감싸져 있으므로 $2 \\times 11 = 22$
 
-### 예시 2
-**Input:**
+
+### input 2
 {TICK}
 [][]((])
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 0
 {TICK}
-* 올바르지 않은 괄호열이므로 0을 출력합니다.
 """
 
 with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
@@ -214,11 +209,11 @@ while len(test_cases) < 20:
     if (inp, str(out)) not in test_cases:
         test_cases.append((inp, str(out)))
 
-# 파일 저장 (형식: input_01.in / output_01.out)
+# 파일 저장 
 for i, (inp, out) in enumerate(test_cases, 1):
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(out)
 
-print(f"✅ 'Level01/P19' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P019' 문제 생성이 완료되었습니다.")

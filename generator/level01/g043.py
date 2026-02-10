@@ -8,7 +8,7 @@ from collections import deque
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P43")
+base_dir = os.path.join(root_dir, "Level01", "P043")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -151,9 +151,9 @@ for i, (n, k) in enumerate(test_cases, 1):
     inp = f"{n} {k}"
     ans = solve_internal(n, k)
     
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print(f"✅ 'Level01/P43' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P043' 문제 생성이 완료되었습니다.")

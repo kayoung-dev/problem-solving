@@ -350,4 +350,4 @@ for i, (R, C, H, grid) in enumerate(test_data, 1):
     with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print("✅ 'Level01/P112' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P112' 문제 생성이 완료되었습니다. ")

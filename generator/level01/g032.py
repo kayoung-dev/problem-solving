@@ -6,7 +6,7 @@ import random
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P32")
+base_dir = os.path.join(root_dir, "Level01", "P032")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -175,9 +175,9 @@ for i, (inp, out) in enumerate(all_cases, 1):
     real_inp = inp.replace("\\\\n", "\\n").replace("\\n", "\n")
     real_out = out.replace("\\\\n", "\\n").replace("\\n", "\n")
     
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(real_inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(real_out)
 
-print(f"✅ 'Level01/P32' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P032' 문제 생성이 완료되었습니다.")

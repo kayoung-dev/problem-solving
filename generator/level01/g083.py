@@ -2,11 +2,11 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level01/P83 폴더 생성)
+# 1. 경로 설정 (Level01/P083 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", ".."))
-base_dir = os.path.join(root_dir, "Level01", "P83")
+base_dir = os.path.join(root_dir, "Level01", "P083")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -181,9 +181,9 @@ for i, (n, k, arr) in enumerate(test_data, 1):
     input_str = f"{n} {k}\n" + " ".join(map(str, arr)) + "\n"
     ans = solve_internal(n, k, arr)
 
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans + "\n")
 
-print("✅ 'Level01/P83' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P083' 문제 생성이 완료되었습니다. ")

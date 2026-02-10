@@ -6,7 +6,7 @@ import random
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P12")
+base_dir = os.path.join(root_dir, "Level01", "P012")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -17,52 +17,50 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 애니팡팡 버그 수정
+problem_md = f"""---
+title: "애니팡팡 버그 수정"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-## 문제 설명
-게임 개발자 **민수**는 새로운 퍼즐 게임 '애니팡팡'을 개발 중입니다. 이 게임에는 알파벳 소문자가 적힌 블록들이 일렬로 내려오는 스테이지가 있습니다. 
-
+## description
+게임 개발자 **민수**는 새로운 퍼즐 게임 '애니팡팡'을 개발 중입니다.<br/>
+이 게임에는 알파벳 소문자가 적힌 블록들이 일렬로 내려오는 스테이지가 있습니다.<br/>
 게임의 핵심 로직은 다음과 같습니다.
 1. 같은 알파벳이 적힌 블록 두 개가 연속해서 붙어 있게 되면, 두 블록은 팡! 소리를 내며 사라집니다.
 2. 블록이 사라진 후, 떨어진 빈자리를 메우기 위해 나머지 블록들이 다시 붙게 됩니다.
 3. 이때 다시 붙은 블록끼리 또 같은 알파벳이라면 연쇄적으로 사라집니다.
-
 민수는 모든 블록을 성공적으로 제거할 수 있는지 확인하는 테스트 프로그램을 만들려고 합니다. 문자열 $S$가 주어졌을 때, 모든 블록을 제거할 수 있다면 $1$을, 남는 블록이 있다면 $0$을 반환하는 프로그램을 작성하세요.
 
----
+## input_description
+- 첫 번째 줄에 알파벳 소문자로만 구성된 문자열 $S$가 주어집니다.
+- 문자열 $S$의 길이는 $1$ 이상 $1,000,000$ 이하입니다.
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 알파벳 소문자로만 구성된 문자열 $S$가 주어집니다.
-* 문자열 $S$의 길이는 $1$ 이상 $1,000,000$ 이하입니다.
+## output_description
+- 모든 블록을 제거할 수 있으면 $1$, 아니면 $0$을 출력합니다.
 
-## 출력 형식 (Output Format)
-* 모든 블록을 제거할 수 있으면 $1$, 아니면 $0$을 출력합니다.
+# samples
 
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 baabaa
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 1
 {TICK}
-* `aa`가 먼저 제거되어 `bbaa`가 됩니다.
-* 이어서 `bb`가 제거되어 `aa`가 됩니다.
-* 마지막으로 `aa`가 제거되어 빈 문자열이 되므로 $1$을 출력합니다.
 
-### 예시 2
-**Input:**
+
+### input 2
 {TICK}
 cdcd
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 0
 {TICK}
@@ -160,9 +158,9 @@ while len(test_cases) < 20:
 
 # 파일 쓰기
 for i, (inp, out) in enumerate(test_cases, 1):
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(str(out)) # int/bool을 문자열로 변환
 
-print(f"✅ 'Level01/P12' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P012' 문제 생성이 완료되었습니다.")

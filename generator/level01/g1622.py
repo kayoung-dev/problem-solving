@@ -210,5 +210,5 @@ for i in range(1, 21):
     with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(out_str)
 
-print("✅ 'Level01/P162' (Q-쿼리 버전) 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P162' (Q-쿼리 버전) 문제 생성이 완료되었습니다. ")
 print("✅ 19~20번 테스트는 선형탐색(TLE) 탐지용 최악 케이스입니다.")

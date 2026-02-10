@@ -6,7 +6,7 @@ import random
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P11")
+base_dir = os.path.join(root_dir, "Level01", "P011")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -17,52 +17,51 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 고대 유적의 비밀 문
+problem_md = f"""---
+title: "고대 유적의 비밀 문"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-## 문제 설명
-고고학자 **지수**는 깊은 정글 속에서 거대한 석문을 발견했습니다. 이 문을 열기 위해서는 문 위에 새겨진 괄호 문양들이 '올바른 규칙'을 따르고 있는지 확인해야 합니다. 
-
+## description
+고고학자 **지수**는 깊은 정글 속에서 거대한 석문을 발견했습니다.<br/>
+이 문을 열기 위해서는 문 위에 새겨진 괄호 문양들이 '올바른 규칙'을 따르고 있는지 확인해야 합니다.<br/>
 석문에는 오직 소괄호 $($ 와 $)$ 로 구성된 문자열 $S$가 새겨져 있습니다. 지수는 다음의 규칙을 만족할 때만 문이 열린다는 사실을 알아냈습니다.
-
 1. $($ 문자로 시작했다면, 반드시 그에 대응하는 $)$ 문자로 닫혀야 합니다.
 2. 모든 괄호는 자신이 열린 순서의 역순으로 닫혀야 하며, 짝이 맞지 않는 괄호가 있어서는 안 됩니다.
 3. 빈 문자열은 올바른 규칙을 따른 것으로 간주합니다.
-
 지수를 도와 주어진 문자열 $S$가 올바른 괄호열인지 판별하는 프로그램을 작성하세요.
 
----
+## input_description
+- 첫 번째 줄에 괄호로 구성된 문자열 $S$가 주어집니다.
+- 문자열의 길이 $n$의 범위는 $0 \\le n \\le 100,000$ 입니다.
+- 문자열은 $($ 와 $)$ 로만 구성됩니다.
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 괄호로 구성된 문자열 $S$가 주어집니다.
-* 문자열의 길이 $n$의 범위는 $0 \le n \le 100,000$ 입니다.
-* 문자열은 $($ 와 $)$ 로만 구성됩니다.
+## output_description
+- 주어진 문자열이 올바른 괄호열이면 `True`를, 그렇지 않으면 `False`를 출력합니다.
 
-## 출력 형식 (Output Format)
-* 주어진 문자열이 올바른 괄호열이면 `True`를, 그렇지 않으면 `False`를 출력합니다.
+# samples
 
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 (())()
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 True
 {TICK}
-* 안쪽의 괄호 짝 `()`이 맞고, 이를 감싸는 바깥 괄호 `(())`도 짝이 맞으며, 마지막 `()`도 올바르므로 문이 열립니다.
 
-### 예시 2
-**Input:**
+
+### input 2
 {TICK}
 (()(
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 False
 {TICK}
@@ -161,11 +160,11 @@ while len(test_cases) < 20:
 # 파일 쓰기
 for i, (inp, out) in enumerate(test_cases, 1):
     # .in 파일 저장
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
     
     # .out 파일 저장
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(str(out))
 
-print(f"✅ 'Level01/P11' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P011' 문제 생성이 완료되었습니다.")

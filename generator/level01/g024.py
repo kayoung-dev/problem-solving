@@ -7,7 +7,7 @@ import sys
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P24")
+base_dir = os.path.join(root_dir, "Level01", "P024")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -18,67 +18,59 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 스카이라인과 레이더
+problem_md = f"""---
+title: "스카이라인과 레이더"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-## 문제 설명
-미래 도시 **네오-서울**에는 일직선상에 다양한 높이의 빌딩들이 $N$개 서 있습니다.
-각 빌딩의 옥상에는 **레이더 송신기**가 설치되어 있습니다. 이 레이더는 **왼쪽 방향**으로 수평 신호를 발사하여 데이터를 전송합니다.
+## description
+미래 도시 **네오-서울**에는 일직선상에 다양한 높이의 빌딩들이 $N$개 서 있습니다. <br />
+각 빌딩의 옥상에는 **레이더 송신기**가 설치되어 있습니다. 이 레이더는 **왼쪽 방향**으로 수평 신호를 발사하여 데이터를 전송합니다. <br />
 
-레이더 신호는 수평으로 이동하다가, **발신한 빌딩보다 높이가 높은 첫 번째 빌딩**에 부딪히면 수신됩니다. 만약 신호가 도시 끝까지 이동하는 동안 더 높은 빌딩을 만나지 못하면, 그 신호는 수신되지 않고 사라집니다.
+레이더 신호는 수평으로 이동하다가, **발신한 빌딩보다 높이가 높은 첫 번째 빌딩**에 부딪히면 수신됩니다. 만약 신호가 도시 끝까지 이동하는 동안 더 높은 빌딩을 만나지 못하면, 그 신호는 수신되지 않고 사라집니다. <br />
+모든 빌딩이 동시에 왼쪽으로 신호를 발사할 때, 각 빌딩의 신호를 수신하는 빌딩의 번호를 구하는 프로그램을 작성하세요. <br />
 
-모든 빌딩이 동시에 왼쪽으로 신호를 발사할 때, 각 빌딩의 신호를 수신하는 빌딩의 번호를 구하는 프로그램을 작성하세요.
-
-### 규칙
+규칙은 다음과 같습니다:
 1. 빌딩의 높이는 모두 정수입니다.
 2. 모든 빌딩은 왼쪽으로만 신호를 보냅니다.
 3. 신호는 **발신한 빌딩보다 높이가 '높은'** 건물에만 수신됩니다. (높이가 같거나 낮은 건물은 통과합니다.)
 4. 빌딩의 번호는 왼쪽부터 1번, 2번, ..., $N$번입니다.
 
----
+## input_description
+- 첫 번째 줄에 빌딩의 개수 $N$이 주어집니다. ($1 \\le N \\le 100,000$)
+- 두 번째 줄에 각 빌딩의 높이를 나타내는 $N$개의 정수가 공백으로 구분되어 주어집니다. (높이는 $1$ 이상 $100,000,000$ 이하)
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 빌딩의 개수 $N$이 주어집니다. ($1 \\le N \\le 100,000$)
-* 두 번째 줄에 각 빌딩의 높이를 나타내는 $N$개의 정수가 공백으로 구분되어 주어집니다. (높이는 $1$ 이상 $100,000,000$ 이하)
+## output_description
+- 1번 빌딩부터 $N$번 빌딩까지 순서대로, 해당 빌딩의 신호를 수신하는 **빌딩의 번호**를 공백으로 구분하여 출력합니다. 수신하는 빌딩이 없다면 `0`을 출력합니다.
 
-## 출력 형식 (Output Format)
-* 1번 빌딩부터 $N$번 빌딩까지 순서대로, 해당 빌딩의 신호를 수신하는 **빌딩의 번호**를 공백으로 구분하여 출력합니다.
-* 수신하는 빌딩이 없다면 `0`을 출력합니다.
+# samples
 
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 5
 6 9 5 7 4
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 0 0 2 2 4
 {TICK}
 
-* **1번 빌딩(6):** 왼쪽에 건물이 없음 $\\rightarrow$ `0`
-* **2번 빌딩(9):** 왼쪽의 1번(6)은 9보다 낮음 $\\rightarrow$ 수신 불가 $\\rightarrow$ `0`
-* **3번 빌딩(5):** 왼쪽의 2번(9)이 5보다 높음 $\\rightarrow$ **2번 수신** $\\rightarrow$ `2`
-* **4번 빌딩(7):** 왼쪽의 3번(5) 통과, 2번(9)이 7보다 높음 $\\rightarrow$ **2번 수신** $\\rightarrow$ `2`
-* **5번 빌딩(4):** 왼쪽의 4번(7)이 4보다 높음 $\\rightarrow$ **4번 수신** $\\rightarrow$ `4`
 
-### 예시 2
-**Input:**
+### input 2
 {TICK}
 4
 1 2 3 4
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 0 0 0 0
 {TICK}
-* 모든 빌딩이 자신보다 왼쪽 빌딩들보다 높기 때문에, 아무도 신호를 수신하지 못합니다. (오름차순)
-
 """
 
 with open(os.path.join(base_dir, "problem.md"), "w", encoding="utf-8") as f:
@@ -180,9 +172,9 @@ for _ in range(14):
 
 # 파일 저장
 for i, (inp, out) in enumerate(test_cases, 1):
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(out)
 
-print(f"✅ 'Level01/P24' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P024' 문제 생성이 완료되었습니다.")

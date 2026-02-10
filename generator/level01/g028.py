@@ -6,7 +6,7 @@ import random
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P28")
+base_dir = os.path.join(root_dir, "Level01", "P028")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -17,10 +17,18 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 심해 탐사선의 신호 차단 분석
+problem_md = f"""---
+title: "심해 탐사선의 신호 차단 분석"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack"]
+---
 
-## 문제 설명
-심해 탐사선 **울릉1호**는 해저 지형을 조사하기 위해 오른쪽 방향으로 연속해서 음파 신호를 쏩니다. 각 신호는 고유한 세기(Intensity)를 가지고 있으며, 발사된 신호는 장애물을 만나기 전까지 오른쪽으로 계속 나아갑니다.
+## description
+심해 탐사선 **울릉1호**는 해저 지형을 조사하기 위해 오른쪽 방향으로 연속해서 음파 신호를 쏩니다.
+각 신호는 고유한 세기(Intensity)를 가지고 있으며, 발사된 신호는 장애물을 만나기 전까지 오른쪽으로 계속 나아갑니다. <br />
 
 이때, 어떤 신호의 진행을 막는 **장애물**이란, 그 신호보다 **세기가 더 강한(값이 큰) 신호**를 의미합니다. 모든 신호는 발사된 직후 오른쪽으로 날아가다가, 자신보다 강한 신호를 처음 만나는 순간 그 신호에 부딪혀 소멸합니다.
 
@@ -29,42 +37,38 @@ problem_md = f"""# 심해 탐사선의 신호 차단 분석
 2. **2번 신호 (3)**: 오른쪽으로 가자마자 자신보다 강한 **3번 신호 (7)** 를 만나서 곧바로 소멸합니다.
 3. **3번 신호 (7)**: 오른쪽으로 가다가 자신보다 강한 **4번 신호 (12)** 를 만나 소멸합니다.
 4. **4번 신호 (12)**: 오른쪽을 봐도 자신보다 강한 신호가 없으므로, 아무것도 부딪히지 않고 끝까지 나아갑니다.
-
+<br />
 각 신호가 발사되었을 때, 이 신호의 진행을 막아 소멸시키는 **첫 번째 신호의 번호** 가 무엇인지 구하는 프로그램을 작성하세요.
 
----
+## input_description
+- 첫 번째 줄에 신호들의 세기를 나타내는 정수들이 공백으로 구분되어 주어집니다.
+- 신호의 개수는 $1$ 이상 $100,000$ 이하이며, 각 세기는 정수입니다.
 
-## 입출력 예시 (Sample I/O)
+## output_description
+- 1번 신호부터 순서대로, 해당 신호를 막아 소멸시키는 첫 번째 신호의 번호를 공백으로 구분하여 출력합니다. 막는 신호가 없으면 $0$을 출력합니다.
 
-### 예시 1
-**Input:**
+# samples
+
+### input 1
 {TICK}
 10 3 7 12
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 4 3 4 0
 {TICK}
 
-* 1번 (10)은 4번 (12)에 막힙니다. $\\rightarrow$ **4**
-* 2번 (3)은 3번 (7)에 막힙니다. $\\rightarrow$ **3**
-* 3번 (7)은 4번 (12)에 막힙니다. $\\rightarrow$ **4**
-* 4번 (12)은 막는 신호가 없습니다. $\\rightarrow$ **0**
 
-
-### 예시 2
-**Input:**
+### input 2
 {TICK}
 20 15 10 5
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 0 0 0 0
 {TICK}
-
-* 모든 신호가 오른쪽으로 갈수록 약해집니다. 즉, 뒤에 오는 어떤 신호도 앞선 신호보다 강하지 않으므로 아무도 가로막히지 않습니다.
 """
 
 # ---------------------------------------------------------
@@ -143,11 +147,11 @@ with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
 
 all_cases = generate_test_cases()
 for i, (inp, out) in enumerate(all_cases, 1):
-    in_file = os.path.join(test_dir, f"input_{i:02d}.in")
-    out_file = os.path.join(test_dir, f"output_{i:02d}.out")
+    in_file = os.path.join(test_dir, f"{i}.in")
+    out_file = os.path.join(test_dir, f"{i}.out")
     with open(in_file, "w", encoding="utf-8") as f:
         f.write(inp)
     with open(out_file, "w", encoding="utf-8") as f:
         f.write(out)
 
-print(f"✅ 'Level01/P28' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P028' 문제 생성이 완료되었습니다.")

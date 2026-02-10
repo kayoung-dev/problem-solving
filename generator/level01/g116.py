@@ -226,9 +226,9 @@ for i, nums in enumerate(test_data, 1):
     input_str = str(len(nums)) + "\n" + "\n".join(nums) + "\n"
     ans = solve_internal(nums)
 
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print(f"✅ 'Level01/P116' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P116' 문제 생성이 완료되었습니다. ")

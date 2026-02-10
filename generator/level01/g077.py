@@ -3,11 +3,11 @@ import random
 from collections import deque
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level01/P77 폴더 생성)
+# 1. 경로 설정 (Level01/P077 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P77")
+base_dir = os.path.join(root_dir, "Level01", "P077")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -218,10 +218,10 @@ for i, (s, t) in enumerate(test_data, 1):
     input_str = f"{s}\n{t}"
     ans_list = get_all_solutions(s, t)
     
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(input_str.strip())
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         # 모든 가능한 최단 경로 정답을 여러 줄에 걸쳐 저장
         f.write("\n".join(ans_list))
 
-print(f"✅ 'Level01/P77' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P077' 문제 생성이 완료되었습니다. ")

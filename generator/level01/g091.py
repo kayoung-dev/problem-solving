@@ -2,11 +2,11 @@ import os
 import random
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level01/P91 폴더 생성)
+# 1. 경로 설정 (Level01/P091 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", ".."))
-base_dir = os.path.join(root_dir, "Level01", "P91")
+base_dir = os.path.join(root_dir, "Level01", "P091")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -119,9 +119,9 @@ with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
     f.write(solution_py)
 
 for i, n_str in enumerate(test_data, 1):
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w") as f:
         f.write(n_str + "\n")
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w") as f:
         f.write(solve_internal(n_str) + "\n")
 
-print("✅ 'Level01/P91' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P091' 문제 생성이 완료되었습니다. ")

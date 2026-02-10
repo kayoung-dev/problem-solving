@@ -186,4 +186,4 @@ for i in range(1, 21):
         f.write(ans)
 
 
-print(f"✅ 'Level01/P131' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P131' 문제 생성이 완료되었습니다. ")

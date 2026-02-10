@@ -258,9 +258,9 @@ def write_case(idx, a, b):
     )
     ans = solve_internal(a, b)
 
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(ans + "\n")
 
 
@@ -347,4 +347,4 @@ test_cases = test_cases[:20]
 for i, (a, b) in enumerate(test_cases, 1):
     write_case(i, a, b)
 
-print("✅ 'Level01/P109' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P109' 문제 생성이 완료되었습니다. ")

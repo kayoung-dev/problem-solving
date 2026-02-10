@@ -7,7 +7,7 @@ import sys
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", "..")) 
-base_dir = os.path.join(root_dir, "Level01", "P23")
+base_dir = os.path.join(root_dir, "Level01", "P023")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -18,65 +18,54 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-problem_md = f"""# 접시 닦기 아르바이트
+problem_md = f"""---
+title: "접시 닦기 아르바이트"
+level: "1"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Stack", "Simulation"]
+---
 
-## 문제 설명
-주방 보조 민수는 설거지를 하여 접시를 찬장에 정리해야 합니다.
-
-민수 앞에는 더러운 접시가 쌓인 '설거지 통'이 있고, 씻은 접시를 잠시 두는 '식기 건조대', 그리고 최종적으로 접시를 정리하는 '찬장'이 있습니다.
-
+## description
+주방 보조 민수는 설거지를 하여 접시를 찬장에 정리해야 합니다.<br/>
+민수 앞에는 더러운 접시가 쌓인 '설거지 통', 씻은 접시를 잠시 두는 '식기 건조대', 최종적으로 접시를 정리하는 '찬장'이 있습니다.
 민수는 다음 순서로만 접시를 옮길 수 있습니다.
 1. [설거지 통]에서 접시를 하나 꺼내 씻어서 [식기 건조대]에 쌓습니다. (Push)
 2. [식기 건조대]의 맨 위에 있는 접시를 꺼내 [찬장]에 옮깁니다. (Pop)
+'식기 건조대'는 좁고 깊은 모양이라, 가장 나중에 넣은(맨 위의) 접시만 꺼낼 수 있습니다.<br/>
+'설거지 통'에 쌓인 접시의 순서(입력)와, 주방장님이 원하는 '찬장'의 접시 정리 순서(목표)가 주어질 때, 이 순서를 만들 수 있는지 확인하고 그 과정을 출력하세요. (모든 접시는 고유한 알파벳 소문자로 구분됩니다.)
 
-**중요한 점은 '식기 건조대'가 좁고 깊은 모양이라, 가장 나중에 넣은(맨 위의) 접시만 꺼낼 수 있다는 것입니다.**
+## input_description
+- 첫 번째 줄에 '세척 전 접시 순서'를 나타내는 문자열 S1이 주어집니다.
+- 두 번째 줄에 '목표 완성 순서'를 나타내는 문자열 S2가 주어집니다.
+- S1과 S2는 서로 구성하는 문자가 같고 순서만 다른(혹은 같은) 문자열이며, 길이는 1 이상 26 이하입니다. 각 문자는 중복되지 않습니다.
 
-민수는 '설거지 통'에 있는 접시들을 하나씩 꺼내서 씻어야 합니다. 씻은 접시는 바로 찬장에 넣을 수도 있고, 건조대에 잠시 쌓아뒀다가 나중에 찬장에 넣을 수도 있습니다.
+## output_description
+- 목표 순서를 만들 수 있다면, 세척(Push)은 `0`, 건조(Pop)는 `1`로 표기하여 공백 없이 이어서 출력합니다.
+- 목표 순서를 만드는 것이 불가능하다면 `impossible`을 출력합니다.
 
-'설거지 통'에 쌓인 접시의 순서(입력)와, 주방장님이 원하는 '찬장'의 접시 정리 순서(목표)가 주어질 때, 이 순서를 만들 수 있는지 확인하고 그 과정을 출력하세요.
-(단, 모든 접시는 고유한 알파벳 소문자로 구분됩니다.)
+# samples
 
----
-
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 '세척 전 접시 순서'를 나타내는 문자열 S1이 주어집니다.
-* 두 번째 줄에 '목표 완성 순서'를 나타내는 문자열 S2가 주어집니다.
-* S1과 S2는 서로 구성하는 문자가 같고 순서만 다른(혹은 같은) 문자열이며, 길이는 1 이상 26 이하입니다. 각 문자는 중복되지 않습니다.
-
-## 출력 형식 (Output Format)
-* 목표 순서를 만들 수 있다면, 수행해야 하는 동작을 순서대로 출력합니다.
-    * 세척(Push)은 `0`, 건조(Pop)는 `1`로 표기하며, 공백 없이 이어서 출력합니다.
-* 만약 목표 순서를 만드는 것이 불가능하다면 `impossible`을 출력합니다.
-
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 abc
 cba
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 000111
 {TICK}
-* `a` 세척(0), `b` 세척(0), `c` 세척(0) -> 건조대:[a, b, c]
-* `c` 건조(1) -> 건조대:[a, b]
-* `b` 건조(1) -> 건조대:[a]
-* `a` 건조(1) -> 건조대:[]
-* 결과: `000111`
 
-### 예시 2
-**Input:**
+
+### input 2
 {TICK}
 abcde
 bdcae
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 0010011101
 {TICK}
@@ -207,9 +196,9 @@ while len(test_cases) < 20:
 
 # 파일 저장
 for i, (inp, out) in enumerate(test_cases, 1):
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(inp)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(out)
 
-print(f"✅ 'Level01/P23' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P023' 문제 생성이 완료되었습니다.")

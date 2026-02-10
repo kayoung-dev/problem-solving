@@ -127,4 +127,4 @@ for i, s_val in enumerate(test_cases, 1):
     with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print(f"✅ 'Level01/P124' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P124' 문제 생성이 완료되었습니다. ")

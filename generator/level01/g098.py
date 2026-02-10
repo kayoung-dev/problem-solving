@@ -3,11 +3,11 @@ import random
 from collections import Counter
 
 # ---------------------------------------------------------
-# 1. 경로 설정 (Level01/P98 폴더 생성)
+# 1. 경로 설정 (Level01/P098 폴더 생성)
 # ---------------------------------------------------------
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.abspath(os.path.join(current_dir, "..", ".."))
-base_dir = os.path.join(root_dir, "Level01", "P98")
+base_dir = os.path.join(root_dir, "Level01", "P098")
 test_dir = os.path.join(base_dir, "test")
 
 os.makedirs(base_dir, exist_ok=True)
@@ -185,9 +185,9 @@ with open(os.path.join(base_dir, "solution.py"), "w", encoding="utf-8") as f:
     f.write(solution_py)
 
 for idx, s in enumerate(test_data, 1):
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(s + "\n")
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(solve_internal(s) + "\n")
 
-print("✅ 'Level01/P98' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P098' 문제 생성이 완료되었습니다. ")

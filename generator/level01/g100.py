@@ -330,9 +330,9 @@ for idx, lines in enumerate(test_data, 1):
     input_str = "\n".join(out_lines) + "\n"
     ans = solve_internal(lines)
 
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(ans + ("\n" if ans else ""))
 
-print("✅ 'Level01/P100' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P100' 문제 생성이 완료되었습니다. ")

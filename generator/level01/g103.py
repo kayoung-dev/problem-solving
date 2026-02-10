@@ -274,10 +274,10 @@ for idx, (doc_date, inv, query_words) in enumerate(test_cases, 1):
     input_str = "\n".join(input_lines).rstrip() + "\n"
     ans = solve_internal(doc_date, inv, query_words)
 
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
 
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(ans + "\n")
 
-print("✅ 'Level01/P103' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P103' 문제 생성이 완료되었습니다. ")

@@ -221,9 +221,9 @@ for i in range(1, 21):
     input_str = f"{v}\n{e}\n" + "\n".join([f"{a} {b} {l}" for a, b, l in edges])
     ans = solve_internal(v, e, edges)
     
-    with open(os.path.join(test_dir, f"input_{i:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
-    with open(os.path.join(test_dir, f"output_{i:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{i}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print("✅ 'Level01/P115' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P115' 문제 생성이 완료되었습니다. ")

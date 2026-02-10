@@ -224,11 +224,11 @@ for idx, (posts, k) in enumerate(test_data, 1):
         input_lines.append(f"{pid} {t} {l} {c}")
     input_str = "\n".join(input_lines) + "\n"
 
-    with open(os.path.join(test_dir, f"input_{idx:02d}.in"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.in"), "w", encoding="utf-8") as f:
         f.write(input_str)
 
     ans = solve_internal(posts, k)
-    with open(os.path.join(test_dir, f"output_{idx:02d}.out"), "w", encoding="utf-8") as f:
+    with open(os.path.join(test_dir, f"{idx}.out"), "w", encoding="utf-8") as f:
         f.write(ans)
 
-print("✅ 'Level01/P110' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P110' 문제 생성이 완료되었습니다. ")

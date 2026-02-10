@@ -181,4 +181,4 @@ for i in range(1, 21):
     with open(os.path.join(test_dir, f"{i}.out"), "w") as f:
         f.write("\n".join(ans) + "\n")
 
-print(f"✅ 'Level01/P174' 문제 생성이 완료되었습니다.")
+print(f"✅ 'Level01/P174' 문제 생성이 완료되었습니다. ")
