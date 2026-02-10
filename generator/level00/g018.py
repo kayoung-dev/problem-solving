@@ -15,54 +15,53 @@ os.makedirs(test_dir, exist_ok=True)
 TICK = "`" * 3
 
 # ---------------------------------------------------------
-# 2. 문제 설명 (problem.md) 
+# 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 두리의 징검다리 (Stepping Stones)
+md_content = f"""---
+title: "두리의 징검다리"
+level: "0"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Condition"]
+---
 
-## 문제 설명
-강을 건너려는 강아지 '두리' 앞에 숫자가 적힌 징검다리들이 놓여 있습니다.
-
-'두리'는 다음과 같은 규칙으로 점수를 계산하며 강을 건너려고 합니다.
-1. 첫 번째, 세 번째, 다섯 번째... 처럼 **홀수 번째** 다리를 밟으면 그 숫자를 더합니다.
-2. 두 번째, 네 번째, 여섯 번째... 처럼 **짝수 번째** 다리를 밟으면 그 숫자를 뺍니다.
-
+## description
+강을 건너려는 강아지 '두리' 앞에 숫자가 적힌 징검다리들이 놓여 있습니다.<br/>
+'두리'는 다음과 같은 규칙으로 점수를 계산하며 강을 건너려고 합니다.<br/>
+1. 첫 번째, 세 번째, 다섯 번째... 처럼 **홀수 번째** 다리를 밟으면 그 숫자를 더합니다.<br/>
+2. 두 번째, 네 번째, 여섯 번째... 처럼 **짝수 번째** 다리를 밟으면 그 숫자를 뺍니다.<br/>
 징검다리에 적힌 숫자 리스트가 주어질 때, '두리'가 모든 다리를 건넌 후의 최종 점수를 구하는 프로그램을 작성하세요. (점수는 0점에서 시작합니다.)
 
----
+## input_description
+- 첫 번째 줄에 징검다리에 적힌 정수들이 공백으로 구분되어 한 줄에 주어집니다.
+- 다리의 개수는 1개 이상 100개 이하입니다.
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 징검다리에 적힌 정수들이 공백으로 구분되어 한 줄에 주어집니다.
-* 다리의 개수는 1개 이상 100개 이하입니다.
+## output_description
+- 계산된 최종 점수를 정수로 출력합니다.
 
-## 출력 형식 (Output Format)
-* 계산된 최종 점수를 정수로 출력합니다.
+# samples
 
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 10 5 20 7
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 18
 {TICK}
 
-### 예시 2
-**Input:**
+
+### input 2
 {TICK}
 100 50 10
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 60
 {TICK}
-> 100(1번째, 더하기) - 50(2번째, 빼기) + 10(3번째, 더하기) = 60
 """
 
 # ---------------------------------------------------------
@@ -116,10 +115,10 @@ for i in range(1, 21):
             score -= val
             
     # 입력 파일 저장 (숫자 리스트만 한 줄로 저장)
-    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
+    input_path = os.path.join(test_dir, f"{i}.in")
     with open(input_path, "w", encoding="utf-8") as f:
         f.write(" ".join(map(str, stones)))
         
-    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), str(score))
+    save_file(os.path.join(test_dir, f"{i}.out"), str(score))
 
 print(f"✅ 'Level00/P018' 생성이 완료되었습니다.")

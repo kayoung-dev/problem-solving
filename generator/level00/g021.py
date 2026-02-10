@@ -17,53 +17,49 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 포근이의 요일 맞추기 (Day of the Week)
+md_content = f"""---
+title: "포근이의 요일 맞추기"
+level: "0"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Math"]
+---
 
-## 문제 설명
-강아지 '포근이'는 매주 특정 요일에 산책 나가는 것을 좋아합니다. 오늘은 **월요일**입니다.
-
-포근이는 오늘로부터 정확히 $N$일이 지났을 때가 무슨 요일인지 궁금해졌습니다. 요일은 다음과 같은 순서로 반복됩니다:
-**월요일 -> 화요일 -> 수요일 -> 목요일 -> 금요일 -> 토요일 -> 일요일** (다시 월요일...)
-
+## description
+강아지 '포근이'는 매주 특정 요일에 산책 나가는 것을 좋아합니다. 오늘은 **월요일**입니다.<br/>
+포근이는 오늘로부터 정확히 $N$일이 지났을 때가 무슨 요일인지 궁금해졌습니다.<br/>
+요일은 **월요일 → 화요일 → 수요일 → 목요일 → 금요일 → 토요일 → 일요일** 순서로 반복됩니다.<br/>
 $N$이 주어졌을 때, 오늘(월요일)로부터 $N$일 후의 요일을 출력하는 프로그램을 작성하세요.
 
----
+## input_description
+- 첫 번째 줄에 지날 날짜를 의미하는 정수 $N$이 주어집니다. ($0 \\le N \\le 10,000$)
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 지날 날짜를 의미하는 정수 $N$이 주어집니다. ($0 \\le N \\le 10,000$)
+## output_description
+- $N$일 후의 요일을 한글로 출력합니다. (예: 월요일, 화요일 등)
 
-## 출력 형식 (Output Format)
-* $N$일 후의 요일을 한글로 출력합니다. (예: 월요일, 화요일 등)
+# samples
 
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 3
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 목요일
 {TICK}
 
-* 월요일부터 1일 후는 화요일, 2일 후는 수요일, 3일 후는 **목요일**입니다.
 
-### 예시 2
-**Input:**
+### input 2
 {TICK}
 10
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 목요일
 {TICK}
-
-* 7일이 지나면 다시 월요일이 됩니다. 10을 7로 나눈 나머지는 3이므로, 월요일로부터 3일 뒤인 **목요일**이 됩니다.
 """
 
 # ---------------------------------------------------------
@@ -118,10 +114,10 @@ for i in range(1, 21):
     ans = days_list[n % 7]
     
     # 입력 파일 저장
-    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
+    input_path = os.path.join(test_dir, f"{i}.in")
     with open(input_path, "w", encoding="utf-8") as f:
         f.write(str(n))
         
-    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), ans)
+    save_file(os.path.join(test_dir, f"{i}.out"), ans)
 
 print(f"✅ 'Level00/P021' 생성이 완료되었습니다.")

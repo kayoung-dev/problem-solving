@@ -17,58 +17,50 @@ TICK = "`" * 3
 # ---------------------------------------------------------
 # 2. 문제 설명 (problem.md)
 # ---------------------------------------------------------
-md_content = f"""# 구름이의 평균 미달 책장 (Below Average)
+md_content = f"""---
+title: "구름이의 평균 미달 책장"
+level: "0"
+time_limit: 1000
+memory_limit: 128
+languages: ["c", "cpp", "java", "js", "go", "python"]
+tags: ["Math"]
+---
 
-## 문제 설명
-도서관 사서 '구름이'는 책장에 꽂힌 책들의 두께(페이지 수)를 조사했습니다. 
-
-구름이는 책들의 **평균 페이지 수**를 구한 뒤, 평균보다 **엄격히 적은(미만)** 페이지를 가진 책이 총 몇 권인지 알고 싶어 합니다. 
-
+## description
+도서관 사서 '구름이'는 책장에 꽂힌 책들의 두께(페이지 수)를 조사했습니다.<br/>
+구름이는 책들의 **평균 페이지 수**를 구한 뒤, 평균보다 **엄격히 적은(미만)** 페이지를 가진 책이 총 몇 권인지 알고 싶어 합니다.<br/>
 책들의 페이지 수가 리스트로 주어질 때, 평균보다 적은 페이지의 책 권수를 출력하는 프로그램을 작성하세요.
 
----
+## input_description
+- 첫 번째 줄에 책들의 페이지 수가 공백으로 구분되어 한 줄에 주어집니다.
+- 각 페이지 수는 1 이상 1,000 이하의 정수입니다.
+- 책은 최소 1권 이상 100권 이하로 주어집니다.
 
-## 입력 형식 (Input Format)
-* 첫 번째 줄에 책들의 페이지 수가 공백으로 구분되어 한 줄에 주어집니다.
-* 각 페이지 수는 1 이상 1,000 이하의 정수입니다.
-* 책은 최소 1권 이상 100권 이하로 주어집니다.
+## output_description
+- 평균 페이지 수보다 적은 책의 권수를 정수로 출력합니다.
 
-## 출력 형식 (Output Format)
-* 평균 페이지 수보다 적은 책의 권수를 정수로 출력합니다.
+# samples
 
----
-
-## 입출력 예시 (Sample I/O)
-
-### 예시 1
-**Input:**
+### input 1
 {TICK}
 100 200 300 400 500
 {TICK}
 
-**Output:**
+### output 1
 {TICK}
 2
 {TICK}
 
-* 전체 합계: 1500
-* 평균: 1500 / 5 = 300
-* 300보다 작은 값: 100, 200 (총 2개)
 
-### 예시 2
-**Input:**
+### input 2
 {TICK}
 10 20 15
 {TICK}
 
-**Output:**
+### output 2
 {TICK}
 1
 {TICK}
-
-* 합계: 45
-* 평균: 45 / 3 = 15
-* 15보다 작은 값: 10 (총 1개)
 """
 
 # ---------------------------------------------------------
@@ -125,10 +117,10 @@ for i in range(1, 21):
     ans = len([p for p in pages if p < avg])
             
     # 입력 파일 저장
-    input_path = os.path.join(test_dir, f"input_{i:02d}.in")
+    input_path = os.path.join(test_dir, f"{i}.in")
     with open(input_path, "w", encoding="utf-8") as f:
         f.write(" ".join(map(str, pages)))
         
-    save_file(os.path.join(test_dir, f"output_{i:02d}.out"), str(ans))
+    save_file(os.path.join(test_dir, f"{i}.out"), str(ans))
 
 print(f"✅ 'Level00/P020' 생성이 완료되었습니다.")
